@@ -109,7 +109,7 @@
       "light-theme": "Light"
     },
     "search-box": {
-      "placeholder": "Search or jump to..."
+      "placeholder": "Найти или перейти к..."
     },
     "section": {
       "actions": "Actions",
@@ -1064,7 +1064,7 @@
       "title": "Scenes"
     },
     "search": {
-      "placeholderCommandPalette": "Search or jump to..."
+      "placeholderCommandPalette": "Найти или перейти к..."
     },
     "search-dashboards": {
       "title": "Search dashboards"

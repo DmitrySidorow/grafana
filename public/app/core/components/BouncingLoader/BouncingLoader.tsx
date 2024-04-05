@@ -72,7 +72,7 @@ const getStyles = (theme: GrafanaTheme2) => ({
     opacity: 0,
     animationName: fadeIn,
     animationIterationCount: 1,
-    animationDuration: '0.9s',
+    animationDuration: '0s',
     animationDelay: '0.5s',
     animationFillMode: 'forwards',
   }),
@@ -80,13 +80,12 @@ const getStyles = (theme: GrafanaTheme2) => ({
   bounce: css({
     textAlign: 'center',
     animationName: bounce,
-    animationDuration: '0.9s',
+    animationDuration: '0s',
     animationIterationCount: 'infinite',
   }),
 
   logo: css({
     display: 'inline-block',
-    animationName: squash,
     animationDuration: '0.9s',
     animationIterationCount: 'infinite',
     width: '60px',

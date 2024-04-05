@@ -919,19 +919,19 @@
       "title": "Correlations"
     },
     "create": {
-      "title": "Create"
+      "title": "Создать"
     },
     "create-alert": {
-      "title": "Create alert rule"
+      "title": "Правило оповещения"
     },
     "create-dashboard": {
-      "title": "Dashboard"
+      "title": "Дашборд"
     },
     "create-folder": {
-      "title": "Folder"
+      "title": "Папка"
     },
     "create-import": {
-      "title": "Import dashboard"
+      "title": "Импортировать дашборд"
     },
     "dashboards": {
       "subtitle": "Create and manage dashboards to visualize your data",
@@ -963,8 +963,8 @@
       "title": "Organizations"
     },
     "global-users": {
-      "subtitle": "Manage users in Grafana",
-      "title": "Users"
+      "subtitle": "Управление пользователями",
+      "title": "Пользователи"
     },
     "grafana-quaderno": {
       "title": "Grafana Quaderno"
@@ -972,15 +972,15 @@
     "help": {
       "title": "Помощь"
     },
-    "help/community": "Community",
-    "help/documentation": "Documentation",
-    "help/keyboard-shortcuts": "Keyboard shortcuts",
-    "help/support": "Support",
+    "help/community": "Сообщество",
+    "help/documentation": "Документация",
+    "help/keyboard-shortcuts": "Горячие клавиши",
+    "help/support": "Поддержка",
     "home": {
       "title": "Главная"
     },
     "incidents": {
-      "title": "Incidents"
+      "title": "Инциденты"
     },
     "infrastructure": {
       "subtitle": "Understand your infrastructure's health",
@@ -1014,7 +1014,7 @@
       "title": "Observability"
     },
     "new": {
-      "title": "New"
+      "title": "Новый"
     },
     "new-dashboard": {
       "title": "Новый дашборд"
@@ -1054,7 +1054,7 @@
       "title": "Профиль"
     },
     "profiles": {
-      "title": "Profiles"
+      "title": "Профили"
     },
     "public": {
       "title": "Public dashboards"
@@ -1076,7 +1076,7 @@
     },
     "server-settings": {
       "subtitle": "View the settings defined in your Grafana config",
-      "title": "Settings"
+      "title": "Настройки"
     },
     "service-accounts": {
       "subtitle": "Use service accounts to run automated workloads in Grafana",
@@ -1125,23 +1125,23 @@
     },
     "users": {
       "subtitle": "Invite and assign roles to users",
-      "title": "Users"
+      "title": "Пользователи"
     }
   },
   "navigation": {
     "kiosk": {
-      "tv-alert": "Press ESC to exit kiosk mode"
+      "tv-alert": "Нажмите ESC для выхода из режима киоска"
     },
     "megamenu": {
-      "close": "Close menu",
-      "dock": "Dock menu",
-      "list-label": "Navigation",
-      "undock": "Undock menu"
+      "close": "Закрыть меню",
+      "dock": "Закрепить меню",
+      "list-label": "Навигация",
+      "undock": "Открепить меню"
     },
     "toolbar": {
-      "close-menu": "Close menu",
-      "enable-kiosk": "Enable kiosk mode",
-      "open-menu": "Open menu",
+      "close-menu": "Закрыт меню",
+      "enable-kiosk": "Включить режим Киоска",
+      "open-menu": "Открыть меню",
       "toggle-search-bar": "Toggle top search bar"
     }
   },
@@ -1157,24 +1157,24 @@
   },
   "panel": {
     "header-menu": {
-      "copy": "Copy",
+      "copy": "Копировать",
       "create-library-panel": "Create library panel",
       "duplicate": "Duplicate",
-      "edit": "Edit",
-      "explore": "Explore",
-      "get-help": "Get help",
-      "hide-legend": "Hide legend",
-      "inspect": "Inspect",
-      "inspect-data": "Data",
-      "inspect-json": "Panel JSON",
-      "more": "More...",
+      "edit": "Редактировать",
+      "explore": "Исследовать",
+      "get-help": "Получить помощь",
+      "hide-legend": "Скрыть легенду",
+      "inspect": "Осмотреть",
+      "inspect-data": "Данные",
+      "inspect-json": "JSON панели",
+      "more": "Больше...",
       "new-alert-rule": "New alert rule",
-      "query": "Query",
-      "remove": "Remove",
-      "share": "Share",
-      "show-legend": "Show legend",
+      "query": "Запрос",
+      "remove": "Удалить",
+      "share": "Поделиться",
+      "show-legend": "Показать легенду",
       "unlink-library-panel": "Unlink library panel",
-      "view": "View"
+      "view": "Обзор"
     }
   },
   "playlist-edit": {

@@ -87,8 +87,8 @@ const getStyles = (theme: GrafanaTheme2) => ({
   logo: css({
     display: 'inline-block',
     animationName: squash,
-    animationDuration: '0.9s',
-    animationIterationCount: 'infinite',
+    // animationDuration: '0.9s',
+    // animationIterationCount: 'infinite',
     width: '60px',
     height: '60px',
   }),

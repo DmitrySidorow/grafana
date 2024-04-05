@@ -84,7 +84,7 @@
     },
     "manage-folder-nav": {
       "alert-rules": "Alert rules",
-      "dashboards": "Dashboards",
+      "dashboards": "Дашборды",
       "panels": "Panels"
     },
     "new-folder-form": {
@@ -160,10 +160,10 @@
       "target": "Target"
     },
     "navigation-form": {
-      "add-button": "Add",
-      "back-button": "Back",
-      "next-button": "Next",
-      "save-button": "Save"
+      "add-button": "Добавить",
+      "back-button": "Назад",
+      "next-button": "Следующий",
+      "save-button": "Сохранить"
     },
     "page-content": "To enable Correlations, add it in the Grafana config:",
     "page-heading": "Correlations are disabled",
@@ -241,17 +241,17 @@
     },
     "empty": {
       "add-library-panel-body": "Add visualizations that are shared with other dashboards.",
-      "add-library-panel-button": "Add library panel",
-      "add-library-panel-header": "Add a library panel",
-      "add-visualization-body": "Select a data source and then query and visualize your data with charts, stats and tables or create lists, markdowns and other widgets.",
-      "add-visualization-button": "Add visualization",
-      "add-visualization-header": "Start your new dashboard by adding a visualization",
+      "add-library-panel-button": "Добавить панель",
+      "add-library-panel-header": "Добавить панель из библиотеки",
+      "add-visualization-body": "Выберите источник данных, а затем запросите и визуализируйте свои данные с помощью диаграмм, статистики и таблиц или создайте списки и другие виджеты.",
+      "add-visualization-button": "Добавить панель",
+      "add-visualization-header": "Создайте новый дашборд добавлением панелей визуализации",
       "add-widget-body": "Create lists, markdowns and other widgets",
-      "add-widget-button": "Add widget",
-      "add-widget-header": "Add a widget",
-      "import-a-dashboard-body": "Import dashboard from file or <1>grafana.com</1>.",
-      "import-a-dashboard-header": "Import a dashboard",
-      "import-dashboard-button": "Import dashboard"
+      "add-widget-button": "Добавить",
+      "add-widget-header": "Добавить виджет",
+      "import-a-dashboard-body": "Импортировать дашборд из файла или <1>grafana.com</1>.",
+      "import-a-dashboard-header": "Импортировать дашборд",
+      "import-dashboard-button": "Импортировать"
     },
     "inspect": {
       "data-tab": "Data",
@@ -306,19 +306,19 @@
       "table-title": "Stats"
     },
     "toolbar": {
-      "add": "Add",
+      "add": "Добавить",
       "alert-rules": "Alert rules",
-      "mark-favorite": "Mark as favorite",
+      "mark-favorite": "Добавить в избранное",
       "open-original": "Open original dashboard",
       "playlist-next": "Go to next dashboard",
       "playlist-previous": "Go to previous dashboard",
       "playlist-stop": "Stop playlist",
       "refresh": "Refresh dashboard",
-      "save": "Save dashboard",
-      "settings": "Dashboard settings",
-      "share": "Share dashboard",
-      "share-button": "Share",
-      "unmark-favorite": "Unmark as favorite"
+      "save": "Сохранить дашборд",
+      "settings": "Настройки дашборда",
+      "share": "Поделиться дашбордом",
+      "share-button": "Поделиться",
+      "unmark-favorite": "Удалить из избранного"
     },
     "validation": {
       "invalid-dashboard-id": "Could not find a valid Grafana.com ID",
@@ -930,7 +930,7 @@
     },
     "dashboards": {
       "subtitle": "Create and manage dashboards to visualize your data",
-      "title": "Dashboards"
+      "title": "Дашборды"
     },
     "data-sources": {
       "subtitle": "View and manage your connected data source connections",
@@ -1190,7 +1190,7 @@
       "table-delete": "Delete playlist item",
       "table-drag": "Drag and drop to reorder",
       "table-empty": "Playlist is empty. Add dashboards below.",
-      "table-heading": "Dashboards"
+      "table-heading": "Дашборды"
     },
     "sub-title": "A playlist rotates through a pre-selected list of dashboards. A playlist can be a great way to build situational awareness, or just show off your metrics to your team or visitors.",
     "title": "Edit playlist"
@@ -1404,10 +1404,10 @@
       "view-as-list": "View as list"
     },
     "dashboard-actions": {
-      "import": "Import",
-      "new": "New",
-      "new-dashboard": "New dashboard",
-      "new-folder": "New folder"
+      "import": "Ипорт",
+      "new": "Новый",
+      "new-dashboard": "Новый дашборд",
+      "new-folder": "Новая папка"
     },
     "results-table": {
       "datasource-header": "Data source",

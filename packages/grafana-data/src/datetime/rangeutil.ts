@@ -49,7 +49,7 @@ const rangeOptions: TimeOption[] = [
   { from: 'now-30m', to: 'now', display: 'Last 30 minutes' },
   { from: 'now-1h', to: 'now', display: 'Last 1 hour' },
   { from: 'now-3h', to: 'now', display: 'Last 3 hours' },
-  { from: 'now-6h', to: 'now', display: 'Last 6 hours' },
+  { from: 'now-6h', to: 'now', display: 'Последние 6 часов' },
   { from: 'now-12h', to: 'now', display: 'Last 12 hours' },
   { from: 'now-24h', to: 'now', display: 'Last 24 hours' },
   { from: 'now-2d', to: 'now', display: 'Last 2 days' },

@@ -78,22 +78,22 @@ func (s *ServiceImpl) GetNavTree(c *contextmodel.ReqContext, prefs *pref.Prefere
 
 	treeRoot.AddSection(s.getHomeNode(c, prefs))
 
-	if hasAccess(ac.EvalPermission(dashboards.ActionDashboardsRead)) {
-		starredItemsLinks, err := s.buildStarredItemsNavLinks(c)
-		if err != nil {
-			return nil, err
-		}
-
-		treeRoot.AddSection(&navtree.NavLink{
-			Text:           "Starred",
-			Id:             "starred",
-			Icon:           "star",
-			SortWeight:     navtree.WeightSavedItems,
-			Children:       starredItemsLinks,
-			EmptyMessageId: "starred-empty",
-			Url:            s.cfg.AppSubURL + "/dashboards?starred",
-		})
-	}
+// 	if hasAccess(ac.EvalPermission(dashboards.ActionDashboardsRead)) {
+// 		starredItemsLinks, err := s.buildStarredItemsNavLinks(c)
+// 		if err != nil {
+// 			return nil, err
+// 		}
+//
+// 		treeRoot.AddSection(&navtree.NavLink{
+// 			Text:           "Starred",
+// 			Id:             "starred",
+// 			Icon:           "star",
+// 			SortWeight:     navtree.WeightSavedItems,
+// 			Children:       starredItemsLinks,
+// 			EmptyMessageId: "starred-empty",
+// 			Url:            s.cfg.AppSubURL + "/dashboards?starred",
+// 		})
+// 	}
 
 	if c.IsPublicDashboardView() || hasAccess(ac.EvalAny(
 		ac.EvalPermission(dashboards.ActionFoldersRead), ac.EvalPermission(dashboards.ActionFoldersCreate),

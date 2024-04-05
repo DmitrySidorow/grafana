@@ -1554,12 +1554,12 @@
   "time-picker": {
     "absolute": {
       "recent-title": "Recently used absolute ranges",
-      "title": "Absolute time range"
+      "title": "Аболютный временной диапазон"
     },
     "calendar": {
       "apply-button": "Apply time range",
-      "cancel-button": "Cancel",
-      "close": "Close calendar",
+      "cancel-button": "Отменить",
+      "close": "Закрыть календарь",
       "select-time": "Select a time range"
     },
     "content": {
@@ -1582,13 +1582,13 @@
       "time-zone-selection": "Time zone selection"
     },
     "range-content": {
-      "apply-button": "Apply time range",
-      "default-error": "Please enter a past date or \"now\"",
-      "fiscal-year": "Fiscal year",
-      "from-input": "From",
-      "open-input-calendar": "Open calendar",
-      "range-error": "\"From\" can't be after \"To\"",
-      "to-input": "To"
+      "apply-button": "Применить",
+      "default-error": "Введите прошедшую дату или \"now\"",
+      "fiscal-year": "Фискальный год",
+      "from-input": "От",
+      "open-input-calendar": "Открыть календарь",
+      "range-error": "\"От\" не может быть после \"До\"",
+      "to-input": "До"
     },
     "range-picker": {
       "backwards-time-aria-label": "Move time range backwards",

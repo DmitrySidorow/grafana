@@ -1637,7 +1637,7 @@
   "user-session": {
     "browser-column": "Browser & OS",
     "created-at-column": "Logged on",
-    "ip-column": "IP address",
+    "ip-column": "IP адрес",
     "revoke": "Revoke user session",
     "seen-at-column": "Last seen"
   },

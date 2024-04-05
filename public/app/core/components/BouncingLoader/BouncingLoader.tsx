@@ -34,14 +34,14 @@ const fadeIn = keyframes({
 });
 
 const bounce = keyframes({
-  'from, to': {
-    transform: 'translateY(0px)',
-    animationTimingFunction: 'cubic-bezier(0.3, 0, 0.1, 1)',
-  },
-  '50%': {
-    transform: 'translateY(-50px)',
-    animationTimingFunction: 'cubic-bezier(0.9, 0, 0.7, 1)',
-  },
+  // 'from, to': {
+  //   transform: 'translateY(0px)',
+  //   animationTimingFunction: 'cubic-bezier(0.3, 0, 0.1, 1)',
+  // },
+  // '50%': {
+  //   transform: 'translateY(-50px)',
+  //   animationTimingFunction: 'cubic-bezier(0.9, 0, 0.7, 1)',
+  // },
 });
 
 const squash = keyframes({

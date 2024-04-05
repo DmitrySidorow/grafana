@@ -19,7 +19,7 @@ const createUser = async (user: UserDTO) => getBackendSrv().post('/api/admin/use
 const pageNav: NavModelItem = {
   icon: 'user',
   id: 'user-new',
-  text: 'New user',
+  text: 'Новый пользователь',
   subTitle: 'Create a new Grafana user.',
 };
 

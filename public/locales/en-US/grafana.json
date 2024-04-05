@@ -88,9 +88,9 @@
       "panels": "Panels"
     },
     "new-folder-form": {
-      "cancel-label": "Cancel",
-      "create-label": "Create",
-      "name-label": "Folder name"
+      "cancel-label": "Отменить",
+      "create-label": "Создать",
+      "name-label": "Название папки"
     },
     "no-results": {
       "clear": "Clear search and filters",
@@ -104,20 +104,20 @@
   },
   "command-palette": {
     "action": {
-      "change-theme": "Change theme...",
-      "dark-theme": "Dark",
-      "light-theme": "Light"
+      "change-theme": "Изменить тему...",
+      "dark-theme": "Темная",
+      "light-theme": "Светлая"
     },
     "search-box": {
       "placeholder": "Найти или перейти к..."
     },
     "section": {
-      "actions": "Actions",
-      "dashboard-search-results": "Dashboards",
-      "folder-search-results": "Folders",
-      "pages": "Pages",
-      "preferences": "Preferences",
-      "recent-dashboards": "Recent dashboards"
+      "actions": "Действия",
+      "dashboard-search-results": "Дашборды",
+      "folder-search-results": "Папки",
+      "pages": "Страницы",
+      "preferences": "Настройки",
+      "recent-dashboards": "Недавние дашборды"
     }
   },
   "common": {
@@ -965,14 +965,14 @@
       "title": "Grafana Quaderno"
     },
     "help": {
-      "title": "Help"
+      "title": "Помощь"
     },
     "help/community": "Community",
     "help/documentation": "Documentation",
     "help/keyboard-shortcuts": "Keyboard shortcuts",
     "help/support": "Support",
     "home": {
-      "title": "Home"
+      "title": "Главная"
     },
     "incidents": {
       "title": "Incidents"
@@ -1012,10 +1012,10 @@
       "title": "New"
     },
     "new-dashboard": {
-      "title": "New dashboard"
+      "title": "Новый дашборд"
     },
     "new-folder": {
-      "title": "New folder"
+      "title": "Новая папка"
     },
     "observability": {
       "title": "Observability"
@@ -1043,10 +1043,10 @@
       "title": "Notification history"
     },
     "profile/password": {
-      "title": "Change password"
+      "title": "Изменить пароль"
     },
     "profile/settings": {
-      "title": "Profile"
+      "title": "Профиль"
     },
     "profiles": {
       "title": "Profiles"
@@ -1078,7 +1078,7 @@
       "title": "Service accounts"
     },
     "sign-out": {
-      "title": "Sign out"
+      "title": "Выход"
     },
     "slo": {
       "title": "SLO"
@@ -1088,7 +1088,7 @@
       "title": "Snapshots"
     },
     "starred": {
-      "title": "Starred"
+      "title": "Избранное"
     },
     "starred-empty": {
       "title": "Your starred dashboards will appear here"

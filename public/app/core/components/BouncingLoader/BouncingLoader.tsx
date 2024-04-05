@@ -80,8 +80,8 @@ const getStyles = (theme: GrafanaTheme2) => ({
   bounce: css({
     textAlign: 'center',
     animationName: bounce,
-    animationDuration: '0.9s',
-    animationIterationCount: 'infinite',
+    // animationDuration: '0.9s',
+    // animationIterationCount: 'infinite',
   }),
 
   logo: css({

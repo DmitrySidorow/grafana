@@ -1581,9 +1581,9 @@
       "tooltip-paste": "Paste time range"
     },
     "footer": {
-      "change-settings-button": "Change time settings",
+      "change-settings-button": "Настройки",
       "fiscal-year-option": "Фискальный год",
-      "fiscal-year-start": "Fiscal year start month",
+      "fiscal-year-start": "Начало фискального года",
       "time-zone-option": "Часовой пояс",
       "time-zone-selection": "Выбор часового пояса"
     },
@@ -1612,7 +1612,7 @@
     },
     "zone": {
       "select-aria-label": "Time zone picker",
-      "select-search-input": "Type to search (country, city, abbreviation)"
+      "select-search-input": "Введите для поиска (страна, город...)"
     }
   },
   "transformations": {

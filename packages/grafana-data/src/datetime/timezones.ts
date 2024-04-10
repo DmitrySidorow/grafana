@@ -14,7 +14,7 @@ export enum InternalTimeZones {
 export const timeZoneFormatUserFriendly = (timeZone: TimeZone | undefined) => {
   switch (getTimeZone({ timeZone })) {
     case 'browser':
-      return 'Local browser time';
+      return 'Браузерное время';
     case 'utc':
       return 'UTC';
     default:
@@ -128,7 +128,7 @@ const mapInternal = (zone: string, timestamp: number): TimeZoneInfo | undefined 
         offsetInMins: 0,
         ...info,
         ianaName: info?.ianaName ?? '',
-        name: 'Default',
+        name: 'По умолчанию',
         zone,
       };
     }
@@ -139,10 +139,10 @@ const mapInternal = (zone: string, timestamp: number): TimeZoneInfo | undefined 
 
       return {
         countries: countriesByTimeZone[tz] ?? [],
-        abbreviation: 'Your local time',
+        abbreviation: 'Ваше локальное время',
         offsetInMins: new Date().getTimezoneOffset(),
         ...info,
-        name: 'Browser Time',
+        name: 'Браузерное время',
         ianaName: info?.ianaName ?? '',
         zone,
       };
@@ -358,7 +358,7 @@ const countryByCode: Record<string, string> = {
   QA: 'Qatar',
   RE: 'Reunion',
   RO: 'Romania',
-  RU: 'Russian Federation',
+  RU: 'Российская федерация',
   RW: 'Rwanda',
   BL: 'Saint Barthelemy',
   SH: 'Saint Helena',

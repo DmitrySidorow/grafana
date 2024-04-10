@@ -55,7 +55,7 @@ export const StateTimelinePanel = ({
   if (!frames || warn) {
     return (
       <div className="panel-empty">
-        <p>{warn ?? 'No data found in response'}</p>
+        <p>{warn ?? 'Нет данных'}</p>
       </div>
     );
   }

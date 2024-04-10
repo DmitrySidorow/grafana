@@ -29,7 +29,7 @@ import { getColumns, sortCaseInsensitive, sortNumber, getFooterItems, createFoot
 
 const COLUMN_MIN_WIDTH = 150;
 const FOOTER_ROW_HEIGHT = 36;
-const NO_DATA_TEXT = 'No data';
+const NO_DATA_TEXT = 'Нет данных';
 
 export const Table = memo((props: Props) => {
   const {

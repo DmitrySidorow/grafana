@@ -132,7 +132,7 @@ export function getEditionAndUpdateLinks(): NavModelItem[] {
     links.push({
       target: '_blank',
       id: 'updateVersion',
-      text: `New version available!`,
+      text: `Доступна новая версия!`,
       icon: 'download-alt',
       url: 'https://grafana.com/grafana/download?utm_source=grafana_footer',
     });

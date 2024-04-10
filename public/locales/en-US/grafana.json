@@ -1660,7 +1660,7 @@
       "placeholder": "Select value"
     },
     "dropdown": {
-      "placeholder": "Enter variable value"
+      "placeholder": "Введите значение"
     },
     "picker": {
       "link-all": "All",
@@ -1669,7 +1669,7 @@
       "option-tooltip": "Clear selections"
     },
     "textbox": {
-      "placeholder": "Enter variable value"
+      "placeholder": "Введите значение"
     }
   }
 }

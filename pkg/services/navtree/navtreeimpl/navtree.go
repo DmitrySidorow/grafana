@@ -107,7 +107,7 @@ func (s *ServiceImpl) GetNavTree(c *contextmodel.ReqContext, prefs *pref.Prefere
 		dashboardChildLinks := s.buildDashboardNavLinks(c)
 
 		dashboardLink := &navtree.NavLink{
-			Text:       "Dashboards",
+			Text:       "Дашборды",
 			Id:         navtree.NavIDDashboards,
 			SubTitle:   "Create and manage dashboards to visualize your data",
 			Icon:       "apps",

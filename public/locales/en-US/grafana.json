@@ -1140,7 +1140,7 @@
       "undock": "Открепить меню"
     },
     "toolbar": {
-      "close-menu": "Закрыт меню",
+      "close-menu": "Закрыть меню",
       "enable-kiosk": "Включить режим Киоска",
       "open-menu": "Открыть меню",
       "toggle-search-bar": "Toggle top search bar"
@@ -1153,8 +1153,8 @@
     "title": "Latest from the blog"
   },
   "notifications": {
-    "starred-dashboard": "Dashboard starred",
-    "unstarred-dashboard": "Dashboard unstarred"
+    "starred-dashboard": "Добавлено в избранное",
+    "unstarred-dashboard": "Удалено из избранного"
   },
   "panel": {
     "header-menu": {
@@ -1186,13 +1186,13 @@
       "add-title-label": "Add by title",
       "cancel": "Cancel",
       "heading": "Add dashboards",
-      "interval-label": "Interval",
+      "interval-label": "Интервал",
       "interval-placeholder": "5m",
-      "interval-required": "Interval is required",
+      "interval-required": "Требуется интервал",
       "name-label": "Name",
       "name-placeholder": "Name",
       "name-required": "Name is required",
-      "save": "Save",
+      "save": "Сохранить",
       "table-delete": "Delete playlist item",
       "table-drag": "Drag and drop to reorder",
       "table-empty": "Playlist is empty. Add dashboards below.",
@@ -1229,19 +1229,19 @@
   },
   "profile": {
     "change-password": {
-      "cancel-button": "Cancel",
-      "cannot-change-password-message": "Password cannot be changed here.",
-      "change-password-button": "Change Password",
-      "confirm-password-label": "Confirm password",
-      "confirm-password-required": "New password confirmation is required",
+      "cancel-button": "Отменить",
+      "cannot-change-password-message": "Пароль не может быть изменен.",
+      "change-password-button": "Изменить пароль",
+      "confirm-password-label": "Подтверждение пароля",
+      "confirm-password-required": "Требуется подтверждение пароля",
       "ldap-auth-proxy-message": "You cannot change password when signed in with LDAP or auth proxy.",
-      "new-password-label": "New password",
-      "new-password-required": "New password is required",
-      "new-password-same-as-old": "New password can't be the same as the old one.",
-      "old-password-label": "Old password",
-      "old-password-required": "Old password is required",
-      "passwords-must-match": "Passwords must match",
-      "strong-password-validation-register": "Password does not comply with the strong password policy"
+      "new-password-label": "Новый пароль",
+      "new-password-required": "Требуется новый пароль",
+      "new-password-same-as-old": "Новый пароль не должен совпадать с предыдущим",
+      "old-password-label": "Старый пароль",
+      "old-password-required": "Требуется старый пароль",
+      "passwords-must-match": "Пароли должны совпадать",
+      "strong-password-validation-register": "Пароль"
     }
   },
   "public-dashboard": {
@@ -1374,7 +1374,7 @@
   },
   "refresh-picker": {
     "aria-label": {
-      "choose-interval": "Auto refresh turned off. Choose refresh time interval",
+      "choose-interval": "Автообновление выключено. Выберите интервал обновления",
       "duration-selected": "Choose refresh time interval with current interval {{durationAriaLabel}} selected"
     },
     "auto-option": {
@@ -1387,30 +1387,30 @@
     },
     "off-option": {
       "aria-label": "Turn off auto refresh",
-      "label": "Off"
+      "label": "Выключить"
     },
     "tooltip": {
-      "interval-selected": "Set auto refresh interval",
-      "turned-off": "Auto refresh off"
+      "interval-selected": "Установить авто интервал обновления",
+      "turned-off": "Автообновление выключено"
     }
   },
   "return-to-previous": {
     "button": {
-      "label": "Back to {{title}}"
+      "label": "Вернуться к {{title}}"
     },
-    "dismissable-button": "Close"
+    "dismissable-button": "Закрыть"
   },
   "search": {
     "actions": {
       "include-panels": "Include panels",
       "remove-datasource-filter": "Datasource: {{datasource}}",
       "sort-placeholder": "Sort",
-      "starred": "Starred",
+      "starred": "Избранное",
       "view-as-folders": "View by folders",
       "view-as-list": "View as list"
     },
     "dashboard-actions": {
-      "import": "Ипорт",
+      "import": "Импорт",
       "new": "Новый",
       "new-dashboard": "Новый дашборд",
       "new-folder": "Новая папка"
@@ -1431,10 +1431,10 @@
   },
   "share-modal": {
     "dashboard": {
-      "title": "Share"
+      "title": "Поделиться"
     },
     "embed": {
-      "copy": "Copy to clipboard",
+      "copy": "Скопировать в буфер обмена",
       "html": "Embed HTML",
       "html-description": "The HTML code below can be pasted and included in another web page. Unless anonymous access is enabled, the user viewing that page need to be signed into Grafana for the graph to load.",
       "info": "Generate HTML for embedding an iframe with this panel.",
@@ -1466,7 +1466,7 @@
       "time-range-label": "Lock time range"
     },
     "panel": {
-      "title": "Share Panel"
+      "title": "Поделиться"
     },
     "snapshot": {
       "cancel-button": "Cancel",
@@ -1559,19 +1559,19 @@
   },
   "time-picker": {
     "absolute": {
-      "recent-title": "Recently used absolute ranges",
+      "recent-title": "Недавние временные диапазоны",
       "title": "Аболютный временной диапазон"
     },
     "calendar": {
-      "apply-button": "Apply time range",
+      "apply-button": "Применить временной диапазаон",
       "cancel-button": "Отменить",
       "close": "Закрыть календарь",
-      "select-time": "Select a time range"
+      "select-time": "Выбрать временной диапазон"
     },
     "content": {
       "empty-recent-list-docs": "<0><0>Read the documentation</0><1> to find out more about how to enter custom time ranges.</1></0>",
       "empty-recent-list-info": "It looks like you haven't used this time picker before. As soon as you enter some time intervals, recently used intervals will appear here.",
-      "filter-placeholder": "Search quick ranges"
+      "filter-placeholder": "Поиск"
     },
     "copy-paste": {
       "copy-success-message": "Time range copied to clipboard",
@@ -1582,10 +1582,10 @@
     },
     "footer": {
       "change-settings-button": "Change time settings",
-      "fiscal-year-option": "Fiscal year",
+      "fiscal-year-option": "Фискальный год",
       "fiscal-year-start": "Fiscal year start month",
-      "time-zone-option": "Time zone",
-      "time-zone-selection": "Time zone selection"
+      "time-zone-option": "Часовой пояс",
+      "time-zone-selection": "Выбор часового пояса"
     },
     "range-content": {
       "apply-button": "Применить",
@@ -1606,7 +1606,7 @@
     },
     "time-range": {
       "aria-role": "Time range selection",
-      "default-title": "Time ranges",
+      "default-title": "Временные диапазаоны",
       "example-title": "Example time ranges",
       "specify": "Specify time range <1></1>"
     },
@@ -1622,10 +1622,10 @@
     }
   },
   "user-orgs": {
-    "current-org-button": "Current",
-    "name-column": "Name",
-    "role-column": "Role",
-    "select-org-button": "Select organisation",
+    "current-org-button": "Текущая",
+    "name-column": "Название",
+    "role-column": "Роль",
+    "select-org-button": "Выбрать организацию",
     "title": "Organizations"
   },
   "user-profile": {

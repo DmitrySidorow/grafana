@@ -69,7 +69,7 @@
     "releaseNotesUrl": "https://grafana.com/docs/grafana/next/release-notes/"
   },
   "devDependencies": {
-    "@babel/runtime": "7.24.1",
+    "@babel/runtime": "7.24.4",
     "@betterer/betterer": "5.4.0",
     "@betterer/cli": "5.4.0",
     "@betterer/eslint": "5.4.0",
@@ -239,7 +239,7 @@
     "@emotion/css": "11.11.2",
     "@emotion/react": "11.11.4",
     "@fingerprintjs/fingerprintjs": "^3.4.2",
-    "@floating-ui/react": "0.26.10",
+    "@floating-ui/react": "0.26.12",
     "@glideapps/glide-data-grid": "^6.0.0",
     "@grafana/aws-sdk": "0.3.3",
     "@grafana/data": "workspace:*",

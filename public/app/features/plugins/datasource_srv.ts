@@ -152,7 +152,7 @@ export class DatasourceSrv implements DataSourceService {
     // find the metadata
     const instanceSettings = this.getInstanceSettings(key);
     if (!instanceSettings) {
-      return Promise.reject({ message: `Datasource ${key} was not found` });
+      return Promise.reject({ message: `Источник данных ${key} не найден` });
     }
 
     try {
@@ -195,7 +195,7 @@ export class DatasourceSrv implements DataSourceService {
       if (err instanceof Error) {
         appEvents.emit(AppEvents.alertError, [instanceSettings.name + ' plugin failed', err.toString()]);
       }
-      return Promise.reject({ message: `Datasource: ${key} was not found` });
+      return Promise.reject({ message: `Источник данных: ${key} не найден` });
     }
   }
 

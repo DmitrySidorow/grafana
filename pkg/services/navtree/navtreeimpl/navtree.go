@@ -329,7 +329,7 @@ func (s *ServiceImpl) buildDashboardNavLinks(c *contextmodel.ReqContext) []*navt
 	if c.IsSignedIn {
 		if s.cfg.SnapshotEnabled {
 			dashboardChildNavs = append(dashboardChildNavs, &navtree.NavLink{
-				Text:     "Snapshots",
+				Text:     "Снимки",
 				SubTitle: "Interactive, publically available, point-in-time representations of dashboards",
 				Id:       "dashboards/snapshots",
 				Url:      s.cfg.AppSubURL + "/dashboard/snapshots",
@@ -338,7 +338,7 @@ func (s *ServiceImpl) buildDashboardNavLinks(c *contextmodel.ReqContext) []*navt
 		}
 
 		dashboardChildNavs = append(dashboardChildNavs, &navtree.NavLink{
-			Text:     "Library panels",
+			Text:     "Библиотека панелей",
 			SubTitle: "Reusable panels that can be added to multiple dashboards",
 			Id:       "dashboards/library-panels",
 			Url:      s.cfg.AppSubURL + "/library-panels",

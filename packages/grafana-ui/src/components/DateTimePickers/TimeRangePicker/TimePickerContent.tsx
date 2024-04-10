@@ -221,7 +221,7 @@ const EmptyRecentList = memo(() => {
   const styles = useStyles2(getEmptyListStyles);
   const emptyRecentListText = t(
     'time-picker.content.empty-recent-list-info',
-    "It looks like you haven't used this time picker before. As soon as you enter some time intervals, recently used intervals will appear here."
+    "Похоже, вы еще не использовали этот инструмент для выбора временного интервала. Как только вы введете временные интервалы - они появятся здесь."
   );
 
   return (
@@ -236,9 +236,9 @@ const EmptyRecentList = memo(() => {
             href="https://grafana.com/docs/grafana/latest/dashboards/time-range-controls"
             target="_new"
           >
-            Read the documentation
+            Прочитайте документацию
           </a>
-          <span> to find out more about how to enter custom time ranges.</span>
+          <span> чтобы узнать больше о том, как вводить пользовательские временные диапазоны.</span>
         </div>
       </Trans>
     </div>

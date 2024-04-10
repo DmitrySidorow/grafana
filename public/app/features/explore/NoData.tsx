@@ -9,7 +9,7 @@ export const NoData = () => {
   return (
     <>
       <PanelContainer data-testid="explore-no-data" className={css.wrapper}>
-        <span className={css.message}>{'No data'}</span>
+        <span className={css.message}>{'Нет данных'}</span>
       </PanelContainer>
     </>
   );

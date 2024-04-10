@@ -673,19 +673,19 @@
   },
   "login": {
     "error": {
-      "blocked": "You have exceeded the number of login attempts for this user. Please try again later.",
-      "invalid-user-or-password": "Invalid username or password",
-      "title": "Login failed",
-      "unknown": "Unknown error occurred"
+      "blocked": "Превышено количество попыток входа. Повторите позже.",
+      "invalid-user-or-password": "Неверный логин или пароль",
+      "title": "Ошибка входа",
+      "unknown": "Неизвестная ошибка"
     },
-    "forgot-password": "Forgot your password?",
+    "forgot-password": "Забыли пароль?",
     "form": {
-      "password-label": "Password",
-      "password-required": "Password is required",
-      "submit-label": "Log in",
-      "submit-loading-label": "Logging in...",
-      "username-label": "Email or username",
-      "username-required": "Email or username is required"
+      "password-label": "Пароль",
+      "password-required": "Требуется пароль",
+      "submit-label": "Войти",
+      "submit-loading-label": "Вход...",
+      "username-label": "Email или логин",
+      "username-required": "Требуется email или логин"
     },
     "services": {
       "sing-in-with-prefix": "Sign in with {{serviceName}}"

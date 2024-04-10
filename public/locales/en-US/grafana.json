@@ -1569,8 +1569,8 @@
       "select-time": "Выбрать временной диапазон"
     },
     "content": {
-      "empty-recent-list-docs": "<0><0>Read the documentation</0><1> to find out more about how to enter custom time ranges.</1></0>",
-      "empty-recent-list-info": "It looks like you haven't used this time picker before. As soon as you enter some time intervals, recently used intervals will appear here.",
+      "empty-recent-list-docs": "<0><0>Прочтите документацию</0><1>, чтобы узнать больше о том, как вводить пользовательские временные диапазоны.</1></0>",
+      "empty-recent-list-info": "Похоже, вы еще не использовали этот инструмент для выбора временного интервала. Как только вы введете временные интервалы - они появятся здесь.",
       "filter-placeholder": "Поиск"
     },
     "copy-paste": {

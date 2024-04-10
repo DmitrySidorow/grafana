@@ -236,7 +236,7 @@ const EmptyRecentList = memo(() => {
             href="https://grafana.com/docs/grafana/latest/dashboards/time-range-controls"
             target="_new"
           >
-            Прочитайте документацию
+            Прочтите документацию,
           </a>
           <span> чтобы узнать больше о том, как вводить пользовательские временные диапазоны.</span>
         </div>

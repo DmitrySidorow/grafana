@@ -280,7 +280,7 @@ export const Table = memo((props: Props) => {
         />
         {isSmall ? null : (
           <div className={tableStyles.paginationSummary}>
-            {itemsRangeStart} - {itemsRangeEnd} of {data.length} rows
+            {itemsRangeStart} - {itemsRangeEnd} из {data.length} строк
           </div>
         )}
       </div>

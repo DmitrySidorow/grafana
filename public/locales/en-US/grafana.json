@@ -1626,29 +1626,29 @@
     "name-column": "Название",
     "role-column": "Роль",
     "select-org-button": "Выбрать организацию",
-    "title": "Organizations"
+    "title": "Организации"
   },
   "user-profile": {
     "fields": {
-      "email-error": "Email is required",
+      "email-error": "Требуется email",
       "email-label": "Email",
-      "name-error": "Name is required",
-      "name-label": "Name",
-      "username-label": "Username"
+      "name-error": "Требуется имя",
+      "name-label": "Имя",
+      "username-label": "Логин"
     },
     "tabs": {
       "general": "General"
     }
   },
   "user-session": {
-    "browser-column": "Browser & OS",
-    "created-at-column": "Logged on",
+    "browser-column": "Браузер & ОС",
+    "created-at-column": "Зарегистрирован",
     "ip-column": "IP адрес",
-    "revoke": "Revoke user session",
-    "seen-at-column": "Last seen"
+    "revoke": "Завершить сессию",
+    "seen-at-column": "Последний вход"
   },
   "user-sessions": {
-    "loading": "Loading sessions..."
+    "loading": "Загрузка сессий..."
   },
   "users-access-list": {
     "tabs": {

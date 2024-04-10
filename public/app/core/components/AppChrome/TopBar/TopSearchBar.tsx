@@ -38,7 +38,7 @@ export const TopSearchBar = React.memo(function TopSearchBar() {
   return (
     <div className={styles.layout}>
       <TopSearchBarSection>
-        <a className={styles.logo} href={homeUrl} title="Go to home">
+        <a className={styles.logo} href={homeUrl} title="На главную">
           <Branding.MenuLogo className={styles.img} />
         </a>
         <OrganizationSwitcher />

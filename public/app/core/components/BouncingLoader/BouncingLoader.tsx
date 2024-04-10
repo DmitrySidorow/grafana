@@ -34,37 +34,37 @@ const fadeIn = keyframes({
 });
 
 const bounce = keyframes({
-  // 'from, to': {
-  //   transform: 'translateY(0px)',
-  //   animationTimingFunction: 'cubic-bezier(0.3, 0, 0.1, 1)',
-  // },
-  // '50%': {
-  //   transform: 'translateY(-50px)',
-  //   animationTimingFunction: 'cubic-bezier(0.9, 0, 0.7, 1)',
-  // },
+  'from, to': {
+    transform: 'translateY(0px)',
+    animationTimingFunction: 'cubic-bezier(0.3, 0, 0.1, 1)',
+  },
+  '50%': {
+    transform: 'translateY(-50px)',
+    animationTimingFunction: 'cubic-bezier(0.9, 0, 0.7, 1)',
+  },
 });
 
 const squash = keyframes({
-  // '0%': {
-  //   transform: 'scaleX(1.3) scaleY(0.8)',
-  //   animationTimingFunction: 'cubic-bezier(0.3, 0, 0.1, 1)',
-  // },
-  // '15%': {
-  //   transform: 'scaleX(0.75) scaleY(1.25)',
-  //   animationTimingFunction: 'cubic-bezier(0, 0, 0.7, 0.75)',
-  // },
-  // '55%': {
-  //   transform: 'scaleX(1.05) scaleY(0.95)',
-  //   animationTimingFunction: 'cubic-bezier(0.9, 0, 1, 1)',
-  // },
-  // '95%': {
-  //   transform: 'scaleX(0.75) scaleY(1.25)',
-  //   animationTimingFunction: 'cubic-bezier(0, 0, 0, 1)',
-  // },
-  // '100%': {
-  //   transform: 'scaleX(1.3) scaleY(0.8)',
-  //   animationTimingFunction: 'cubic-bezier(0, 0, 0.7, 1)',
-  // },
+  '0%': {
+    transform: 'scaleX(1.3) scaleY(0.8)',
+    animationTimingFunction: 'cubic-bezier(0.3, 0, 0.1, 1)',
+  },
+  '15%': {
+    transform: 'scaleX(0.75) scaleY(1.25)',
+    animationTimingFunction: 'cubic-bezier(0, 0, 0.7, 0.75)',
+  },
+  '55%': {
+    transform: 'scaleX(1.05) scaleY(0.95)',
+    animationTimingFunction: 'cubic-bezier(0.9, 0, 1, 1)',
+  },
+  '95%': {
+    transform: 'scaleX(0.75) scaleY(1.25)',
+    animationTimingFunction: 'cubic-bezier(0, 0, 0, 1)',
+  },
+  '100%': {
+    transform: 'scaleX(1.3) scaleY(0.8)',
+    animationTimingFunction: 'cubic-bezier(0, 0, 0.7, 1)',
+  },
 });
 
 const getStyles = (theme: GrafanaTheme2) => ({

@@ -26,26 +26,26 @@
     }
   },
   "bouncing-loader": {
-    "label": "Loading"
+    "label": "Загрузка..."
   },
   "browse-dashboards": {
     "action": {
-      "cancel-button": "Cancel",
-      "cannot-move-folders": "Folders can not be moved",
-      "delete-button": "Delete",
+      "cancel-button": "Отменить",
+      "cannot-move-folders": "Папка не может быть перемещена",
+      "delete-button": "Удалить",
       "delete-modal-invalid-text": "One or more folders contain library panels or alert rules. Delete these first in order to proceed.",
-      "delete-modal-invalid-title": "Cannot delete folder",
-      "delete-modal-text": "This action will delete the following content:",
-      "delete-modal-title": "Delete",
-      "deleting": "Deleting...",
-      "manage-permissions-button": "Manage permissions",
-      "move-button": "Move",
+      "delete-modal-invalid-title": "Невозможно удалить папку",
+      "delete-modal-text": "Это действие удалит следующие данные:",
+      "delete-modal-title": "Удаление",
+      "deleting": "Удаление...",
+      "manage-permissions-button": "Управление разрешениями",
+      "move-button": "Переместить",
       "move-modal-alert": "Moving this item may change its permissions.",
-      "move-modal-field-label": "Folder name",
-      "move-modal-text": "This action will move the following content:",
-      "move-modal-title": "Move",
-      "moving": "Moving...",
-      "new-folder-name-required-phrase": "Folder name is required."
+      "move-modal-field-label": "Название папки",
+      "move-modal-text": "Это действие удалит следующие данные:",
+      "move-modal-title": "Перемещение",
+      "moving": "Перемещение...",
+      "new-folder-name-required-phrase": "Требуется название папки."
     },
     "counts": {
       "alertRule_one": "{{count}} alert rule",
@@ -60,18 +60,18 @@
       "total_other": "{{count}} items"
     },
     "dashboards-tree": {
-      "collapse-folder-button": "Collapse folder {{title}}",
-      "expand-folder-button": "Expand folder {{title}}",
-      "name-column": "Name",
-      "select-all-header-checkbox": "Select all",
-      "select-checkbox": "Select",
-      "tags-column": "Tags"
+      "collapse-folder-button": "Свернуть папку {{title}}",
+      "expand-folder-button": "Раскрыть папку {{title}}",
+      "name-column": "Название",
+      "select-all-header-checkbox": "Выбрать все",
+      "select-checkbox": "Выбрать",
+      "tags-column": "Теги"
     },
     "folder-actions-button": {
-      "delete": "Delete",
-      "folder-actions": "Folder actions",
-      "manage-permissions": "Manage permissions",
-      "move": "Move"
+      "delete": "Удалить",
+      "folder-actions": "Действия с папкой",
+      "manage-permissions": "Управление разрешениями",
+      "move": "Переместить"
     },
     "folder-picker": {
       "accessible-label": "Select folder: {{ label }} currently selected",
@@ -83,9 +83,9 @@
       "unknown-error": "Unknown error"
     },
     "manage-folder-nav": {
-      "alert-rules": "Alert rules",
+      "alert-rules": "Правила уведомлений",
       "dashboards": "Дашборды",
-      "panels": "Panels"
+      "panels": "Панели"
     },
     "new-folder-form": {
       "cancel-label": "Отменить",
@@ -99,7 +99,7 @@
   },
   "clipboard-button": {
     "inline-toast": {
-      "success": "Copied"
+      "success": "Скопировано"
     }
   },
   "command-palette": {
@@ -122,9 +122,9 @@
   },
   "common": {
     "locale": {
-      "default": "Default"
+      "default": "По умолчанию"
     },
-    "save": "Save"
+    "save": "Сохранить"
   },
   "connections": {
     "connect-data": {
@@ -229,11 +229,11 @@
   },
   "dashboard": {
     "add-menu": {
-      "import": "Import from library",
-      "paste-panel": "Paste panel",
-      "row": "Row",
-      "visualization": "Visualization",
-      "widget": "Widget"
+      "import": "Импортировать из библиотеки",
+      "paste-panel": "Вставить панель",
+      "row": "Строка",
+      "visualization": "Панель визуализации",
+      "widget": "Виджет"
     },
     "alert-rules-drawer": {
       "redirect-link": "List in Grafana Alerting",

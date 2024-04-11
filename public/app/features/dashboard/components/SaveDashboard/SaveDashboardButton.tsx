@@ -30,7 +30,7 @@ export const SaveDashboardButton = ({ dashboard, onSaveSuccess, size }: SaveDash
             }}
             aria-label={selectors.pages.Dashboard.Settings.General.saveDashBoard}
           >
-            Save dashboard
+            Сохранить дашборд
           </Button>
         );
       }}

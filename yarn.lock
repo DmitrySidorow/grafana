@@ -4027,7 +4027,7 @@ __metadata:
     "@testing-library/user-event": "npm:14.5.2"
     "@types/d3": "npm:7.4.3"
     "@types/debounce-promise": "npm:3.1.9"
-    "@types/eslint": "npm:8.56.7"
+    "@types/eslint": "npm:8.56.8"
     "@types/jest": "npm:29.5.12"
     "@types/jquery": "npm:3.5.29"
     "@types/lodash": "npm:4.17.0"
@@ -9611,13 +9611,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/eslint@npm:*, @types/eslint@npm:8.56.7, @types/eslint@npm:^8.56.5":
-  version: 8.56.7
-  resolution: "@types/eslint@npm:8.56.7"
+"@types/eslint@npm:*, @types/eslint@npm:8.56.8, @types/eslint@npm:^8.56.5":
+  version: 8.56.8
+  resolution: "@types/eslint@npm:8.56.8"
   dependencies:
     "@types/estree": "npm:*"
     "@types/json-schema": "npm:*"
-  checksum: 10/4c90f30a19bc5a01b27afc4f7e3efa28d191b7c9505fd4f6373d1dcdf8e93b939628d92ae730c3ef77bf2a094622296bb307cbecbad7cb6b43ef31dd722f6944
+  checksum: 10/2f1514f9510cbf5662142b067e6a6641b04f65f5c7d3ea67c63d48a7788376322ed0c4557c4200923cfaf5059b50521384476ba92a3c3108ec9dc5164b4fbda1
   languageName: node
   linkType: hard
 
@@ -13076,13 +13076,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"centrifuge@npm:5.0.2":
-  version: 5.0.2
-  resolution: "centrifuge@npm:5.0.2"
+"centrifuge@npm:5.1.1":
+  version: 5.1.1
+  resolution: "centrifuge@npm:5.1.1"
   dependencies:
     events: "npm:^3.3.0"
     protobufjs: "npm:^7.2.5"
-  checksum: 10/d11e7448df3da8053102afb2bea0906c6e7335dfcc1a560240f60d93c8fc6a6be02c6c9e7db89e2796d2a1c1fe2b84719e673b627d300926f2f54eff4ae4da26
+  checksum: 10/3d07aa2981da7e8c42469bddbfa6a45341161f022febff8b2c74a478b4ace4d6abecebff20d3fcea9d8a5df9785493132492ed6587d3bbd66753aba08e9e5958
   languageName: node
   linkType: hard
 
@@ -18724,7 +18724,7 @@ __metadata:
     "@types/d3-scale-chromatic": "npm:3.0.3"
     "@types/debounce-promise": "npm:3.1.9"
     "@types/diff": "npm:^5"
-    "@types/eslint": "npm:8.56.7"
+    "@types/eslint": "npm:8.56.8"
     "@types/eslint-scope": "npm:^3.7.7"
     "@types/file-saver": "npm:2.0.7"
     "@types/glob": "npm:^8.0.0"
@@ -18794,7 +18794,7 @@ __metadata:
     brace: "npm:0.11.1"
     browserslist: "npm:^4.21.4"
     calculate-size: "npm:1.1.1"
-    centrifuge: "npm:5.0.2"
+    centrifuge: "npm:5.1.1"
     chance: "npm:^1.0.10"
     chrome-remote-interface: "npm:0.33.0"
     classnames: "npm:2.5.1"

@@ -833,7 +833,7 @@
   },
   "nav": {
     "add-new-connections": {
-      "title": "Добавить источник данных"
+      "title": "Добавить"
     },
     "admin": {
       "subtitle": "Manage server-wide settings and access to resources such as organizations, users, and licenses",
@@ -1041,7 +1041,7 @@
     },
     "org-settings": {
       "subtitle": "Manage preferences across an organization",
-      "title": "Настройки по умолчанию"
+      "title": "Настройки"
     },
     "playlists": {
       "subtitle": "Groups of dashboards that are displayed in a sequence",
@@ -1091,7 +1091,7 @@
     },
     "service-accounts": {
       "subtitle": "Use service accounts to run automated workloads in Grafana",
-      "title": "Service accounts"
+      "title": "Сервисные аккаунты"
     },
     "sign-out": {
       "title": "Выход"
@@ -1125,7 +1125,7 @@
     },
     "teams": {
       "subtitle": "Groups of users that have common dashboard and permission needs",
-      "title": "Teams"
+      "title": "Команды"
     },
     "testing-and-synthetics": {
       "subtitle": "Optimize performance with k6 and Synthetic Monitoring insights",

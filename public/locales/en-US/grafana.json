@@ -25,6 +25,11 @@
       "user": "User"
     }
   },
+  "api-keys": {
+    "empty-state": {
+      "message": "No API keys found"
+    }
+  },
   "bouncing-loader": {
     "label": "Загрузка..."
   },
@@ -107,6 +112,9 @@
       "change-theme": "Изменить тему...",
       "dark-theme": "Темная",
       "light-theme": "Светлая"
+    },
+    "empty-state": {
+      "message": "No results found"
     },
     "search-box": {
       "placeholder": "Найти или перейти к..."
@@ -417,6 +425,9 @@
   "data-sources": {
     "datasource-add-button": {
       "label": "Add new data source"
+    },
+    "empty-state": {
+      "message": "No data sources found"
     }
   },
   "explore": {
@@ -714,6 +725,8 @@
       "connect": "Connect to this stack",
       "connecting": "Connecting to this stack...",
       "title": "Connect to a cloud stack",
+      "token-error-description": "There was an error saving the token. See the Grafana server logs for more details.",
+      "token-error-title": "Error saving token",
       "token-required-error": "Migration token is required"
     },
     "cta": {
@@ -1227,6 +1240,11 @@
       "message": "No playlists found"
     }
   },
+  "plugins": {
+    "empty-state": {
+      "message": "No plugins found"
+    }
+  },
   "profile": {
     "change-password": {
       "cancel-button": "Отменить",
@@ -1429,6 +1447,11 @@
       "placeholder": "Search for dashboards and folders"
     }
   },
+  "service-accounts": {
+    "empty-state": {
+      "message": "No services accounts found"
+    }
+  },
   "share-modal": {
     "dashboard": {
       "title": "Поделиться"
@@ -1557,6 +1580,11 @@
     "no-tags": "No tags found",
     "placeholder": "Filter by tag"
   },
+  "teams": {
+    "empty-state": {
+      "message": "No teams found"
+    }
+  },
   "time-picker": {
     "absolute": {
       "recent-title": "Недавние временные диапазоны",
@@ -1649,6 +1677,11 @@
   },
   "user-sessions": {
     "loading": "Загрузка сессий..."
+  },
+  "users": {
+    "empty-state": {
+      "message": "No users found"
+    }
   },
   "users-access-list": {
     "tabs": {

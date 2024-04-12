@@ -215,7 +215,7 @@ export const TimePickerTooltip = ({ timeRange, timeZone }: { timeRange: TimeRang
     <>
       {dateTimeFormat(timeRange.from, { timeZone })}
       <div className="text-center">
-        <Trans i18nKey="time-picker.range-picker.to">to</Trans>
+        <Trans i18nKey="time-picker.range-picker.to">до</Trans>
       </div>
       {dateTimeFormat(timeRange.to, { timeZone })}
       <div className="text-center">

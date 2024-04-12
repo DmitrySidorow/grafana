@@ -1386,11 +1386,11 @@
       "label": "Live"
     },
     "off-option": {
-      "aria-label": "Turn off auto refresh",
+      "aria-label": "Выключить автообновление",
       "label": "Выключить"
     },
     "tooltip": {
-      "interval-selected": "Установить авто интервал обновления",
+      "interval-selected": "Установить интервал автообновления",
       "turned-off": "Автообновление выключено"
     }
   },
@@ -1600,9 +1600,9 @@
       "backwards-time-aria-label": "Move time range backwards",
       "current-time-selected": "Time range selected: {{currentTimeRange}}",
       "forwards-time-aria-label": "Move time range forwards",
-      "to": "to",
-      "zoom-out-button": "Zoom out time range",
-      "zoom-out-tooltip": "Time range zoom out <1></1> CTRL+Z"
+      "to": "до",
+      "zoom-out-button": "Уменьшить временной диапазон",
+      "zoom-out-tooltip": "Уменьшить временной диапазон <1></1> CTRL+Z"
     },
     "time-range": {
       "aria-role": "Time range selection",

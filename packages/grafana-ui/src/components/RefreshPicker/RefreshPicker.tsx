@@ -30,7 +30,7 @@ export interface Props {
 
 export class RefreshPicker extends PureComponent<Props> {
   static offOption = {
-    label: 'Off',
+    label: 'Выкл.',
     value: '',
     ariaLabel: 'Turn off auto refresh',
   };
@@ -40,7 +40,7 @@ export class RefreshPicker extends PureComponent<Props> {
     ariaLabel: 'Turn on live streaming',
   };
   static autoOption = {
-    label: 'Auto',
+    label: 'Авто',
     value: 'auto',
     ariaLabel: 'Select refresh from the query range',
   };

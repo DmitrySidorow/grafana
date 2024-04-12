@@ -513,8 +513,8 @@
     "rich-history-starred-tab": {
       "filter-queries-aria-label": "Filter queries for data sources(s)",
       "filter-queries-placeholder": "Filter queries for data sources(s)",
-      "loading": "Loading...",
-      "loading-results": "Loading results...",
+      "loading": "Загрузка...",
+      "loading-results": "Загрузка результатов...",
       "local-history-message": "The history is local to your browser and is not shared with others.",
       "search-queries-placeholder": "Search queries",
       "showing-queries": "Showing {{ shown }} of {{ total }} <0>Load more</0>",
@@ -522,13 +522,13 @@
       "sort-queries-placeholder": "Sort queries by"
     },
     "rich-history-utils": {
-      "a-week-ago": "a week ago",
-      "days-ago": "{{num}} days ago",
-      "default-from": "now-1h",
-      "default-to": "now",
-      "today": "today",
-      "two-weeks-ago": "two weeks ago",
-      "yesterday": "yesterday"
+      "a-week-ago": "неделю назад",
+      "days-ago": "{{num}} дней назад",
+      "default-from": "час назад",
+      "default-to": "сейчас",
+      "today": "сегодня",
+      "two-weeks-ago": "2 недели назад",
+      "yesterday": "вчера"
     },
     "rich-history-utils-notification": {
       "saving-failed": "Saving rich history failed",
@@ -1405,7 +1405,7 @@
     },
     "off-option": {
       "aria-label": "Выключить автообновление",
-      "label": "Выключить"
+      "label": "Выкл."
     },
     "tooltip": {
       "interval-selected": "Установить интервал автообновления",
@@ -1602,11 +1602,11 @@
       "filter-placeholder": "Поиск"
     },
     "copy-paste": {
-      "copy-success-message": "Time range copied to clipboard",
-      "default-error-message": "{{error}} is not a valid time range",
-      "default-error-title": "Invalid time range",
-      "tooltip-copy": "Copy time range to clipboard",
-      "tooltip-paste": "Paste time range"
+      "copy-success-message": "Временной диапазон скопирован в буфер обмена",
+      "default-error-message": "{{error}} неверный временной диапазон",
+      "default-error-title": "Неверный временно диапазон",
+      "tooltip-copy": "Скопировать в буфер обмена",
+      "tooltip-paste": "Вставить временной диапазон"
     },
     "footer": {
       "change-settings-button": "Настройки",

@@ -51,7 +51,7 @@ export const AddLibraryPanelWidget = ({ panel, dashboard }: Props) => {
             aria-label="Close 'Add Panel' widget"
             name="times"
             onClick={onCancelAddPanel}
-            tooltip="Close widget"
+            tooltip="Закрыть"
           />
         </div>
         <LibraryPanelsSearch onClick={onAddLibraryPanel} variant={LibraryPanelsSearchVariant.Tight} showPanelFilter />

@@ -651,25 +651,25 @@
   },
   "library-panel": {
     "add-modal": {
-      "cancel": "Cancel",
-      "create": "Create library panel",
+      "cancel": "Отмена",
+      "create": "Создать панель в библиотеку",
       "error": "Library panel with this name already exists",
-      "folder": "Save in folder",
+      "folder": "Сохранить в папку",
       "folder-description": "Library panel permissions are derived from the folder permissions",
-      "name": "Library panel name"
+      "name": "Название"
     },
     "add-widget": {
-      "title": "Add panel from panel library"
+      "title": "Добавить панель из библиотеки"
     }
   },
   "library-panels": {
     "empty-state": {
-      "message": "No library panels found"
+      "message": "Библиотека панелей пуста"
     },
     "modal": {
       "body_one": "This panel is being used in {{count}} dashboard. Please choose which dashboard to view the panel in:",
       "body_other": "This panel is being used in {{count}} dashboards. Please choose which dashboard to view the panel in:",
-      "button-cancel": "<0>Cancel</0>",
+      "button-cancel": "<0>Отменить</0>",
       "button-view-panel1": "View panel in {{label}}...",
       "button-view-panel2": "View panel in dashboard...",
       "panel-not-linked": "Panel is not linked to a dashboard. Add the panel to a dashboard and retry.",

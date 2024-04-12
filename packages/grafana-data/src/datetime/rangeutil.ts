@@ -151,7 +151,7 @@ export function describeTextRange(expr: string): TimeOption {
  * @alpha
  */
 export function describeTimeRange(range: RawTimeRange, timeZone?: TimeZone): string {
-  const option = rangeIndex[range.from.toString() + ' to ' + range.to.toString()];
+  const option = rangeIndex[range.from.toString() + ' до ' + range.to.toString()];
 
   if (option) {
     return option.display;

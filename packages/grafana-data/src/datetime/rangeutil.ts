@@ -88,10 +88,10 @@ const hiddenRangeOptions: TimeOption[] = [
 
 const rangeIndex: Record<string, TimeOption> = {};
 each(rangeOptions, (frame) => {
-  rangeIndex[frame.from + ' to ' + frame.to] = frame;
+  rangeIndex[frame.from + ' до ' + frame.to] = frame;
 });
 each(hiddenRangeOptions, (frame) => {
-  rangeIndex[frame.from + ' to ' + frame.to] = frame;
+  rangeIndex[frame.from + ' до ' + frame.to] = frame;
 });
 
 // handles expressions like
@@ -131,7 +131,7 @@ export function describeTextRange(expr: string): TimeOption {
       }
     }
   } else {
-    opt.display = opt.from + ' to ' + opt.to;
+    opt.display = opt.from + ' до ' + opt.to;
     opt.invalid = true;
   }
 
@@ -160,17 +160,17 @@ export function describeTimeRange(range: RawTimeRange, timeZone?: TimeZone): str
   const options = { timeZone };
 
   if (isDateTime(range.from) && isDateTime(range.to)) {
-    return dateTimeFormat(range.from, options) + ' to ' + dateTimeFormat(range.to, options);
+    return dateTimeFormat(range.from, options) + ' до ' + dateTimeFormat(range.to, options);
   }
 
   if (isDateTime(range.from)) {
     const parsed = dateMath.parse(range.to, true, 'utc');
-    return parsed ? dateTimeFormat(range.from, options) + ' to ' + dateTimeFormatTimeAgo(parsed, options) : '';
+    return parsed ? dateTimeFormat(range.from, options) + ' до ' + dateTimeFormatTimeAgo(parsed, options) : '';
   }
 
   if (isDateTime(range.to)) {
     const parsed = dateMath.parse(range.from, false, 'utc');
-    return parsed ? dateTimeFormatTimeAgo(parsed, options) + ' to ' + dateTimeFormat(range.to, options) : '';
+    return parsed ? dateTimeFormatTimeAgo(parsed, options) + ' до ' + dateTimeFormat(range.to, options) : '';
   }
 
   if (range.to.toString() === 'now') {
@@ -178,7 +178,7 @@ export function describeTimeRange(range: RawTimeRange, timeZone?: TimeZone): str
     return res.display;
   }
 
-  return range.from.toString() + ' to ' + range.to.toString();
+  return range.from.toString() + ' до ' + range.to.toString();
 }
 
 export const isValidTimeSpan = (value: string) => {

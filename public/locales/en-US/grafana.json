@@ -1041,7 +1041,7 @@
     },
     "org-settings": {
       "subtitle": "Manage preferences across an organization",
-      "title": "Настройки"
+      "title": "Настройки по умолчанию"
     },
     "playlists": {
       "subtitle": "Groups of dashboards that are displayed in a sequence",

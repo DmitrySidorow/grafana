@@ -848,10 +848,10 @@
     },
     "alerting-groups": {
       "subtitle": "See grouped alerts from an Alertmanager instance",
-      "title": "Groups"
+      "title": "Группы"
     },
     "alerting-home": {
-      "title": "Home"
+      "title": "Главная"
     },
     "alerting-legacy": {
       "title": "Alerting (legacy)"
@@ -878,14 +878,14 @@
     },
     "api-keys": {
       "subtitle": "Manage and create API keys that are used to interact with Grafana HTTP APIs",
-      "title": "API keys"
+      "title": "API ключи"
     },
     "application": {
-      "title": "Application"
+      "title": "Приложение"
     },
     "apps": {
       "subtitle": "App plugins that extend the Grafana experience",
-      "title": "Apps"
+      "title": "Приложения"
     },
     "authentication": {
       "title": "Authentication"
@@ -894,26 +894,26 @@
       "title": "Collector"
     },
     "config": {
-      "title": "Administration"
+      "title": "Администрирование"
     },
     "config-access": {
       "subtitle": "Configure access for individual users, teams, and service accounts",
-      "title": "Users and access"
+      "title": "Пользователи и доступ"
     },
     "config-general": {
       "subtitle": "Manage default preferences and settings across Grafana",
-      "title": "General"
+      "title": "Общие"
     },
     "config-plugins": {
       "subtitle": "Install plugins and define the relationships between data",
-      "title": "Plugins and data"
+      "title": "Плагины и данные"
     },
     "connect-data": {
-      "title": "Connect data"
+      "title": "Добавить источник данных"
     },
     "connections": {
       "subtitle": "Browse and create new connections",
-      "title": "Connections"
+      "title": "Источники данных"
     },
     "correlations": {
       "subtitle": "Add and configure correlations",

@@ -29,7 +29,7 @@ export const LoginLayout = ({ children, branding, isChangingPassword }: React.Pr
   const loginTitle = branding?.loginTitle ?? Branding.LoginTitle;
   const loginBoxBackground = branding?.loginBoxBackground || Branding.LoginBoxBackground();
   const loginLogo = branding?.loginLogo;
-  const hideEdition = branding?.hideEdition ?? Branding.HideEdition;
+  // const hideEdition = branding?.hideEdition ?? Branding.HideEdition;
 
   useEffect(() => setStartAnim(true), []);
 
@@ -43,7 +43,7 @@ export const LoginLayout = ({ children, branding, isChangingPassword }: React.Pr
             <Branding.LoginLogo className={loginStyles.loginLogo} logo={loginLogo} />
             <div className={loginStyles.titleWrapper}>
               {isChangingPassword ? (
-                <h1 className={loginStyles.mainTitle}>Update your password</h1>
+                <h1 className={loginStyles.mainTitle}>Обновите ваш пароль</h1>
               ) : (
                 <>
                   <h1 className={loginStyles.mainTitle}>{loginTitle}</h1>

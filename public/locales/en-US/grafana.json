@@ -833,7 +833,7 @@
   },
   "nav": {
     "add-new-connections": {
-      "title": "Add new connection"
+      "title": "Добавить источник данных"
     },
     "admin": {
       "subtitle": "Manage server-wide settings and access to resources such as organizations, users, and licenses",
@@ -950,11 +950,11 @@
     },
     "data-sources": {
       "subtitle": "View and manage your connected data source connections",
-      "title": "Data sources"
+      "title": "Источники данных"
     },
     "datasources": {
       "subtitle": "Add and configure data sources",
-      "title": "Data sources"
+      "title": "Источники данных"
     },
     "detect": {
       "title": "Detect"
@@ -971,7 +971,7 @@
     },
     "global-orgs": {
       "subtitle": "Isolated instances of Grafana running on the same server",
-      "title": "Organizations"
+      "title": "Организации"
     },
     "global-users": {
       "subtitle": "Управление пользователями",
@@ -1041,15 +1041,15 @@
     },
     "org-settings": {
       "subtitle": "Manage preferences across an organization",
-      "title": "Default preferences"
+      "title": "Настройки по умолчанию"
     },
     "playlists": {
       "subtitle": "Groups of dashboards that are displayed in a sequence",
-      "title": "Playlists"
+      "title": "Плейлисты"
     },
     "plugins": {
       "subtitle": "Extend the Grafana experience with plugins",
-      "title": "Plugins"
+      "title": "Плагины"
     },
     "private-data-source-connections": {
       "subtitle": "Query data that lives within a secured network without opening the network to inbound traffic from Grafana Cloud. Learn more in our docs.",
@@ -1083,7 +1083,7 @@
       "placeholderCommandPalette": "Найти или перейти к..."
     },
     "search-dashboards": {
-      "title": "Search dashboards"
+      "title": "Поиск дашбордов"
     },
     "server-settings": {
       "subtitle": "View the settings defined in your Grafana config",
@@ -1132,7 +1132,7 @@
       "title": "Testing & synthetics"
     },
     "upgrading": {
-      "title": "Stats and license"
+      "title": "Статистика"
     },
     "users": {
       "subtitle": "Invite and assign roles to users",

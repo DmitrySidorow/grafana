@@ -435,7 +435,7 @@ func (s *ServiceImpl) buildDataConnectionsNavLink(c *contextmodel.ReqContext) *n
 		// Add new connection
 		children = append(children, &navtree.NavLink{
 			Id:       "connections-add-new-connection",
-			Text:     "Add new connection",
+			Text:     "Добавить источник данных",
 			SubTitle: "Browse and create new connections",
 			Url:      baseUrl + "/add-new-connection",
 			Children: []*navtree.NavLink{},
@@ -445,7 +445,7 @@ func (s *ServiceImpl) buildDataConnectionsNavLink(c *contextmodel.ReqContext) *n
 		// Data sources
 		children = append(children, &navtree.NavLink{
 			Id:       "connections-datasources",
-			Text:     "Data sources",
+			Text:     "Источники данных",
 			SubTitle: "View and manage your connected data source connections",
 			Url:      baseUrl + "/datasources",
 			Children: []*navtree.NavLink{},

@@ -19,7 +19,7 @@ const spans: { [key: string]: { display: string; section?: number } } = {
 
 const rangeOptions: TimeOption[] = [
   { from: 'now/d', to: 'now/d', display: 'Сегодня' },
-  { from: 'now/d', to: 'now', display: 'Today (до сих пор)' },
+  { from: 'now/d', to: 'now', display: 'Сегодня (до сих пор)' },
   { from: 'now/w', to: 'now/w', display: 'Эта неделя' },
   { from: 'now/w', to: 'now', display: 'Эта неделя (до сих пор)' },
   { from: 'now/M', to: 'now/M', display: 'Этот месяц' },
@@ -123,7 +123,7 @@ export function describeTextRange(expr: string): TimeOption {
     const amount = parseInt(parts[2], 10);
     const span = spans[unit];
     if (span) {
-      opt.display = isLast ? 'Last ' : 'Next ';
+      opt.display = isLast ? 'Последние ' : 'Следующие ';
       opt.display += amount + ' ' + span.display;
       opt.section = span.section;
       if (amount > 1) {

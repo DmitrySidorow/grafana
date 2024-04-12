@@ -140,7 +140,7 @@ export function RelativeTimeRangePicker(props: RelativeTimeRangePickerProps) {
           <Icon name="clock-nine" />
         </span>
         <span>
-          {timeOption.from} to {timeOption.to}
+          {timeOption.from} до {timeOption.to}
         </span>
         <span className={styles.caretIcon}>
           <Icon name={isOpen ? 'angle-up' : 'angle-down'} size="lg" />

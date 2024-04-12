@@ -158,10 +158,10 @@ func (hs *HTTPServer) patchPreferencesFor(ctx context.Context, orgID, userID, te
 	}
 
 	if err := hs.preferenceService.Patch(ctx, &patchCmd); err != nil {
-		return response.ErrOrFallback(http.StatusInternalServerError, "Failed to save preferences", err)
+		return response.ErrOrFallback(http.StatusInternalServerError, "Ошибка изменения настроек", err)
 	}
 
-	return response.Success("Preferences updated")
+	return response.Success("Настройки обновлены")
 }
 
 // swagger:route GET /org/preferences org_preferences getOrgPreferences

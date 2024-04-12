@@ -16,7 +16,7 @@ func UpdatePreferencesFor(ctx context.Context,
 	dashboardService dashboards.DashboardService, preferenceService pref.Service,
 	orgID, userID, teamId int64, dtoCmd *dtos.UpdatePrefsCmd) response.Response {
 	if dtoCmd.Theme != "" && !pref.IsValidThemeID(dtoCmd.Theme) {
-		return response.Error(http.StatusBadRequest, "Invalid theme", nil)
+		return response.Error(http.StatusBadRequest, "Неверная тема", nil)
 	}
 
 	dashboardID := dtoCmd.HomeDashboardID
@@ -28,7 +28,7 @@ func UpdatePreferencesFor(ctx context.Context,
 		} else {
 			queryResult, err := dashboardService.GetDashboard(ctx, &query)
 			if err != nil {
-				return response.Error(http.StatusNotFound, "Dashboard not found", err)
+				return response.Error(http.StatusNotFound, "Дашборд не найден", err)
 			}
 			dashboardID = queryResult.ID
 		}
@@ -49,10 +49,10 @@ func UpdatePreferencesFor(ctx context.Context,
 	}
 
 	if err := preferenceService.Save(ctx, &saveCmd); err != nil {
-		return response.ErrOrFallback(http.StatusInternalServerError, "Failed to save preferences", err)
+		return response.ErrOrFallback(http.StatusInternalServerError, "Ошибка сохранения настроек", err)
 	}
 
-	return response.Success("Preferences updated")
+	return response.Success("Настройки обновлены")
 }
 
 func GetPreferencesFor(ctx context.Context,
@@ -62,7 +62,7 @@ func GetPreferencesFor(ctx context.Context,
 
 	preference, err := preferenceService.Get(ctx, &prefsQuery)
 	if err != nil {
-		return response.Error(http.StatusInternalServerError, "Failed to get preferences", err)
+		return response.Error(http.StatusInternalServerError, "Ошибка получения настроек", err)
 	}
 
 	var dashboardUID string

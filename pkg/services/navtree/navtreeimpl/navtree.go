@@ -196,7 +196,7 @@ func (s *ServiceImpl) addHelpLinks(treeRoot *navtree.NavTreeRoot, c *contextmode
 	if s.cfg.HelpEnabled {
 		// The version subtitle is set later by NavTree.ApplyHelpVersion
 		helpNode := &navtree.NavLink{
-			Text:       "Help",
+			Text:       "Помощь",
 			Id:         "help",
 			Url:        "#",
 			Icon:       "question-circle",
@@ -236,12 +236,12 @@ func (s *ServiceImpl) getProfileNode(c *contextmodel.ReqContext) *navtree.NavLin
 
 	children := []*navtree.NavLink{
 		{
-			Text: "Profile", Id: "profile/settings", Url: s.cfg.AppSubURL + "/profile", Icon: "sliders-v-alt",
+			Text: "Профиль", Id: "profile/settings", Url: s.cfg.AppSubURL + "/profile", Icon: "sliders-v-alt",
 		},
 	}
 
 	children = append(children, &navtree.NavLink{
-		Text: "Notification history", Id: "profile/notifications", Url: s.cfg.AppSubURL + "/profile/notifications", Icon: "bell",
+		Text: "История уведомлений", Id: "profile/notifications", Url: s.cfg.AppSubURL + "/profile/notifications", Icon: "bell",
 	})
 
 	if s.cfg.AddChangePasswordLink() {

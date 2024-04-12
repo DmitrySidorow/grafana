@@ -103,15 +103,15 @@ export const Footer = React.memo(({ customLinks, hideEdition }: Props) => {
 
   return (
     <footer className="footer">
-      {/*<div className="text-center">*/}
-      {/*  <ul>*/}
-      {/*    {links.map((link, index) => (*/}
-      {/*      <li key={index}>*/}
-      {/*        <FooterItem item={link} />*/}
-      {/*      </li>*/}
-      {/*    ))}*/}
-      {/*  </ul>*/}
-      {/*</div>*/}
+      <div className="text-center">
+        <ul>
+          {links.map((link, index) => (
+            <li key={index}>
+              <FooterItem item={link} />
+            </li>
+          ))}
+        </ul>
+      </div>
     </footer>
   );
 });

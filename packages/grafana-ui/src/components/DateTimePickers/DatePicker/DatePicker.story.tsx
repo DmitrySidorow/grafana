@@ -40,7 +40,7 @@ export const Basic = (args: DatePickerProps) => {
 
   return (
     <>
-      <Button onClick={() => setOpen(true)}>Show Calendar</Button>
+      <Button onClick={() => setOpen(true)}>Показать календарь</Button>
       <DatePicker {...args} />
     </>
   );

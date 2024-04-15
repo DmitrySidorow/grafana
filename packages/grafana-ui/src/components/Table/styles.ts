@@ -58,7 +58,7 @@ export function useTableStyles(theme: GrafanaTheme2, cellHeightOption: TableCell
         whiteSpace: overflowOnHover ? 'normal' : 'nowrap',
         boxShadow: overflowOnHover ? `0 0 2px ${theme.colors.primary.main}` : undefined,
         background: rowStyled ? 'inherit' : backgroundHover ?? theme.colors.background.primary,
-        zIndex: 1,
+        zIndex: overflowOnHover ? 1 : undefined,
         '.cellActions': {
           color: '#FFF',
           visibility: 'visible',

@@ -139,11 +139,11 @@ func (s *ServiceImpl) GetNavTree(c *contextmodel.ReqContext, prefs *pref.Prefere
 	_, uaIsDisabledForOrg := s.cfg.UnifiedAlerting.DisabledOrgs[c.SignedInUser.GetOrgID()]
 	uaVisibleForOrg := s.cfg.UnifiedAlerting.IsEnabled() && !uaIsDisabledForOrg
 
-	if uaVisibleForOrg {
-		if alertingSection := s.buildAlertNavLinks(c); alertingSection != nil {
-			treeRoot.AddSection(alertingSection)
-		}
-	}
+// 	if uaVisibleForOrg {
+// 		if alertingSection := s.buildAlertNavLinks(c); alertingSection != nil {
+// 			treeRoot.AddSection(alertingSection)
+// 		}
+// 	}
 
 	if connectionsSection := s.buildDataConnectionsNavLink(c); connectionsSection != nil {
 		treeRoot.AddSection(connectionsSection)

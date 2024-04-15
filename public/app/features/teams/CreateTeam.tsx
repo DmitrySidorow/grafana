@@ -14,7 +14,7 @@ import { AccessControlAction, Role, TeamDTO } from 'app/types';
 const pageNav: NavModelItem = {
   icon: 'users-alt',
   id: 'team-new',
-  text: 'New team',
+  text: 'Новая команда',
   subTitle: 'Create a new team. Teams let you grant permissions to a group of users.',
 };
 

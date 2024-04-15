@@ -209,7 +209,7 @@ export const TeamList = ({
       navId="teams"
       actions={
         <LinkButton href={canCreate ? 'org/teams/new' : '#'} disabled={!canCreate}>
-          New Team
+          Новая команда
         </LinkButton>
       }
     >

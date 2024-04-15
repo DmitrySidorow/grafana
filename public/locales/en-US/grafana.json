@@ -1518,13 +1518,13 @@
       "snapshot": "Snapshot"
     },
     "theme-picker": {
-      "current": "Current",
-      "dark": "Dark",
-      "field-name": "Theme",
-      "light": "Light"
+      "current": "Текущая",
+      "dark": "Темная",
+      "field-name": "Тема",
+      "light": "Светлая"
     },
     "view-json": {
-      "copy-button": "Copy to Clipboard"
+      "copy-button": "Скопировать в буфер обмена"
     }
   },
   "share-playlist": {
@@ -1532,39 +1532,39 @@
     "checkbox-label": "Autofit",
     "copy-link-button": "Copy",
     "link-url-label": "Link URL",
-    "mode": "Mode",
-    "mode-kiosk": "Kiosk",
-    "mode-normal": "Normal",
+    "mode": "Режим",
+    "mode-kiosk": "Киоск",
+    "mode-normal": "Обычный",
     "mode-tv": "TV",
     "title": "Share playlist"
   },
   "shared": {
     "preferences": {
       "theme": {
-        "dark-label": "Dark",
-        "light-label": "Light",
-        "system-label": "System preference"
+        "dark-label": "Темная",
+        "light-label": "Светлая",
+        "system-label": "Системная"
       }
     }
   },
   "shared-dashboard": {
     "fields": {
-      "timezone-label": "Timezone"
+      "timezone-label": "Часовой пояс"
     }
   },
   "shared-preferences": {
     "fields": {
-      "home-dashboard-label": "Home Dashboard",
-      "home-dashboard-placeholder": "Default dashboard",
-      "locale-label": "Language",
-      "locale-placeholder": "Choose language",
-      "theme-label": "Interface theme",
-      "week-start-label": "Week start"
+      "home-dashboard-label": "Домашний дашборд",
+      "home-dashboard-placeholder": "Дашборд по умолчанию",
+      "locale-label": "Язык",
+      "locale-placeholder": "Выберите язык",
+      "theme-label": "Тема интерфейса",
+      "week-start-label": "Начало недели"
     },
     "theme": {
-      "default-label": "Default"
+      "default-label": "По умолчанию"
     },
-    "title": "Preferences"
+    "title": "Предпочтения"
   },
   "snapshot": {
     "external-badge": "External",
@@ -1573,13 +1573,13 @@
     "view-button": "View"
   },
   "tag-filter": {
-    "loading": "Loading...",
-    "no-tags": "No tags found",
-    "placeholder": "Filter by tag"
+    "loading": "Загрузка...",
+    "no-tags": "Теги не найдены",
+    "placeholder": "Фильтр по тегу"
   },
   "teams": {
     "empty-state": {
-      "message": "No teams found"
+      "message": "Команды не найдены"
     }
   },
   "time-picker": {

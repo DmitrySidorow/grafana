@@ -239,7 +239,7 @@ export function useTableStyles(theme: GrafanaTheme2, cellHeightOption: TableCell
         label: 'tableContentWrapper',
         width,
         display: 'flex',
-        flexDirection: 'row',
+        flexDirection: 'column',
       });
     },
     row: css({
@@ -289,7 +289,7 @@ export function useTableStyles(theme: GrafanaTheme2, cellHeightOption: TableCell
     }),
     expanderCell: css({
       display: 'flex',
-      flexDirection: 'column',
+      flexDirection: 'row',
       justifyContent: 'center',
       height: `${rowHeight}px`,
       cursor: 'pointer',

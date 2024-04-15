@@ -136,14 +136,14 @@ func (s *ServiceImpl) GetNavTree(c *contextmodel.ReqContext, prefs *pref.Prefere
 		treeRoot.AddSection(s.getProfileNode(c))
 	}
 
-	_, uaIsDisabledForOrg := s.cfg.UnifiedAlerting.DisabledOrgs[c.SignedInUser.GetOrgID()]
-	uaVisibleForOrg := s.cfg.UnifiedAlerting.IsEnabled() && !uaIsDisabledForOrg
-
-	if uaVisibleForOrg {
-		if alertingSection := s.buildAlertNavLinks(c); alertingSection != nil {
-			treeRoot.AddSection(alertingSection)
-		}
-	}
+// 	_, uaIsDisabledForOrg := s.cfg.UnifiedAlerting.DisabledOrgs[c.SignedInUser.GetOrgID()]
+// 	uaVisibleForOrg := s.cfg.UnifiedAlerting.IsEnabled() && !uaIsDisabledForOrg
+//
+// 	if uaVisibleForOrg {
+// 		if alertingSection := s.buildAlertNavLinks(c); alertingSection != nil {
+// 			treeRoot.AddSection(alertingSection)
+// 		}
+// 	}
 
 	if connectionsSection := s.buildDataConnectionsNavLink(c); connectionsSection != nil {
 		treeRoot.AddSection(connectionsSection)

@@ -25,7 +25,7 @@ export function useTableStyles(theme: GrafanaTheme2, cellHeightOption: TableCell
       padding: `${cellPadding}px`,
       width: '100%',
       // Cell height need to account for row border
-      height: `fit-content`,
+      height: `${rowHeight - 1}px`,
 
       display: 'flex',
 

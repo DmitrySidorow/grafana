@@ -239,7 +239,7 @@ export function useTableStyles(theme: GrafanaTheme2, cellHeightOption: TableCell
         label: 'tableContentWrapper',
         width,
         display: 'flex',
-        flexDirection: 'column',
+        flexDirection: 'row',
       });
     },
     row: css({

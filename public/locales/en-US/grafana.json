@@ -1153,7 +1153,7 @@
       "close-menu": "Закрыть меню",
       "enable-kiosk": "Включить режим Киоска",
       "open-menu": "Открыть меню",
-      "toggle-search-bar": "Toggle top search bar"
+      "toggle-search-bar": "Спрятать верхнюю панель поиска"
     }
   },
   "news": {
@@ -1170,7 +1170,7 @@
     "header-menu": {
       "copy": "Копировать",
       "create-library-panel": "Create library panel",
-      "duplicate": "Duplicate",
+      "duplicate": "Дублировать",
       "edit": "Редактировать",
       "explore": "Исследовать",
       "get-help": "Получить помощь",

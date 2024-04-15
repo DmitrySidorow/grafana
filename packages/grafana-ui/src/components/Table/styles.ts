@@ -51,14 +51,14 @@ export function useTableStyles(theme: GrafanaTheme2, cellHeightOption: TableCell
 
       '&:hover': {
         overflow: overflowOnHover ? 'visible' : undefined,
-        width: textShouldWrap ? 'auto' : 'auto !important',
-        height: textShouldWrap ? 'auto !important' : `${rowHeight - 1}px`,
+        width: textShouldWrap || !overflowOnHover ? 'auto' : 'auto !important',
+        height: textShouldWrap || overflowOnHover ? 'auto !important' : `${rowHeight - 1}px`,
         minHeight: `${rowHeight - 1}px`,
         wordBreak: textShouldWrap ? 'break-word' : undefined,
-        whiteSpace: overflowOnHover ? 'normal' : 'nowrap',
+        whiteSpace: 'nowrap',
         boxShadow: overflowOnHover ? `0 0 2px ${theme.colors.primary.main}` : undefined,
         background: rowStyled ? 'inherit' : backgroundHover ?? theme.colors.background.primary,
-        zIndex: overflowOnHover ? 1 : undefined,
+        zIndex: 1,
         '.cellActions': {
           color: '#FFF',
           visibility: 'visible',

@@ -274,12 +274,12 @@ export function getPanelMenu(
     }
   }
 
-  if (isCreateAlertMenuOptionAvailable) {
-    subMenu.push({
-      text: t('panel.header-menu.new-alert-rule', `New alert rule`),
-      onClick: onCreateAlert,
-    });
-  }
+  // if (isCreateAlertMenuOptionAvailable) {
+  //   subMenu.push({
+  //     text: t('panel.header-menu.new-alert-rule', `New alert rule`),
+  //     onClick: onCreateAlert,
+  //   });
+  // }
 
   // add old angular panel options
   if (angularComponent) {
@@ -317,12 +317,12 @@ export function getPanelMenu(
   // When editing hide most actions
   if (panel.isEditing) {
     subMenu.length = 0;
-    if (isCreateAlertMenuOptionAvailable) {
-      subMenu.push({
-        text: t('panel.header-menu.new-alert-rule', `New alert rule`),
-        onClick: onCreateAlert,
-      });
-    }
+    // if (isCreateAlertMenuOptionAvailable) {
+    //   subMenu.push({
+    //     text: t('panel.header-menu.new-alert-rule', `New alert rule`),
+    //     onClick: onCreateAlert,
+    //   });
+    // }
   }
 
   if (canEdit && panel.plugin && !panel.plugin.meta.skipDataQuery) {

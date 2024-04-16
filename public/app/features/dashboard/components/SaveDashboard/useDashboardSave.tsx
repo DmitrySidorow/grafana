@@ -50,7 +50,7 @@ export const useDashboardSave = (isCopy = false) => {
 
         // important that these happen before location redirect below
         appEvents.publish(new DashboardSavedEvent());
-        notifyApp.success('Dashboard saved');
+        notifyApp.success('Дашборд сохранен');
 
         //Update local storage dashboard to handle things like last used datasource
         updateDashboardUidLastUsedDatasource(result.uid);
@@ -85,7 +85,7 @@ export const useDashboardSave = (isCopy = false) => {
         return result;
       } catch (error) {
         if (error instanceof Error) {
-          notifyApp.error(error.message ?? 'Error saving dashboard');
+          notifyApp.error(error.message ?? 'Ошибка сохранения дашборда');
         }
         throw error;
       }

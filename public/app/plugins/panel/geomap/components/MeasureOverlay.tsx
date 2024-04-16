@@ -100,7 +100,7 @@ export const MeasureOverlay = ({ map, menuActiveState }: Props) => {
         <IconButton
           className={measureStyle.icon}
           name="ruler-combined"
-          tooltip="show measure tools"
+          tooltip="инструменты измерения"
           tooltipPlacement="left"
           onClick={toggleMenu}
         />

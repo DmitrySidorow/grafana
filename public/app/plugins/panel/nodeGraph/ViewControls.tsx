@@ -41,7 +41,7 @@ export function ViewControls<Config extends Record<string, any>>(props: Props<Co
             icon={'plus-circle'}
             onClick={onPlus}
             size={'md'}
-            title={'Zoom in'}
+            title={'Приблизить'}
             variant="secondary"
             disabled={disableZoomIn}
           />
@@ -49,7 +49,7 @@ export function ViewControls<Config extends Record<string, any>>(props: Props<Co
             icon={'minus-circle'}
             onClick={onMinus}
             size={'md'}
-            title={'Zoom out'}
+            title={'Отдалить'}
             variant="secondary"
             disabled={disableZoomOut}
           />

@@ -154,7 +154,7 @@ export class MeasureVectorLayer extends VectorLayer<VectorSource> {
       }),
     }),
     text: new Text({
-      text: 'Drag to modify',
+      text: 'Перетащите для изменения',
       font: '12px Calibri,sans-serif',
       fill: new Fill({
         color: 'rgba(255, 255, 255, 1)',
@@ -227,8 +227,8 @@ export class MeasureVectorLayer extends VectorLayer<VectorSource> {
   addInteraction(map: Map, typeSelect: Type, showSegments: boolean, clearPrevious: boolean) {
     const drawType = typeSelect;
     const activeTip =
-      ' Click to continue ' + (drawType === 'Polygon' ? 'polygon' : 'line') + ' \n (double-click to end) ';
-    const idleTip = ' Click to start ';
+      ' Нажмите для продолжения ' + (drawType === 'Polygon' ? 'polygon' : 'line') + ' \n (двойной нажатие для завершения) ';
+    const idleTip = ' Нажмите для начала ';
     let tip = idleTip;
     this.draw = new Draw({
       source: this.getSource()!,

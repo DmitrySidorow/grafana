@@ -59,14 +59,14 @@ func ProvideService(cfg *setting.Cfg, hooksService *hooks.HooksService) *OSSLice
 			return
 		}
 
-		if adminNode := indexData.NavTree.FindById(navtree.NavIDCfg); adminNode != nil {
-			adminNode.Children = append(adminNode.Children, &navtree.NavLink{
-				Text: "Stats and license",
-				Id:   "upgrading",
-				Url:  l.LicenseURL(req.IsGrafanaAdmin),
-				Icon: "unlock",
-			})
-		}
+// 		if adminNode := indexData.NavTree.FindById(navtree.NavIDCfg); adminNode != nil {
+// 			adminNode.Children = append(adminNode.Children, &navtree.NavLink{
+// 				Text: "Stats and license",
+// 				Id:   "upgrading",
+// 				Url:  l.LicenseURL(req.IsGrafanaAdmin),
+// 				Icon: "unlock",
+// 			})
+// 		}
 	})
 
 	return l

@@ -472,7 +472,7 @@ func (s *ServiceImpl) buildExploreNavLinks(c *contextmodel.ReqContext) []*navtre
 	exploreChildNavs := []*navtree.NavLink{}
 	if s.features.IsEnabled(c.Req.Context(), featuremgmt.FlagExploreMetrics) {
 		exploreChildNavs = append(exploreChildNavs, &navtree.NavLink{
-			Text:     "Metrics",
+			Text:     "Метрики",
 			SubTitle: "Queryless exploration of your metrics",
 			Id:       "explore/metrics",
 			Url:      s.cfg.AppSubURL + "/explore/metrics",

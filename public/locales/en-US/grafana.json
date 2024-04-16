@@ -1169,7 +1169,7 @@
   "panel": {
     "header-menu": {
       "copy": "Копировать",
-      "create-library-panel": "Create library panel",
+      "create-library-panel": "Добавить в библиотеку",
       "duplicate": "Дублировать",
       "edit": "Редактировать",
       "explore": "Исследовать",
@@ -1470,7 +1470,7 @@
       "view-button": "View JSON"
     },
     "library": {
-      "info": "Create library panel."
+      "info": "Добавить в библиотеку."
     },
     "link": {
       "copy-link-button": "Copy",

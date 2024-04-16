@@ -395,10 +395,10 @@ function createExtensionContext(panel: VizPanel, dashboard: DashboardScene): Plu
 export function onRemovePanel(dashboard: DashboardScene, panel: VizPanel) {
   appEvents.publish(
     new ShowConfirmModalEvent({
-      title: 'Remove panel',
-      text: 'Are you sure you want to remove this panel?',
+      title: 'Удаление панели',
+      text: 'Вы уверены, что хотите удалить эту панель?',
       icon: 'trash-alt',
-      yesText: 'Remove',
+      yesText: 'Удалить',
       onConfirm: () => dashboard.removePanel(panel),
     })
   );

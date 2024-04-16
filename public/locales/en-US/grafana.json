@@ -445,8 +445,8 @@
     "rich-history-card": {
       "add-comment-form": "Add comment form",
       "add-comment-tooltip": "Add comment",
-      "cancel": "Cancel",
-      "confirm-delete": "Delete",
+      "cancel": "Удаление",
+      "confirm-delete": "Удалить",
       "copy-query-tooltip": "Copy query to clipboard",
       "copy-shortened-link-tooltip": "Copy shortened link to clipboard",
       "datasource-icon-label": "Data source icon",
@@ -556,7 +556,7 @@
       "copy-shortened-link": "Copy shortened URL",
       "copy-shortened-link-abs-time": "Copy absolute shortened URL",
       "copy-shortened-link-menu": "Open shortened link menu",
-      "refresh-picker-cancel": "Cancel",
+      "refresh-picker-cancel": "Отмена",
       "refresh-picker-run": "Run query",
       "split-close": "Close",
       "split-close-tooltip": "Close split pane",
@@ -718,7 +718,7 @@
       "body-token-field-placeholder": "Paste token here",
       "body-token-instructions": "Log into your cloud stack and navigate to Administration, General, Migrate to Grafana Cloud. Create a migration token on that screen and paste the token here.",
       "body-view-stacks": "View my cloud stacks",
-      "cancel": "Cancel",
+      "cancel": "Отмена",
       "connect": "Connect to this stack",
       "connecting": "Connecting to this stack...",
       "title": "Connect to a cloud stack",
@@ -732,7 +732,7 @@
     },
     "disconnect-modal": {
       "body": "This will remove the migration token from this installation. If you wish to upload more resources in the future, you will need to enter a new migration token.",
-      "cancel": "Cancel",
+      "cancel": "Отмена",
       "disconnect": "Disconnect",
       "disconnecting": "Disconnecting...",
       "error": "There was an error disconnecting",
@@ -762,7 +762,7 @@
     "migration-token": {
       "body": "Your self-managed Grafana instance will require a special authentication token to securely connect to this cloud stack.",
       "delete-modal-body": "If you've already used this token with a self-managed installation, that installation will no longer be able to upload content.",
-      "delete-modal-cancel": "Cancel",
+      "delete-modal-cancel": "Отмена",
       "delete-modal-confirm": "Delete",
       "delete-modal-deleting": "Deleting...",
       "delete-modal-title": "Delete migration token",
@@ -1194,7 +1194,7 @@
       "add-tag-label": "Add by tag",
       "add-tag-placeholder": "Select a tag",
       "add-title-label": "Add by title",
-      "cancel": "Cancel",
+      "cancel": "Отмена",
       "heading": "Add dashboards",
       "interval-label": "Интервал",
       "interval-placeholder": "5m",
@@ -1355,7 +1355,7 @@
     },
     "delete-user-modal": {
       "delete-user-button-text": "Delete user",
-      "delete-user-cancel-button": "Cancel",
+      "delete-user-cancel-button": "Отмена",
       "delete-user-revoke-access-button": "Revoke access",
       "revoke-access-title": "Revoke access",
       "revoke-user-access-modal-desc-line1": "Are you sure you want to revoke access for {{email}}?",
@@ -1463,7 +1463,7 @@
     },
     "export": {
       "back-button": "Back to export config",
-      "cancel-button": "Cancel",
+      "cancel-button": "Отмена",
       "info-text": "Export this dashboard.",
       "save-button": "Save to file",
       "share-externally-label": "Export for sharing externally",
@@ -1489,7 +1489,7 @@
       "title": "Поделиться"
     },
     "snapshot": {
-      "cancel-button": "Cancel",
+      "cancel-button": "Отмена",
       "copy-link-button": "Copy",
       "delete-button": "Delete snapshot.",
       "deleted-message": "The snapshot has been deleted. If you have already accessed it once, then it might take up to an hour before before it is removed from browser caches or CDN caches.",

@@ -139,10 +139,10 @@ export function panelMenuBehavior(menu: VizPanelMenu, isRepeat = false) {
       }
     }
 
-    // moreSubMenu.push({
-    //   text: t('panel.header-menu.new-alert-rule', `New alert rule`),
-    //   onClick: (e) => onCreateAlert(panel),
-    // });
+    moreSubMenu.push({
+      text: t('panel.header-menu.new-alert-rule', `New alert rule`),
+      onClick: (e) => onCreateAlert(panel),
+    });
 
     if (hasLegendOptions(panel.state.options) && !isEditingPanel) {
       moreSubMenu.push({

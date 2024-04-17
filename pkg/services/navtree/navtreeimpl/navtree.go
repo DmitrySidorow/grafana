@@ -109,7 +109,7 @@ func (s *ServiceImpl) GetNavTree(c *contextmodel.ReqContext, prefs *pref.Prefere
     		dashboardLink := &navtree.NavLink{
     			Text:       "Вагоны в сети",
     			Id:         navtree.NavIDCarsOnline,
-    			Icon:       "fa-wifi",
+    			Icon:       "fa-var-wifi",
     			Url:        s.cfg.AppSubURL + "/d/dvRiH6TGz",
     			SortWeight: navtree.WeightDashboard,
     			Children:   carsOnlineChildLinks,
@@ -235,7 +235,7 @@ func (s *ServiceImpl) addHelpLinks(treeRoot *navtree.NavTreeRoot, c *contextmode
 				Text:       "Support bundles",
 				Id:         "support-bundles",
 				Url:        "/support-bundles",
-				Icon:       "fa-var-wifi",
+				Icon:       "wrench",
 				SortWeight: navtree.WeightHelp,
 			}
 

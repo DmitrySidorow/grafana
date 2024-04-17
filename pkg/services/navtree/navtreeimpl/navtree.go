@@ -109,7 +109,7 @@ func (s *ServiceImpl) GetNavTree(c *contextmodel.ReqContext, prefs *pref.Prefere
     		dashboardLink := &navtree.NavLink{
     			Text:       "Вагоны в сети",
     			Id:         navtree.NavIDCarsOnline,
-    			Icon:       "apps",
+    			Icon:       "rss",
     			Url:        s.cfg.AppSubURL + "/d/dvRiH6TGz",
     			SortWeight: navtree.WeightDashboard,
     			Children:   carsOnlineChildLinks,

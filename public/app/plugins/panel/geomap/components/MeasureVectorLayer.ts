@@ -227,7 +227,7 @@ export class MeasureVectorLayer extends VectorLayer<VectorSource> {
   addInteraction(map: Map, typeSelect: Type, showSegments: boolean, clearPrevious: boolean) {
     const drawType = typeSelect;
     const activeTip =
-      ' Нажмите для продолжения ' + (drawType === 'Polygon' ? 'polygon' : 'line') + ' \n (двойной нажатие для завершения) ';
+      ' Нажмите для продолжения ' + (drawType === 'Polygon' ? 'полигона' : 'линии') + ' \n (двойной нажатие для завершения) ';
     const idleTip = ' Нажмите для начала ';
     let tip = idleTip;
     this.draw = new Draw({

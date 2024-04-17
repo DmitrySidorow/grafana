@@ -505,7 +505,7 @@ func (s *ServiceImpl) buildCarsOnlineLinks(c *contextmodel.ReqContext) []*navtre
 	locHistoryChildNavs = append(locHistoryChildNavs, &navtree.NavLink{
 		Text:     "История передвижения",
 		Id:       "explore/metrics",
-		Url:      s.cfg.AppSubURL + "/explore/metrics",
+		Url:      s.cfg.AppSubURL + "/d/AiBwJXhGz",
 		Icon:     "code-branch",
 	})
 	return locHistoryChildNavs

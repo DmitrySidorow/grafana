@@ -235,7 +235,7 @@ func (s *ServiceImpl) addHelpLinks(treeRoot *navtree.NavTreeRoot, c *contextmode
 				Text:       "Support bundles",
 				Id:         "support-bundles",
 				Url:        "/support-bundles",
-				Icon:       "wrench",
+				Icon:       "fa-var-wifi",
 				SortWeight: navtree.WeightHelp,
 			}
 

@@ -83,6 +83,8 @@ func (s *ServiceImpl) GetNavTree(c *contextmodel.ReqContext, prefs *pref.Prefere
 
 	treeRoot.AddSection(s.getHomeNode(c, prefs))
 
+	treeRoot.AddSection(s.getCarsOnlineNode(c, prefs))
+
 // 	if hasAccess(ac.EvalPermission(dashboards.ActionDashboardsRead)) {
 // 		starredItemsLinks, err := s.buildStarredItemsNavLinks(c)
 // 		if err != nil {
@@ -184,6 +186,18 @@ func (s *ServiceImpl) getHomeNode(c *contextmodel.ReqContext, prefs *pref.Prefer
 		Url:        homeUrl,
 		Icon:       "home-alt",
 		SortWeight: navtree.WeightHome,
+	}
+	return homeNode
+}
+
+func (s *ServiceImpl) getCarsOnlineNode(c *contextmodel.ReqContext, prefs *pref.Preference) *navtree.NavLink {
+	homeNode := &navtree.NavLink{
+		Text:       "Вагоны в сети",
+		Id:         "cars-online",
+		Url:        s.cfg.AppSubURL + "/d/dvRiH6TGz",
+		Icon:       "wifi",
+		SortWeight: navtree.WeightHome,
+		Children:   buildLocationHistoryLinks,
 	}
 	return homeNode
 }
@@ -480,4 +494,15 @@ func (s *ServiceImpl) buildExploreNavLinks(c *contextmodel.ReqContext) []*navtre
 		})
 	}
 	return exploreChildNavs
+}
+
+func (s *ServiceImpl) buildLocationHistoryLinks(c *contextmodel.ReqContext) []*navtree.NavLink {
+	locHistoryChildNavs := []*navtree.NavLink{}
+	locHistoryChildNavs = append(locHistoryChildNavs, &navtree.NavLink{
+		Text:     "История передвижения",
+		Id:       "explore/metrics",
+		Url:      s.cfg.AppSubURL + "/explore/metrics",
+		Icon:     "code-branch",
+	})
+	return locHistoryChildNavs
 }

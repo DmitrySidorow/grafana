@@ -47,6 +47,7 @@ const (
 	NavIDCfgGeneral           = "cfg/general"
 	NavIDCfgPlugins           = "cfg/plugins"
 	NavIDCfgAccess            = "cfg/access"
+	NavIDCarsOnline           = "dashboards/cars-online"
 )
 
 type NavLink struct {

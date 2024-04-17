@@ -1440,8 +1440,8 @@
       "type-header": "Type"
     },
     "search-input": {
-      "include-panels-placeholder": "Search for dashboards, folders, and panels",
-      "placeholder": "Search for dashboards and folders"
+      "include-panels-placeholder": "Выполняйте поиск по дашбордам, папкам и панелям",
+      "placeholder": "Поиск по дашбордам и папкам"
     }
   },
   "service-accounts": {

@@ -162,8 +162,8 @@
     "list": {
       "delete": "delete correlation",
       "label": "Label",
-      "loading": "loading...",
-      "read-only": "Read only",
+      "loading": "загрузка...",
+      "read-only": "Только чтение",
       "source": "Source",
       "target": "Target"
     },
@@ -363,7 +363,7 @@
     "general": {
       "auto-refresh-description": "Define the auto refresh intervals that should be available in the auto refresh list.",
       "auto-refresh-label": "Авто обновление",
-      "description-label": "Description",
+      "description-label": "Описание",
       "editable-description": "Set to read-only to disable all editing. Reload the dashboard for changes to take effect",
       "editable-label": "Редактируемый",
       "folder-label": "Папка",
@@ -371,7 +371,7 @@
       "panel-options-graph-tooltip-label": "Graph tooltip",
       "panel-options-label": "Panel options",
       "tags-label": "Теги",
-      "title": "General",
+      "title": "Общее",
       "title-label": "Title"
     },
     "json-editor": {
@@ -558,7 +558,7 @@
       "copy-shortened-link-menu": "Open shortened link menu",
       "refresh-picker-cancel": "Отмена",
       "refresh-picker-run": "Run query",
-      "split-close": " Close ",
+      "split-close": " Закрыть ",
       "split-close-tooltip": "Close split pane",
       "split-narrow": "Narrow pane",
       "split-title": "Split",
@@ -770,7 +770,7 @@
       "error-title": "Something went wrong",
       "generate-button": "Generate a migration token",
       "generate-button-loading": "Generating a migration token...",
-      "modal-close": "Close",
+      "modal-close": "Закрыть",
       "modal-copy-and-close": "Copy to clipboard and close",
       "modal-copy-button": "Copy to clipboard",
       "modal-field-description": "Copy the token now as you will not be able to see it again. Losing a token requires creating a new one.",
@@ -1662,7 +1662,7 @@
       "username-label": "Логин"
     },
     "tabs": {
-      "general": "General"
+      "general": "Общее"
     }
   },
   "user-session": {

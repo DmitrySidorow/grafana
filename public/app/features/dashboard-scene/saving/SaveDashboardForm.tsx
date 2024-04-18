@@ -41,7 +41,7 @@ export function SaveDashboardForm({ dashboard, drawer, changeInfo }: Props) {
 
   const cancelButton = (
     <Button variant="secondary" onClick={() => dashboard.closeModal()} fill="outline">
-      Cancel
+      Отмена
     </Button>
   );
 
@@ -52,8 +52,8 @@ export function SaveDashboardForm({ dashboard, drawer, changeInfo }: Props) {
   function renderFooter(error?: Error) {
     if (isVersionMismatchError(error)) {
       return (
-        <Alert title="Someone else has updated this dashboard" severity="error">
-          <p>Would you still like to save this dashboard?</p>
+        <Alert title="Кто-то еще обновил дашборд" severity="error">
+          <p>Вы все еще хотите сохранить дашборд?</p>
           <Box paddingTop={2}>
             <Stack alignItems="center">
               {cancelButton}
@@ -87,14 +87,14 @@ export function SaveDashboardForm({ dashboard, drawer, changeInfo }: Props) {
     return (
       <>
         {error && (
-          <Alert title="Failed to save dashboard" severity="error">
+          <Alert title="Ошибка сохранения дашборда" severity="error">
             <p>{error.message}</p>
           </Alert>
         )}
         <Stack alignItems="center">
           {cancelButton}
           {saveButton(false)}
-          {!hasChanges && <div>No changes to save</div>}
+          {!hasChanges && <div>Нет изменений для сохранения</div>}
         </Stack>
       </>
     );
@@ -113,7 +113,7 @@ export function SaveDashboardForm({ dashboard, drawer, changeInfo }: Props) {
               message: e.currentTarget.value,
             });
           }}
-          placeholder="Add a note to describe your changes (optional)."
+          placeholder="Добавьте описание изменений (опционально)"
           autoFocus
           rows={5}
         />
@@ -135,7 +135,7 @@ export function SaveDashboardFormCommonOptions({ drawer, changeInfo }: SaveDashb
   return (
     <>
       {hasTimeChanges && (
-        <Field label="Update default time range" description="Will make current time range the new default">
+        <Field label="Обновление временного диапазона по умолчанию" description="Will make current time range the new default">
           <Checkbox
             id="save-timerange"
             checked={saveTimeRange}
@@ -145,7 +145,7 @@ export function SaveDashboardFormCommonOptions({ drawer, changeInfo }: SaveDashb
         </Field>
       )}
       {hasRefreshChange && (
-        <Field label="Update default refresh value" description="Will make the current refresh the new default">
+        <Field label="Обновить значение автообновления по умолчанию" description="Will make the current refresh the new default">
           <Checkbox
             id="save-refresh"
             checked={saveRefresh}
@@ -155,7 +155,7 @@ export function SaveDashboardFormCommonOptions({ drawer, changeInfo }: SaveDashb
         </Field>
       )}
       {hasVariableValueChanges && (
-        <Field label="Update default variable values" description="Will make the current values the new default">
+        <Field label="Обновить значения переменных по умолчанию" description="Will make the current values the new default">
           <Checkbox
             id="save-variables"
             checked={saveVariables}

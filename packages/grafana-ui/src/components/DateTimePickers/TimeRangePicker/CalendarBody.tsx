@@ -25,7 +25,7 @@ export function Body({ onChange, from, to, timeZone }: TimePickerCalendarProps) 
       nextLabel={<Icon name="angle-right" />}
       prevLabel={<Icon name="angle-left" />}
       onChange={onCalendarChange}
-      locale="en"
+      locale="ru"
     />
   );
 }

@@ -56,7 +56,7 @@ const Body = memo<DatePickerProps>(({ value, minDate, maxDate, onChange }) => {
           onChange(ev);
         }
       }}
-      locale="en"
+      locale="ru"
     />
   );
 });

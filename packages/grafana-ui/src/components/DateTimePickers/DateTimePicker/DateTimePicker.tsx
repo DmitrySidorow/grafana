@@ -247,7 +247,7 @@ const DateTimeInput = React.forwardRef<HTMLInputElement, InputProps>(
           value={internalDate.value}
           onBlur={onBlur}
           data-testid={Components.DateTimePicker.input}
-          placeholder="Select date/time"
+          placeholder="Выберите дату/время"
           ref={ref}
         />
       </InlineField>
@@ -313,7 +313,7 @@ const DateTimeCalendar = React.forwardRef<HTMLDivElement, DateTimeCalendarProps>
           prevLabel={<Icon name="angle-left" />}
           prevAriaLabel="Previous month"
           onChange={onChangeDate}
-          locale="en"
+          locale="ru"
           className={calendarStyles.body}
           tileClassName={calendarStyles.title}
           maxDate={maxDate}
@@ -331,10 +331,10 @@ const DateTimeCalendar = React.forwardRef<HTMLDivElement, DateTimeCalendarProps>
         </div>
         <Stack>
           <Button type="button" onClick={() => onChange(dateTime(internalDate))}>
-            Apply
+            Применить
           </Button>
           <Button variant="secondary" type="button" onClick={onClose}>
-            Cancel
+            Отмена
           </Button>
         </Stack>
       </div>

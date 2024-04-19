@@ -541,5 +541,5 @@ func (s *ServiceImpl) buildServiceLinks(c *contextmodel.ReqContext) []*navtree.N
     		Url:      s.cfg.AppSubURL + "/d/9u5ZLeT1z",
     		Icon:     "code-branch",
     	})
-	return locHistoryChildNavs
+	return serviceChildNavs
 }

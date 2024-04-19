@@ -10,7 +10,7 @@ import (
 var (
 	SortAlphaAsc = model.SortOption{
 		Name:        "alpha-asc",
-		DisplayName: "Alphabetically (A–Z)",
+		DisplayName: "По алфавиту (А–Я)",
 		Description: "Sort results in an alphabetically ascending order",
 		Index:       0,
 		Filter: []model.SortOptionFilter{
@@ -19,7 +19,7 @@ var (
 	}
 	SortAlphaDesc = model.SortOption{
 		Name:        "alpha-desc",
-		DisplayName: "Alphabetically (Z–A)",
+		DisplayName: "По алфавиту (Я–А)",
 		Description: "Sort results in an alphabetically descending order",
 		Index:       0,
 		Filter: []model.SortOptionFilter{

@@ -1014,7 +1014,7 @@
       "title": "Machine learning"
     },
     "manage-folder": {
-      "subtitle": "Manage folder dashboards and permissions"
+      "subtitle": "Управляйте папками и разрешениями"
     },
     "migrate-to-cloud": {
       "subtitle": "Copy configuration from your self-managed installation to a cloud stack",
@@ -1423,7 +1423,7 @@
     "actions": {
       "include-panels": "Include panels",
       "remove-datasource-filter": "Datasource: {{datasource}}",
-      "sort-placeholder": "Sort",
+      "sort-placeholder": "Сортировка",
       "starred": "Избранное",
       "view-as-folders": "View by folders",
       "view-as-list": "View as list"

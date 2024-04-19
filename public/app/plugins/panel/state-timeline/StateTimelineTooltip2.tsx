@@ -63,7 +63,7 @@ export const StateTimelineTooltip2 = ({
       duration = fmtDuration(to - stateTs);
     }
 
-    contentItems.push({ label: 'Duration', value: duration });
+    contentItems.push({ label: 'Длительность', value: duration });
   }
 
   let footer: ReactNode;

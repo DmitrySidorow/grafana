@@ -9,8 +9,8 @@ import { AccessControlAction, Team, TeamPermissionLevel } from 'app/types';
 const loadingTeam = {
   avatarUrl: 'public/img/user_profile.png',
   id: 1,
-  name: 'Loading',
-  email: 'loading',
+  name: 'Загрузка',
+  email: 'загрузка',
   memberCount: 0,
   permission: TeamPermissionLevel.Member,
   accessControl: { isEditor: false },
@@ -22,7 +22,7 @@ export function buildNavModel(team: Team): NavModelItem {
   const navModel: NavModelItem = {
     img: team.avatarUrl,
     id: 'team-' + team.id,
-    subTitle: 'Manage members and settings',
+    subTitle: 'Управляйте пользователями и настройками',
     url: '',
     text: team.name,
     children: [
@@ -32,7 +32,7 @@ export function buildNavModel(team: Team): NavModelItem {
         active: false,
         icon: 'sliders-v-alt',
         id: `team-settings-${team.id}`,
-        text: 'Settings',
+        text: 'Настройки',
         url: `org/teams/edit/${team.id}/settings`,
       },
     ],
@@ -49,7 +49,7 @@ export function buildNavModel(team: Team): NavModelItem {
       active: false,
       icon: 'users-alt',
       id: `team-members-${team.id}`,
-      text: 'Members',
+      text: 'Пользователи',
       url: `org/teams/edit/${team.id}/members`,
     });
   }

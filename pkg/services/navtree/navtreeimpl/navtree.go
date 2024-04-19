@@ -118,6 +118,21 @@ func (s *ServiceImpl) GetNavTree(c *contextmodel.ReqContext, prefs *pref.Prefere
     		treeRoot.AddSection(dashboardLink)
     	}
 
+    if c.SignedInUser.GetOrgID() == 1 {
+    	carsOnlineChildLinks := s.buildCarsOnlineLinks(c)
+
+        dashboardLink := &navtree.NavLink{
+        	Text:       "Сервис",
+        	Id:         navtree.NavIDCarsOnline,
+        	Icon:       "wrench",
+//         	Url:        s.cfg.AppSubURL + "/d/dvRiH6TGz",
+        	SortWeight: navtree.WeightDashboard,
+        	Children:   carsOnlineChildLinks,
+        }
+
+        treeRoot.AddSection(dashboardLink)
+    }
+
 	if c.IsPublicDashboardView() || hasAccess(ac.EvalAny(
 		ac.EvalPermission(dashboards.ActionFoldersRead), ac.EvalPermission(dashboards.ActionFoldersCreate),
 		ac.EvalPermission(dashboards.ActionDashboardsRead), ac.EvalPermission(dashboards.ActionDashboardsCreate)),

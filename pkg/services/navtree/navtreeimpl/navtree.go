@@ -119,18 +119,18 @@ func (s *ServiceImpl) GetNavTree(c *contextmodel.ReqContext, prefs *pref.Prefere
     	}
 
     if c.SignedInUser.GetOrgID() == 1 {
-    	carsOnlineChildLinks := s.buildCarsOnlineLinks(c)
+    	serviceChildLinks := s.buildServiceLinks(c)
 
-        dashboardLink := &navtree.NavLink{
+        serviceLink := &navtree.NavLink{
         	Text:       "Сервис",
-        	Id:         navtree.NavIDCarsOnline,
+        	Id:         navtree.NavIDService,
         	Icon:       "wrench",
-        	Url:        s.cfg.AppSubURL + "/d/dvRiH6TGz",
+        	Url:        s.cfg.AppSubURL + "/dashboards/f/edj7hg9u12o74d",
         	SortWeight: navtree.WeightDashboard,
-        	Children:   carsOnlineChildLinks,
+        	Children:   serviceChildLinks,
         }
 
-        treeRoot.AddSection(dashboardLink)
+        treeRoot.AddSection(serviceLink)
     }
 
 	if c.IsPublicDashboardView() || hasAccess(ac.EvalAny(
@@ -523,5 +523,23 @@ func (s *ServiceImpl) buildCarsOnlineLinks(c *contextmodel.ReqContext) []*navtre
 		Url:      s.cfg.AppSubURL + "/d/AiBwJXhGz",
 		Icon:     "code-branch",
 	})
+	return locHistoryChildNavs
+}
+
+func (s *ServiceImpl) buildServiceLinks(c *contextmodel.ReqContext) []*navtree.NavLink {
+	serviceChildNavs := []*navtree.NavLink{}
+	serviceChildNavs = append(serviceChildNavs, &navtree.NavLink{
+		Text:     "Вагоны",
+		Id:       "explore/metrics",
+		Url:      s.cfg.AppSubURL + "/d/AiBwJXhGz",
+		Icon:     "code-branch",
+	})
+
+	serviceChildNavs = append(serviceChildNavs, &navtree.NavLink{
+    		Text:     "ДГА",
+    		Id:       "explore/metrics",
+    		Url:      s.cfg.AppSubURL + "/d/9u5ZLeT1z",
+    		Icon:     "code-branch",
+    	})
 	return locHistoryChildNavs
 }

@@ -181,6 +181,7 @@ import u1170 from '../../../img/icons/mono/library-panel.svg';
 import u1171 from '../../../img/icons/unicons/record-audio.svg';
 
 import u2000 from '../../../img/icons/unicons/wifi.svg';
+import u2001 from '../../../img/icons/unicons/wrench.svg';
 // do not edit this list directly
 // the list of icons live here: @grafana/ui/components/Icon/cached.json
 
@@ -388,6 +389,7 @@ export function initIconCache() {
   cacheItem(u1171, resolvePath('unicons/record-audio.svg'));
 
   cacheItem(u2000, resolvePath('unicons/wifi.svg'));
+  cacheItem(u2001, resolvePath('unicons/wrench.svg'));
   // do not edit this list directly
   // the list of icons live here: @grafana/ui/components/Icon/cached.json
 }

@@ -247,6 +247,7 @@ export const availableIconsIndex = {
   x: true,
 
   wifi: true,
+  wrench: true
 };
 
 export type IconName = keyof typeof availableIconsIndex;

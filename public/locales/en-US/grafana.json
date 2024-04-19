@@ -2,27 +2,27 @@
   "_comment": "The code is the source of truth for English phrases. They should be updated in the components directly, and additional plurals specified in this file.",
   "access-control": {
     "add-permission": {
-      "role-label": "Role",
+      "role-label": "Роль",
       "serviceaccount-label": "Service Account",
-      "team-label": "Team",
-      "title": "Add permission for",
-      "user-label": "User"
+      "team-label": "Команда",
+      "title": "Добавить разрешение для",
+      "user-label": "Пользователь"
     },
     "add-permissions": {
-      "save": "Save"
+      "save": "Сохранить"
     },
     "permission-list": {
-      "permission": "Permission"
+      "permission": "Разрешение"
     },
     "permissions": {
-      "add-label": "Add a permission",
-      "no-permissions": "There are no permissions",
-      "permissions-change-warning": "This will change permissions for this folder and all its descendants. In total, this will affect:",
-      "role": "Role",
+      "add-label": "Добавить разрешение",
+      "no-permissions": "Здесь нет разрешений",
+      "permissions-change-warning": "Это изменит права доступа для этой папки и всех ее дочерних элементов. Это повлияет на:",
+      "role": "Роль",
       "serviceaccount": "Service Account",
-      "team": "Team",
-      "title": "Permissions",
-      "user": "User"
+      "team": "Команда",
+      "title": "Разрешения",
+      "user": "Пользователь"
     }
   },
   "api-keys": {

@@ -125,7 +125,7 @@ func (s *ServiceImpl) GetNavTree(c *contextmodel.ReqContext, prefs *pref.Prefere
         	Text:       "Сервис",
         	Id:         navtree.NavIDCarsOnline,
         	Icon:       "wrench",
-//         	Url:        s.cfg.AppSubURL + "/d/dvRiH6TGz",
+        	Url:        s.cfg.AppSubURL + "/d/dvRiH6TGz",
         	SortWeight: navtree.WeightDashboard,
         	Children:   carsOnlineChildLinks,
         }

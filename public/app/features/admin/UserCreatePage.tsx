@@ -20,7 +20,7 @@ const pageNav: NavModelItem = {
   icon: 'user',
   id: 'user-new',
   text: 'Новый пользователь',
-  subTitle: 'Create a new Grafana user.',
+  subTitle: 'Создание нового пользователя',
 };
 
 const UserCreatePage = () => {
@@ -44,7 +44,7 @@ const UserCreatePage = () => {
     <Page navId="global-users" pageNav={pageNav}>
       <Page.Contents>
         <form onSubmit={handleSubmit(onSubmit)} style={{ maxWidth: '600px' }}>
-          <Field label="Name" required invalid={!!errors.name} error={errors.name ? 'Name is required' : undefined}>
+          <Field label="ФИО" required invalid={!!errors.name} error={errors.name ? 'Требуется имя' : undefined}>
             <Input id="name-input" {...register('name', { required: true })} />
           </Field>
 
@@ -52,14 +52,14 @@ const UserCreatePage = () => {
             <Input id="email-input" {...register('email')} />
           </Field>
 
-          <Field label="Username">
+          <Field label="Логин">
             <Input id="username-input" {...register('login')} />
           </Field>
           <Field
-            label="Password"
+            label="Пароль"
             required
             invalid={!!errors.password}
-            error={errors.password ? 'Password is required and must contain at least 4 characters' : undefined}
+            error={errors.password ? 'Требуется пароль и он должен содержать как минимум 4 символа' : undefined}
           >
             <Input
               id="password-input"
@@ -69,7 +69,7 @@ const UserCreatePage = () => {
               type="password"
             />
           </Field>
-          <Button type="submit">Create user</Button>
+          <Button type="submit">Создать пользователя</Button>
         </form>
       </Page.Contents>
     </Page>

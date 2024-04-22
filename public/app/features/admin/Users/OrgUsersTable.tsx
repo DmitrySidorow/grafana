@@ -89,7 +89,7 @@ export const OrgUsersTable = ({
       },
       {
         id: 'login',
-        header: 'Login',
+        header: 'Логин',
         cell: ({ cell: { value } }: Cell<'login'>) => <div>{value}</div>,
         sortType: 'string',
       },
@@ -101,21 +101,21 @@ export const OrgUsersTable = ({
       },
       {
         id: 'name',
-        header: 'Name',
+        header: 'ФИО',
         cell: ({ cell: { value } }: Cell<'name'>) => value,
         sortType: 'string',
       },
       {
         id: 'lastSeenAtAge',
-        header: 'Last active',
+        header: 'Последняя активность',
         cell: ({ cell: { value } }: Cell<'lastSeenAtAge'>) => {
-          return <>{value && <>{value === '10 years' ? <Text color={'disabled'}>Never</Text> : value}</>}</>;
+          return <>{value && <>{value === '10 years' ? <Text color={'disabled'}>Никогда</Text> : value}</>}</>;
         },
         sortType: (a, b) => new Date(a.original.lastSeenAt).getTime() - new Date(b.original.lastSeenAt).getTime(),
       },
       {
         id: 'role',
-        header: 'Role',
+        header: 'Роль',
         cell: ({ cell: { value }, row: { original } }: Cell<'role'>) => {
           const basicRoleDisabled = getBasicRoleDisabled(original);
           return contextSrv.licensedAccessControlEnabled() ? (
@@ -218,9 +218,9 @@ export const OrgUsersTable = ({
       </Stack>
       {Boolean(userToRemove) && (
         <ConfirmModal
-          body={`Are you sure you want to delete user ${userToRemove?.login}?`}
-          confirmText="Delete"
-          title="Delete"
+          body={`Вы уверены, что хотите удалить пользователя ${userToRemove?.login}?`}
+          confirmText="Удалить"
+          title="Удаление"
           onDismiss={() => {
             setUserToRemove(null);
           }}

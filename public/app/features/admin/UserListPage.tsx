@@ -68,13 +68,13 @@ export default function UserListPage() {
       {showAdminAndOrgTabs ? (
         <TabsBar className={styles.tabsMargin}>
           <Tab
-            label="All users"
+            label="Все пользователи"
             active={view === TabView.ADMIN}
             onChangeTab={() => setView(TabView.ADMIN)}
             data-testid={selectors.tabs.allUsers}
           />
           <Tab
-            label="Organization users"
+            label="Организации пользователей"
             active={view === TabView.ORG}
             onChangeTab={() => setView(TabView.ORG)}
             data-testid={selectors.tabs.orgUsers}
@@ -93,7 +93,7 @@ export default function UserListPage() {
         hasEmailSharingEnabled && (
           <TabsBar className={styles.tabsMargin}>
             <Tab
-              label="Users"
+              label="Пользователи"
               active={view === TabView.ORG}
               onChangeTab={() => setView(TabView.ORG)}
               data-testid={selectors.tabs.users}

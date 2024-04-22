@@ -1369,12 +1369,12 @@
       "dashboard-modal-title": "Public dashboards"
     },
     "table-header": {
-      "activated-label": "Activated",
+      "activated-label": "Активирован",
       "activated-tooltip": "Earliest time user has been an active user to a dashboard",
       "email-label": "Email",
-      "last-active-label": "Last active",
+      "last-active-label": "Последняя активность",
       "origin-label": "Origin",
-      "role-label": "Role"
+      "role-label": "Роль"
     }
   },
   "query-operation": {

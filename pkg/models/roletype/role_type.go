@@ -12,7 +12,7 @@ const (
 	RoleNone   RoleType = "None"
 	RoleViewer RoleType = "Viewer"
 	RoleEditor RoleType = "Editor"
-	RoleAdmin  RoleType = "Админ"
+	RoleAdmin  RoleType = "Admin"
 )
 
 var rolePrecedence = map[RoleType]int{

@@ -75,15 +75,15 @@ const UserListAdminPageUnConnected = ({
       <div className={styles.actionBar} data-testid={selectors.container}>
         <div className={styles.row}>
           <FilterInput
-            placeholder="Search user by login, email, or name."
+            placeholder="Поиск пользователя по логину, email или ФИО"
             autoFocus={true}
             value={query}
             onChange={changeQuery}
           />
           <RadioButtonGroup
             options={[
-              { label: 'All users', value: false },
-              { label: 'Active last 30 days', value: true },
+              { label: 'Все пользователи', value: false },
+              { label: 'Активные за последние 30 дней', value: true },
             ]}
             onChange={(value) => changeFilter({ name: 'activeLast30Days', value })}
             value={filters.find((f) => f.name === 'activeLast30Days')?.value}
@@ -94,13 +94,13 @@ const UserListAdminPageUnConnected = ({
           ))}
           {contextSrv.hasPermission(AccessControlAction.UsersCreate) && (
             <LinkButton href="admin/users/create" variant="primary">
-              New user
+              Новый пользователь
             </LinkButton>
           )}
         </div>
       </div>
       {!isLoading && users.length === 0 ? (
-        <EmptyState message={t('users.empty-state.message', 'No users found')} variant="not-found" />
+        <EmptyState message={t('users.empty-state.message', 'Пользователи не найдены')} variant="not-found" />
       ) : (
         <UsersTable
           users={users}

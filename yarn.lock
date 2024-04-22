@@ -3827,24 +3827,24 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@grafana/faro-core@npm:^1.3.6, @grafana/faro-core@npm:^1.5.1":
-  version: 1.5.1
-  resolution: "@grafana/faro-core@npm:1.5.1"
+"@grafana/faro-core@npm:^1.3.6, @grafana/faro-core@npm:^1.6.0":
+  version: 1.6.0
+  resolution: "@grafana/faro-core@npm:1.6.0"
   dependencies:
     "@opentelemetry/api": "npm:^1.7.0"
     "@opentelemetry/otlp-transformer": "npm:^0.48.0"
-  checksum: 10/eb2e45f8fe091f590ce51fc7f3258e759b920fc3e880069f9848d0048c048ec79f6545b8ff5dee77392a6bddc70fbe7e22e800976bcbd3b16c2c77830bd5079c
+  checksum: 10/42fe689be231126793e8129dd6c29661618ede36d479756aa02835c7687838861fd795119543c732359388d4f253bfe0ae01f04b2bee9253294ea9ff7bd3aa25
   languageName: node
   linkType: hard
 
-"@grafana/faro-web-sdk@npm:1.5.1, @grafana/faro-web-sdk@npm:^1.3.6":
-  version: 1.5.1
-  resolution: "@grafana/faro-web-sdk@npm:1.5.1"
+"@grafana/faro-web-sdk@npm:1.6.0, @grafana/faro-web-sdk@npm:^1.3.6":
+  version: 1.6.0
+  resolution: "@grafana/faro-web-sdk@npm:1.6.0"
   dependencies:
-    "@grafana/faro-core": "npm:^1.5.1"
+    "@grafana/faro-core": "npm:^1.6.0"
     ua-parser-js: "npm:^1.0.32"
     web-vitals: "npm:^3.1.1"
-  checksum: 10/468e7289ea9e7e00c75469ca558d723f385d5282dfdba66ba963b22381557c3c5f02f7725a0a61d2532929ac9b4132967549ccce67d235d01fad4500e78c6a7d
+  checksum: 10/65db25703bd4f26bf7509ddf5bfa5a47df38e5a6a014612eb707a2475641baff95a27196f760ee68301347735b10006e0cf58e6f47fed553c2c01c264232e76f
   languageName: node
   linkType: hard
 
@@ -4004,7 +4004,7 @@ __metadata:
     "@grafana/data": "npm:11.1.0-pre"
     "@grafana/e2e-selectors": "npm:11.1.0-pre"
     "@grafana/experimental": "npm:1.7.10"
-    "@grafana/faro-web-sdk": "npm:1.5.1"
+    "@grafana/faro-web-sdk": "npm:1.6.0"
     "@grafana/runtime": "npm:11.1.0-pre"
     "@grafana/schema": "npm:11.1.0-pre"
     "@grafana/tsconfig": "npm:^1.3.0-rc1"
@@ -4181,8 +4181,8 @@ __metadata:
   linkType: soft
 
 "@grafana/scenes@npm:^4.10.0":
-  version: 4.10.0
-  resolution: "@grafana/scenes@npm:4.10.0"
+  version: 4.11.2
+  resolution: "@grafana/scenes@npm:4.11.2"
   dependencies:
     "@grafana/e2e-selectors": "npm:10.3.3"
     react-grid-layout: "npm:1.3.4"
@@ -4196,7 +4196,7 @@ __metadata:
     "@grafana/ui": ^10.0.3
     react: ^18.0.0
     react-dom: ^18.0.0
-  checksum: 10/00c2d5f4606184eac757ab01bbace495c5aacec792de3cf55a66dd4597a3ab1bf2bf97806d9271f18107d738244d6c89579fe3db2f1a52506b64243ba1a9d782
+  checksum: 10/6979ddd27c3eb21dc2802e27ad398043b81deb4e99383f07d5dc39055f69220c57b8e09ee1945496d3280695fa99ea63801b27aab8ce7ff90481cfc380795562
   languageName: node
   linkType: hard
 
@@ -9573,9 +9573,9 @@ __metadata:
   linkType: hard
 
 "@types/diff@npm:^5":
-  version: 5.0.9
-  resolution: "@types/diff@npm:5.0.9"
-  checksum: 10/6924740cb67a49771ea3753ee9b15c676860a6227b2bf0200ed9cef4111ff0f59fec8c51c1170bd30a8c7370b32673b308a9cd2da28525130f842194a822ef42
+  version: 5.2.0
+  resolution: "@types/diff@npm:5.2.0"
+  checksum: 10/e1d3e6e9fd9d5386496c8716dd89316288d139cd8159a064f886a079149d05d65289b7b725ce1e333d4e77ce8024e210c6e281e9875a636fc17b4c760c2cf85f
   languageName: node
   linkType: hard
 
@@ -18807,7 +18807,7 @@ __metadata:
     immutable: "npm:4.3.5"
     jest: "npm:29.7.0"
     jest-canvas-mock: "npm:2.5.2"
-    jest-date-mock: "npm:1.0.9"
+    jest-date-mock: "npm:1.0.10"
     jest-environment-jsdom: "npm:29.7.0"
     jest-fail-on-console: "npm:3.2.0"
     jest-junit: "npm:16.0.0"
@@ -18863,7 +18863,7 @@ __metadata:
     rc-slider: "npm:10.5.0"
     rc-time-picker: "npm:3.7.3"
     rc-tree: "npm:5.8.5"
-    re-resizable: "npm:6.9.11"
+    re-resizable: "npm:6.9.14"
     react: "npm:18.2.0"
     react-beautiful-dnd: "npm:13.1.1"
     react-diff-viewer: "npm:^3.1.1"
@@ -20913,10 +20913,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jest-date-mock@npm:1.0.9":
-  version: 1.0.9
-  resolution: "jest-date-mock@npm:1.0.9"
-  checksum: 10/9812a7a2500fd4ab129cc95cce24b202821ba790ca58b8982026ccf9a087dcbb7e776bf83ab6661c2b1767419211fd1b0c8d4c10f42af1a6762dcee455690017
+"jest-date-mock@npm:1.0.10":
+  version: 1.0.10
+  resolution: "jest-date-mock@npm:1.0.10"
+  checksum: 10/0c5a642f857db275faf645176be192cbcc15362234dcff7884d3f05c113eafdda8f910e0b709101b3871e62b470a8874cc844be593cb69228019574f4193f703
   languageName: node
   linkType: hard
 
@@ -26272,13 +26272,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"re-resizable@npm:6.9.11":
-  version: 6.9.11
-  resolution: "re-resizable@npm:6.9.11"
+"re-resizable@npm:6.9.14":
+  version: 6.9.14
+  resolution: "re-resizable@npm:6.9.14"
   peerDependencies:
     react: ^16.13.1 || ^17.0.0 || ^18.0.0
     react-dom: ^16.13.1 || ^17.0.0 || ^18.0.0
-  checksum: 10/3f2590374d03a6b5f7ebc26f273bdb461ceecb1322adf3b7925c695b1c6fa0841225feb79cf63d19c3c2451a9a8ed4f4a82fa119f3a22565ce78e0619d2b624c
+  checksum: 10/eb3c40ead7f0db3bac6971cc15efd660ed403018db4a44e084392f248199244a6400ff3f741b2a1aa897bb5ede498d9e72c3d580a6f3acf06819639a0d943d26
   languageName: node
   linkType: hard
 

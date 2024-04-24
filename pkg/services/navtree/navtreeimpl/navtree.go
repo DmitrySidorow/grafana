@@ -120,7 +120,7 @@ func (s *ServiceImpl) GetNavTree(c *contextmodel.ReqContext, prefs *pref.Prefere
 
     if c.SignedInUser.GetOrgID() == 1 {
     	serviceChildLinks := s.buildServiceLinks(c)
-
+		log.Println(c.SignedInUser.GetTeams())
         serviceLink := &navtree.NavLink{
         	Text:       "Сервис",
         	Id:         navtree.NavIDService,

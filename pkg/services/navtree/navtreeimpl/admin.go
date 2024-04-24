@@ -152,7 +152,7 @@ func (s *ServiceImpl) getAdminNode(c *contextmodel.ReqContext) (*navtree.NavLink
     		Text:     "Сервер",
     		Id:       "server-info",
     		SubTitle: "",
-    		Url:      s.cfg.AppSubURL + "/d/xQlupltGk",
+    		Url:      s.cfg.AppSubURL + "/d/xQIupltGk",
     	}
     	configNodes = append(configNodes, migrateToCloud)
     }

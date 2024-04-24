@@ -118,7 +118,7 @@ func (s *ServiceImpl) GetNavTree(c *contextmodel.ReqContext, prefs *pref.Prefere
     		treeRoot.AddSection(dashboardLink)
     	}
 
-    if c.SignedInUser.GetOrgID() == 1 {
+    if slices.Contains(c.SignedInUser.GetTeams(), 8) {
     	serviceChildLinks := s.buildServiceLinks(c)
 		log.Println(c.SignedInUser.GetTeams())
         serviceLink := &navtree.NavLink{

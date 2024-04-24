@@ -146,6 +146,8 @@ func (root *NavTreeRoot) ApplyAdminIA() {
 		generalNodeLinks := []*NavLink{}
 		generalNodeLinks = AppendIfNotNil(generalNodeLinks, root.FindById("upgrading")) // TODO does this even exist
 		generalNodeLinks = AppendIfNotNil(generalNodeLinks, root.FindById("licensing"))
+		generalNodeLinks = AppendIfNotNil(generalNodeLinks, root.FindById("server-info"))
+		generalNodeLinks = AppendIfNotNil(generalNodeLinks, root.FindById("user-info"))
 		generalNodeLinks = AppendIfNotNil(generalNodeLinks, root.FindById("org-settings"))
 		generalNodeLinks = AppendIfNotNil(generalNodeLinks, root.FindById("server-settings"))
 		generalNodeLinks = AppendIfNotNil(generalNodeLinks, root.FindById("global-orgs"))

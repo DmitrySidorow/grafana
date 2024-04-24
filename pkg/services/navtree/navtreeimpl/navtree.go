@@ -201,10 +201,10 @@ func (s *ServiceImpl) GetNavTree(c *contextmodel.ReqContext, prefs *pref.Prefere
 func checkTeamPermission(roles []int64, role int64){
    	for _, r := range roles {
        	if r == role {
-       		return true
+       		return true, nil
        	}
     }
-    return false
+    return false, nil
 }
 
 func (s *ServiceImpl) getHomeNode(c *contextmodel.ReqContext, prefs *pref.Preference) *navtree.NavLink {

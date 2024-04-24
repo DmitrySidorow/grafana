@@ -204,6 +204,7 @@ func checkTeamPermission(roles []int64, role int64){
        		return true
        	}
     }
+    return false
 }
 
 func (s *ServiceImpl) getHomeNode(c *contextmodel.ReqContext, prefs *pref.Preference) *navtree.NavLink {

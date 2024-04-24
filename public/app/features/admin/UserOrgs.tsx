@@ -81,7 +81,7 @@ export class UserOrgs extends PureComponent<Props, State> {
           <div>
             {canAddToOrg && (
               <Button variant="secondary" onClick={this.showOrgAddModal} ref={this.addToOrgButtonRef}>
-                Add user to organization
+                Добавить в организацию
               </Button>
             )}
           </div>
@@ -246,7 +246,7 @@ class UnThemedOrgRow extends PureComponent<OrgRowProps> {
                 onCancel={this.onCancelClick}
                 onConfirm={this.onOrgRemove}
               >
-                Remove from organization
+                Удалить из организации
               </ConfirmButton>
             )}
           </div>
@@ -388,10 +388,10 @@ export class AddToOrgModal extends PureComponent<AddToOrgModalProps, AddToOrgMod
         <Modal.ButtonRow>
           <HorizontalGroup spacing="md" justify="center">
             <Button variant="secondary" fill="outline" onClick={this.onCancel}>
-              Cancel
+              Отменить
             </Button>
             <Button variant="primary" disabled={selectedOrg === null} onClick={this.onAddUserToOrg}>
-              Add to organization
+              Добавить в организацию
             </Button>
           </HorizontalGroup>
         </Modal.ButtonRow>
@@ -470,7 +470,7 @@ export function ChangeOrgButton({
           onConfirm={onOrgRoleSave}
           disabled={isExternalUser}
         >
-          Change role
+          Изменить роль
         </ConfirmButton>
       )}
     </div>

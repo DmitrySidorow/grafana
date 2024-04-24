@@ -81,13 +81,13 @@ export function UserProfile({
 
   return (
     <div>
-      <h3 className="page-heading">User information</h3>
+      <h3 className="page-heading">Информация о пользователе</h3>
       <Stack direction="column" gap={1.5}>
         <div>
           <table className="filter-table form-inline">
             <tbody>
               <UserProfileRow
-                label="Name"
+                label="ФИО"
                 value={user.name}
                 locked={editLocked}
                 lockMessage={lockMessage}
@@ -101,14 +101,14 @@ export function UserProfile({
                 onChange={onUserEmailChange}
               />
               <UserProfileRow
-                label="Username"
+                label="Логин"
                 value={user.login}
                 locked={editLocked}
                 lockMessage={lockMessage}
                 onChange={onUserLoginChange}
               />
               <UserProfileRow
-                label="Password"
+                label="Пароль"
                 value="********"
                 inputType="password"
                 locked={passwordChangeLocked}
@@ -122,13 +122,13 @@ export function UserProfile({
           {canDelete && (
             <>
               <Button variant="destructive" onClick={showDeleteUserModal(true)} ref={deleteUserRef}>
-                Delete user
+                Удалить пользователя
               </Button>
               <ConfirmModal
                 isOpen={showDeleteModal}
-                title="Delete user"
-                body="Are you sure you want to delete this user?"
-                confirmText="Delete user"
+                title="Удаление пользователя"
+                body="Вы уверены, что хотите удалить этого пользователя?"
+                confirmText="Удалить пользователя"
                 onConfirm={handleUserDelete}
                 onDismiss={showDeleteUserModal(false)}
               />
@@ -136,19 +136,19 @@ export function UserProfile({
           )}
           {user.isDisabled && canEnable && (
             <Button variant="secondary" onClick={handleUserEnable}>
-              Enable user
+              Активировать пользователя
             </Button>
           )}
           {!user.isDisabled && canDisable && (
             <>
               <Button variant="secondary" onClick={showDisableUserModal(true)} ref={disableUserRef}>
-                Disable user
+                Отключить пользователя
               </Button>
               <ConfirmModal
                 isOpen={showDisableModal}
-                title="Disable user"
-                body="Are you sure you want to disable this user?"
-                confirmText="Disable user"
+                title="Отключение пользователя"
+                body="Вы уверены, что хотите отключить этого пользователя?"
+                confirmText="Отключить пользователя"
                 onConfirm={handleUserDisable}
                 onDismiss={showDisableUserModal(false)}
               />
@@ -275,12 +275,12 @@ export class UserProfileRow extends PureComponent<UserProfileRowProps, UserProfi
         </td>
         <td>
           <ConfirmButton
-            confirmText="Save"
+            confirmText="Сохранить"
             onClick={this.onEditClick}
             onConfirm={this.onSave}
             onCancel={this.onCancelClick}
           >
-            Edit
+            Редактировать
           </ConfirmButton>
         </td>
       </tr>

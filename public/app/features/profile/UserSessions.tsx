@@ -26,7 +26,7 @@ class UserSessions extends PureComponent<Props> {
       <div className={styles.wrapper}>
         {sessions.length > 0 && (
           <>
-            <h3 className="page-sub-heading">Sessions</h3>
+            <h3 className="page-sub-heading">Сессии</h3>
             <table className="filter-table form-inline" data-testid={selectors.components.UserProfile.sessionsTable}>
               <thead>
                 <tr>

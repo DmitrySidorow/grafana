@@ -13,7 +13,7 @@ export class UserTeams extends PureComponent<Props> {
     const { isLoading, teams } = this.props;
 
     if (isLoading) {
-      return <LoadingPlaceholder text="Loading teams..." />;
+      return <LoadingPlaceholder text="Загрузка команд..." />;
     }
 
     if (teams.length === 0) {
@@ -27,9 +27,9 @@ export class UserTeams extends PureComponent<Props> {
           <thead>
             <tr>
               <th />
-              <th>Name</th>
+              <th>ФИО</th>
               <th>Email</th>
-              <th>Members</th>
+              <th>Пользователи</th>
             </tr>
           </thead>
           <tbody>

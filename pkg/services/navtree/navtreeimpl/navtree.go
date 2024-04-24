@@ -118,7 +118,7 @@ func (s *ServiceImpl) GetNavTree(c *contextmodel.ReqContext, prefs *pref.Prefere
     		treeRoot.AddSection(dashboardLink)
     	}
 
-    if checkTeamPermission(c.SignedInUser.GetTeams(), 8) {
+    if Contains(c.SignedInUser.GetTeams(), 8) {
     	serviceChildLinks := s.buildServiceLinks(c)
         serviceLink := &navtree.NavLink{
         	Text:       "Сервис",

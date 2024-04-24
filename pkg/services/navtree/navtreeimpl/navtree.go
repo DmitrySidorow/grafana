@@ -198,7 +198,7 @@ func (s *ServiceImpl) GetNavTree(c *contextmodel.ReqContext, prefs *pref.Prefere
 	return treeRoot, nil
 }
 
-func checkTeamPermission(roles []int64, role int){
+func checkTeamPermission(roles []int64, role int64){
    	for _, r := range roles {
        	if r == role {
        		return true

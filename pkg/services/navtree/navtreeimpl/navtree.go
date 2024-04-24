@@ -118,14 +118,6 @@ func (s *ServiceImpl) GetNavTree(c *contextmodel.ReqContext, prefs *pref.Prefere
     		treeRoot.AddSection(dashboardLink)
     	}
 
-    func checkTeamPermission(roles []int64, role int){
-    	for _, r := range roles {
-        	if r == role {
-        		return true
-        	}
-        }
-    }
-
     if checkTeamPermission(c.SignedInUser.GetTeams(), 8) {
     	serviceChildLinks := s.buildServiceLinks(c)
         serviceLink := &navtree.NavLink{
@@ -204,6 +196,14 @@ func (s *ServiceImpl) GetNavTree(c *contextmodel.ReqContext, prefs *pref.Prefere
 	}
 
 	return treeRoot, nil
+}
+
+func checkTeamPermission(roles []int64, role int){
+   	for _, r := range roles {
+       	if r == role {
+       		return true
+       	}
+    }
 }
 
 func (s *ServiceImpl) getHomeNode(c *contextmodel.ReqContext, prefs *pref.Preference) *navtree.NavLink {

@@ -140,7 +140,7 @@ func (s *ServiceImpl) GetNavTree(c *contextmodel.ReqContext, prefs *pref.Prefere
             		ac.EvalPermission(dashboards.ActionFoldersRead), ac.EvalPermission(dashboards.ActionFoldersCreate),
             		ac.EvalPermission(dashboards.ActionDashboardsRead), ac.EvalPermission(dashboards.ActionDashboardsCreate)),
             	) {
-            		dgaChildLinks := s.buildDgaLinks(c)
+//             		dgaChildLinks := s.buildDgaLinks(c)
 
             		dashboardLink := &navtree.NavLink{
             			Text:       "ДГА",

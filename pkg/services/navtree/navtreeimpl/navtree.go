@@ -591,14 +591,14 @@ func (s *ServiceImpl) buildServiceLinks(c *contextmodel.ReqContext) []*navtree.N
 func (s *ServiceImpl) buildCarsLinks(c *contextmodel.ReqContext) []*navtree.NavLink {
 	serviceChildNavs := []*navtree.NavLink{}
 	serviceChildNavs = append(serviceChildNavs, &navtree.NavLink{
-		Text:     "Вагоны",
+		Text:     "Главная",
 		Id:       "explore/metrics",
 		Url:      s.cfg.AppSubURL + "/d/9u5ZL4T1z",
 		Icon:     "code-branch",
 	})
 
 	serviceChildNavs = append(serviceChildNavs, &navtree.NavLink{
-    		Text:     "ДГА",
+    		Text:     "Безопасность",
     		Id:       "explore/metrics",
     		Url:      s.cfg.AppSubURL + "/d/9u5ZLeT1z",
     		Icon:     "code-branch",

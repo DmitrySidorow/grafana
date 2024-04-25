@@ -118,6 +118,24 @@ func (s *ServiceImpl) GetNavTree(c *contextmodel.ReqContext, prefs *pref.Prefere
     		treeRoot.AddSection(dashboardLink)
     	}
 
+    if hasAccess(ac.EvalAny(
+        		ac.EvalPermission(dashboards.ActionFoldersRead), ac.EvalPermission(dashboards.ActionFoldersCreate),
+        		ac.EvalPermission(dashboards.ActionDashboardsRead), ac.EvalPermission(dashboards.ActionDashboardsCreate)),
+        	) {
+        		carsChildLinks := s.buildCarsLinks(c)
+
+        		dashboardLink := &navtree.NavLink{
+        			Text:       "Панель вагона",
+        			Id:         navtree.NavIDCarsOnline,
+        			Icon:       "tachometer-fast-alt",
+        			Url:        s.cfg.AppSubURL + "/d/b76lik1Gk",
+        			SortWeight: navtree.WeightDashboard,
+        			Children:   carsChildLinks,
+        		}
+
+        		treeRoot.AddSection(dashboardLink)
+        	}
+
     if checkTeamPermission(c.SignedInUser.GetTeams(), 8) || checkTeamPermission(c.SignedInUser.GetTeams(), 3) || checkTeamPermission(c.SignedInUser.GetTeams(), 7) || checkTeamPermission(c.SignedInUser.GetTeams(), 5) {
     	serviceChildLinks := s.buildServiceLinks(c)
         serviceLink := &navtree.NavLink{
@@ -535,6 +553,24 @@ func (s *ServiceImpl) buildCarsOnlineLinks(c *contextmodel.ReqContext) []*navtre
 }
 
 func (s *ServiceImpl) buildServiceLinks(c *contextmodel.ReqContext) []*navtree.NavLink {
+	serviceChildNavs := []*navtree.NavLink{}
+	serviceChildNavs = append(serviceChildNavs, &navtree.NavLink{
+		Text:     "Вагоны",
+		Id:       "explore/metrics",
+		Url:      s.cfg.AppSubURL + "/d/9u5ZL4T1z",
+		Icon:     "code-branch",
+	})
+
+	serviceChildNavs = append(serviceChildNavs, &navtree.NavLink{
+    		Text:     "ДГА",
+    		Id:       "explore/metrics",
+    		Url:      s.cfg.AppSubURL + "/d/9u5ZLeT1z",
+    		Icon:     "code-branch",
+    	})
+	return serviceChildNavs
+}
+
+func (s *ServiceImpl) buildCarsLinks(c *contextmodel.ReqContext) []*navtree.NavLink {
 	serviceChildNavs := []*navtree.NavLink{}
 	serviceChildNavs = append(serviceChildNavs, &navtree.NavLink{
 		Text:     "Вагоны",

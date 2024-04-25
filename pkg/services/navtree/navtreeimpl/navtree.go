@@ -125,7 +125,7 @@ func (s *ServiceImpl) GetNavTree(c *contextmodel.ReqContext, prefs *pref.Prefere
         		carsChildLinks := s.buildCarsLinks(c)
 
         		dashboardLink := &navtree.NavLink{
-        			Text:       "Панель вагона",
+        			Text:       "Вагоны",
         			Id:         navtree.NavIDCarsOnline,
         			Icon:       "tachometer-fast-alt",
         			Url:        s.cfg.AppSubURL + "/d/b76lik1Gk",
@@ -135,6 +135,24 @@ func (s *ServiceImpl) GetNavTree(c *contextmodel.ReqContext, prefs *pref.Prefere
 
         		treeRoot.AddSection(dashboardLink)
         	}
+
+    if hasAccess(ac.EvalAny(
+            		ac.EvalPermission(dashboards.ActionFoldersRead), ac.EvalPermission(dashboards.ActionFoldersCreate),
+            		ac.EvalPermission(dashboards.ActionDashboardsRead), ac.EvalPermission(dashboards.ActionDashboardsCreate)),
+            	) {
+            		dgaChildLinks := s.buildDgaLinks(c)
+
+            		dashboardLink := &navtree.NavLink{
+            			Text:       "ДГА",
+            			Id:         navtree.NavIDCarsOnline,
+            			Icon:       "bolt-alt",
+            			Url:        s.cfg.AppSubURL + "/d/ac8-d6EMk",
+            			SortWeight: navtree.WeightDashboard,
+//             			Children:   dgaChildLinks,
+            		}
+
+            		treeRoot.AddSection(dashboardLink)
+            	}
 
     if checkTeamPermission(c.SignedInUser.GetTeams(), 8) || checkTeamPermission(c.SignedInUser.GetTeams(), 3) || checkTeamPermission(c.SignedInUser.GetTeams(), 7) || checkTeamPermission(c.SignedInUser.GetTeams(), 5) {
     	serviceChildLinks := s.buildServiceLinks(c)
@@ -575,7 +593,7 @@ func (s *ServiceImpl) buildCarsLinks(c *contextmodel.ReqContext) []*navtree.NavL
 	serviceChildNavs = append(serviceChildNavs, &navtree.NavLink{
 		Text:     "Вагоны",
 		Id:       "explore/metrics",
-		Url:      s.cfg.AppSubURL + "/d/AiBwJXhGz",
+		Url:      s.cfg.AppSubURL + "/d/9u5ZL4T1z",
 		Icon:     "code-branch",
 	})
 

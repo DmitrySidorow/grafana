@@ -248,7 +248,8 @@ export const availableIconsIndex = {
 
   wifi: true,
   wrench: true,
-  'tachometer-fast-alt': true
+  'tachometer-fast-alt': true,
+  'bolt-alt': true
 };
 
 export type IconName = keyof typeof availableIconsIndex;

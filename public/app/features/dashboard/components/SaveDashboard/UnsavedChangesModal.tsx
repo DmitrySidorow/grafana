@@ -21,9 +21,9 @@ export const UnsavedChangesModal = ({ dashboard, onSaveSuccess, onDiscard, onDis
       title="Несохраненные изменения"
       onDismiss={onDismiss}
       icon="exclamation-triangle"
-      className={css`
-        width: 500px;
-      `}
+      className={css({
+        width: '500px',
+      })}
     >
       <h5>Вы хотите сохранить изменения?</h5>
       <Modal.ButtonRow>

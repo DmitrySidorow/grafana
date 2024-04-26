@@ -158,14 +158,14 @@ func (s *ServiceImpl) getAdminNode(c *contextmodel.ReqContext) (*navtree.NavLink
     }
 
     if hasAccess(ac.EvalPermission(ac.ActionSettingsRead, ac.ScopeSettingsAll)) {
-        	migrateToCloud := &navtree.NavLink{
-        		Text:     "Посещения",
-        		Id:       "user-info",
-        		SubTitle: "",
-        		Url:      s.cfg.AppSubURL + "/d/iH99rpPMk",
-        	}
-        	configNodes = append(configNodes, migrateToCloud)
-        }
+       	migrateToCloud := &navtree.NavLink{
+       		Text:     "Статистика пользователей",
+       		Id:       "user-info",
+       		SubTitle: "",
+       		Url:      s.cfg.AppSubURL + "/d/iH99rpPMk",
+       	}
+       	configNodes = append(configNodes, migrateToCloud)
+    }
 
 	configNode := &navtree.NavLink{
 		Id:         navtree.NavIDCfg,

@@ -330,7 +330,7 @@ export const DashNav = React.memo<Props>((props) => {
     if (showSettings) {
       buttons.push(
         <ToolbarButton
-          tooltip={t('dashboard.toolbar.settings', 'Dashboard settings')}
+          tooltip={t('dashboard.toolbar.settings', 'Настройки дашборда')}
           icon="cog"
           onClick={onOpenSettings}
           key="button-settings"

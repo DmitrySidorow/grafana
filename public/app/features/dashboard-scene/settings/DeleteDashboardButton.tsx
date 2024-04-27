@@ -49,7 +49,7 @@ function DeleteDashboardModal({ dashboard, onClose }: ModalProps) {
       isOpen={true}
       body={
         <>
-          <p>Do you want to delete this dashboard?</p>
+          <p>Вы уверены, что хотите удалить этот дашборд?</p>
           <p>{dashboard.state.title}</p>
         </>
       }

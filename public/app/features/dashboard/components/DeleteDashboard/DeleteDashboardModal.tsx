@@ -47,7 +47,7 @@ const DeleteDashboardModalUnconnected = ({ hideModal, cleanUpDashboardAndVariabl
       }
       onConfirm={onConfirm}
       onDismiss={hideModal}
-      title="Delete"
+      title="Удалить"
       icon="trash-alt"
       confirmText="Delete"
     />

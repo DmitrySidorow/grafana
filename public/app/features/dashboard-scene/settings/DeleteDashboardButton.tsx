@@ -55,7 +55,7 @@ function DeleteDashboardModal({ dashboard, onClose }: ModalProps) {
       }
       onConfirm={onConfirm}
       onDismiss={onClose}
-      title="Delete"
+      title="Удалить"
       icon="trash-alt"
       confirmText="Delete"
     />

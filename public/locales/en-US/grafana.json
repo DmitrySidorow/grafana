@@ -584,12 +584,12 @@
     "toolbar": {
       "aria-label": "Explore toolbar",
       "copy-link": "Copy URL",
-      "copy-link-abs-time": "Copy Absolute Shortened URL",
+      "copy-link-abs-time": "Copy absolute URL",
       "copy-links-absolute-category": "Time-sync URL links (share with time range intact)",
       "copy-links-normal-category": "Normal URL links",
       "copy-shortened-link": "Copy shortened URL",
       "copy-shortened-link-abs-time": "Copy absolute shortened URL",
-      "copy-shortened-link-menu": "Open shortened link menu",
+      "copy-shortened-link-menu": "Open copy link options",
       "refresh-picker-cancel": "Отмена",
       "refresh-picker-run": "Run query",
       "split-close": " Закрыть ",
@@ -731,6 +731,7 @@
       "submit-label": "Войти",
       "submit-loading-label": "Вход...",
       "username-label": "Email или логин",
+      "username-placeholder": "email или логин",
       "username-required": "Требуется email или логин"
     },
     "services": {
@@ -885,7 +886,8 @@
       "title": "Alerting"
     },
     "alerting-admin": {
-      "title": "Admin"
+      "subtitle": "Manage Alertmanager configurations and configure where alert instances generated from Grafana managed alert rules are sent",
+      "title": "Settings"
     },
     "alerting-am-routes": {
       "subtitle": "Determine how alerts are routed to contact points",

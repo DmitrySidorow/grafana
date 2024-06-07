@@ -218,6 +218,9 @@
      "format": "int64",
      "type": "integer"
     },
+    "record": {
+     "$ref": "#/definitions/AlertRuleRecordExport"
+    },
     "title": {
      "type": "string"
     },
@@ -365,6 +368,18 @@
     }
    },
    "title": "AlertRuleNotificationSettingsExport is the provisioned export of models.NotificationSettings.",
+   "type": "object"
+  },
+  "AlertRuleRecordExport": {
+   "properties": {
+    "from": {
+     "type": "string"
+    },
+    "metric": {
+     "type": "string"
+    }
+   },
+   "title": "Record is the provisioned export of models.Record.",
    "type": "object"
   },
   "AlertingFileExport": {
@@ -2787,6 +2802,9 @@
       "$ref": "#/definitions/TimeIntervalItem"
      },
      "type": "array"
+    },
+    "version": {
+     "type": "string"
     }
    },
    "type": "object"
@@ -2923,6 +2941,9 @@
     },
     "provenance": {
      "$ref": "#/definitions/Provenance"
+    },
+    "record": {
+     "$ref": "#/definitions/Record"
     },
     "ruleGroup": {
      "example": "eval_group_1",
@@ -3258,13 +3279,20 @@
   "Record": {
    "properties": {
     "from": {
+     "description": "Which expression node should be used as the input for the recorded metric.",
+     "example": "A",
      "type": "string"
     },
     "metric": {
+     "description": "Name of the recorded metric.",
+     "example": "grafana_alerts_ratio",
      "type": "string"
     }
    },
-   "title": "Record defines how data produced by a recording rule is written.",
+   "required": [
+    "metric",
+    "from"
+   ],
    "type": "object"
   },
   "RelativeTimeRange": {
@@ -4580,49 +4608,6 @@
    "type": "object"
   },
   "gettableAlert": {
-   "description": "GettableAlert gettable alert",
-   "properties": {
-    "annotations": {
-     "$ref": "#/definitions/labelSet"
-    },
-    "endsAt": {
-     "description": "ends at",
-     "format": "date-time",
-     "type": "string"
-    },
-    "fingerprint": {
-     "description": "fingerprint",
-     "type": "string"
-    },
-    "generatorURL": {
-     "description": "generator URL\nFormat: uri",
-     "format": "uri",
-     "type": "string"
-    },
-    "labels": {
-     "$ref": "#/definitions/labelSet"
-    },
-    "receivers": {
-     "description": "receivers",
-     "items": {
-      "$ref": "#/definitions/receiver"
-     },
-     "type": "array"
-    },
-    "startsAt": {
-     "description": "starts at",
-     "format": "date-time",
-     "type": "string"
-    },
-    "status": {
-     "$ref": "#/definitions/alertStatus"
-    },
-    "updatedAt": {
-     "description": "updated at",
-     "format": "date-time",
-     "type": "string"
-    }
-   },
    "required": [
     "labels",
     "annotations",
@@ -4636,75 +4621,13 @@
    "type": "object"
   },
   "gettableAlerts": {
-   "description": "GettableAlerts gettable alerts",
    "items": {
     "$ref": "#/definitions/gettableAlert",
     "type": "object"
    },
    "type": "array"
   },
-  "gettableGrafanaSilence": {
-   "properties": {
-    "accessControl": {
-     "additionalProperties": {
-      "type": "boolean"
-     },
-     "example": {
-      "create": false,
-      "read": true,
-      "write": false
-     },
-     "type": "object"
-    },
-    "metadata": {
-     "$ref": "#/definitions/SilenceMetadata"
-    }
-   },
-   "type": "object"
-  },
-  "gettableGrafanaSilences": {
-   "items": {
-    "$ref": "#/definitions/gettableGrafanaSilence"
-   },
-   "type": "array"
-  },
   "gettableSilence": {
-   "description": "GettableSilence gettable silence",
-   "properties": {
-    "comment": {
-     "description": "comment",
-     "type": "string"
-    },
-    "createdBy": {
-     "description": "created by",
-     "type": "string"
-    },
-    "endsAt": {
-     "description": "ends at",
-     "format": "date-time",
-     "type": "string"
-    },
-    "id": {
-     "description": "id",
-     "type": "string"
-    },
-    "matchers": {
-     "$ref": "#/definitions/matchers"
-    },
-    "startsAt": {
-     "description": "starts at",
-     "format": "date-time",
-     "type": "string"
-    },
-    "status": {
-     "$ref": "#/definitions/silenceStatus"
-    },
-    "updatedAt": {
-     "description": "updated at",
-     "format": "date-time",
-     "type": "string"
-    }
-   },
    "required": [
     "comment",
     "createdBy",
@@ -4726,6 +4649,30 @@
    "type": "array"
   },
   "integration": {
+   "description": "Integration integration",
+   "properties": {
+    "lastNotifyAttempt": {
+     "description": "A timestamp indicating the last attempt to deliver a notification regardless of the outcome.\nFormat: date-time",
+     "format": "date-time",
+     "type": "string"
+    },
+    "lastNotifyAttemptDuration": {
+     "description": "Duration of the last attempt to deliver a notification in humanized format (`1s` or `15ms`, etc).",
+     "type": "string"
+    },
+    "lastNotifyAttemptError": {
+     "description": "Error string for the last attempt to deliver a notification. Empty if the last attempt was successful.",
+     "type": "string"
+    },
+    "name": {
+     "description": "name",
+     "type": "string"
+    },
+    "sendResolved": {
+     "description": "send resolved",
+     "type": "boolean"
+    }
+   },
    "required": [
     "name",
     "sendResolved"
@@ -4846,6 +4793,34 @@
    "type": "array"
   },
   "postableSilence": {
+   "description": "PostableSilence postable silence",
+   "properties": {
+    "comment": {
+     "description": "comment",
+     "type": "string"
+    },
+    "createdBy": {
+     "description": "created by",
+     "type": "string"
+    },
+    "endsAt": {
+     "description": "ends at",
+     "format": "date-time",
+     "type": "string"
+    },
+    "id": {
+     "description": "id",
+     "type": "string"
+    },
+    "matchers": {
+     "$ref": "#/definitions/matchers"
+    },
+    "startsAt": {
+     "description": "starts at",
+     "format": "date-time",
+     "type": "string"
+    }
+   },
    "required": [
     "comment",
     "createdBy",
@@ -4856,6 +4831,24 @@
    "type": "object"
   },
   "receiver": {
+   "description": "Receiver receiver",
+   "properties": {
+    "active": {
+     "description": "active",
+     "type": "boolean"
+    },
+    "integrations": {
+     "description": "integrations",
+     "items": {
+      "$ref": "#/definitions/integration"
+     },
+     "type": "array"
+    },
+    "name": {
+     "description": "name",
+     "type": "string"
+    }
+   },
    "required": [
     "active",
     "integrations",
@@ -7944,6 +7937,17 @@
       "name": "name",
       "required": true,
       "type": "string"
+     },
+     {
+      "description": "Version of mute timing to use for optimistic concurrency. Leave empty to disable validation",
+      "in": "query",
+      "name": "version",
+      "type": "string"
+     },
+     {
+      "in": "header",
+      "name": "X-Disable-Provenance",
+      "type": "string"
      }
     ],
     "responses": {
@@ -8026,6 +8030,12 @@
       "description": "ValidationError",
       "schema": {
        "$ref": "#/definitions/ValidationError"
+      }
+     },
+     "409": {
+      "description": "GenericPublicError",
+      "schema": {
+       "$ref": "#/definitions/GenericPublicError"
       }
      }
     },

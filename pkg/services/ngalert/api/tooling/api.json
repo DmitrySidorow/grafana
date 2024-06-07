@@ -218,6 +218,9 @@
      "format": "int64",
      "type": "integer"
     },
+    "record": {
+     "$ref": "#/definitions/AlertRuleRecordExport"
+    },
     "title": {
      "type": "string"
     },
@@ -365,6 +368,18 @@
     }
    },
    "title": "AlertRuleNotificationSettingsExport is the provisioned export of models.NotificationSettings.",
+   "type": "object"
+  },
+  "AlertRuleRecordExport": {
+   "properties": {
+    "from": {
+     "type": "string"
+    },
+    "metric": {
+     "type": "string"
+    }
+   },
+   "title": "Record is the provisioned export of models.Record.",
    "type": "object"
   },
   "AlertingFileExport": {
@@ -1700,6 +1715,9 @@
       "$ref": "#/definitions/TimeIntervalItem"
      },
      "type": "array"
+    },
+    "version": {
+     "type": "string"
     }
    },
    "type": "object"
@@ -2787,6 +2805,9 @@
       "$ref": "#/definitions/TimeIntervalItem"
      },
      "type": "array"
+    },
+    "version": {
+     "type": "string"
     }
    },
    "type": "object"
@@ -2923,6 +2944,9 @@
     },
     "provenance": {
      "$ref": "#/definitions/Provenance"
+    },
+    "record": {
+     "$ref": "#/definitions/Record"
     },
     "ruleGroup": {
      "example": "eval_group_1",
@@ -3258,13 +3282,20 @@
   "Record": {
    "properties": {
     "from": {
+     "description": "Which expression node should be used as the input for the recorded metric.",
+     "example": "A",
      "type": "string"
     },
     "metric": {
+     "description": "Name of the recorded metric.",
+     "example": "grafana_alerts_ratio",
      "type": "string"
     }
    },
-   "title": "Record defines how data produced by a recording rule is written.",
+   "required": [
+    "metric",
+    "from"
+   ],
    "type": "object"
   },
   "RelativeTimeRange": {
@@ -4452,7 +4483,6 @@
    "type": "object"
   },
   "alertGroup": {
-   "description": "AlertGroup alert group",
    "properties": {
     "alerts": {
      "description": "alerts",
@@ -4476,7 +4506,6 @@
    "type": "object"
   },
   "alertGroups": {
-   "description": "AlertGroups alert groups",
    "items": {
     "$ref": "#/definitions/alertGroup",
     "type": "object"
@@ -4627,6 +4656,42 @@
    "type": "array"
   },
   "gettableSilence": {
+   "description": "GettableSilence gettable silence",
+   "properties": {
+    "comment": {
+     "description": "comment",
+     "type": "string"
+    },
+    "createdBy": {
+     "description": "created by",
+     "type": "string"
+    },
+    "endsAt": {
+     "description": "ends at",
+     "format": "date-time",
+     "type": "string"
+    },
+    "id": {
+     "description": "id",
+     "type": "string"
+    },
+    "matchers": {
+     "$ref": "#/definitions/matchers"
+    },
+    "startsAt": {
+     "description": "starts at",
+     "format": "date-time",
+     "type": "string"
+    },
+    "status": {
+     "$ref": "#/definitions/silenceStatus"
+    },
+    "updatedAt": {
+     "description": "updated at",
+     "format": "date-time",
+     "type": "string"
+    }
+   },
    "required": [
     "comment",
     "createdBy",
@@ -4801,7 +4866,6 @@
    "type": "object"
   },
   "receiver": {
-   "description": "Receiver receiver",
    "properties": {
     "active": {
      "description": "active",
@@ -5696,6 +5760,17 @@
       "name": "name",
       "required": true,
       "type": "string"
+     },
+     {
+      "description": "Version of mute timing to use for optimistic concurrency. Leave empty to disable validation",
+      "in": "query",
+      "name": "version",
+      "type": "string"
+     },
+     {
+      "in": "header",
+      "name": "X-Disable-Provenance",
+      "type": "string"
      }
     ],
     "responses": {
@@ -5778,6 +5853,12 @@
       "description": "ValidationError",
       "schema": {
        "$ref": "#/definitions/ValidationError"
+      }
+     },
+     "409": {
+      "description": "GenericPublicError",
+      "schema": {
+       "$ref": "#/definitions/GenericPublicError"
       }
      }
     },

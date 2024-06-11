@@ -1740,10 +1740,12 @@
       "title": "Аболютный временной диапазон"
     },
     "calendar": {
-      "apply-button": "Применить временной диапазаон",
-      "cancel-button": "Отменить",
-      "close": "Закрыть календарь",
-      "select-time": "Выбрать временной диапазон"
+      "apply-button": "Apply time range",
+      "cancel-button": "Cancel",
+      "close": "Close calendar",
+      "next-month": "Next month",
+      "previous-month": "Previous month",
+      "select-time": "Select a time range"
     },
     "content": {
       "empty-recent-list-docs": "<0><0>Прочтите документацию</0><1>, чтобы узнать больше о том, как вводить пользовательские временные диапазоны.</1></0>",

@@ -83,6 +83,7 @@
       "deleting": "Удаление...",
       "manage-permissions-button": "Управление разрешениями",
       "move-button": "Переместить",
+      "delete-modal-restore-dashboards-text": "This action will delete the selected folders immediately but the selected dashboards will be marked for deletion in 30 days. You can restore the dashboards anytime before the 30 days expires. Folders cannot be restored.",
       "move-modal-alert": "Moving this item may change its permissions.",
       "move-modal-field-label": "Название папки",
       "move-modal-text": "Это действие удалит следующие данные:",
@@ -530,6 +531,12 @@
       "no-logs-found": "No logs found.",
       "scan-for-older-logs": "Scan for older logs",
       "stop-scan": "Stop scan"
+    },
+    "query-library": {
+      "delete-query": "Delete query",
+      "delete-query-text": "You're about to remove this query from the query library. This action cannot be undone. Do you want to continue?",
+      "delete-query-title": "Delete query",
+      "query-deleted": "Query deleted"
     },
     "rich-history": {
       "close-tooltip": "Close query history",
@@ -1557,6 +1564,9 @@
       "role-label": "Роль"
     }
   },
+  "query-library": {
+    "delete-query-button": "Delete query"
+  },
   "query-operation": {
     "header": {
       "collapse-row": "Collapse query row",
@@ -1573,7 +1583,16 @@
   },
   "recently-deleted": {
     "buttons": {
+      "delete": "Delete permanently",
       "restore": "Restore"
+    },
+    "permanently-delete-modal": {
+      "confirm-text": "Delete",
+      "delete-button": "Delete",
+      "delete-loading": "Deleting...",
+      "text_one": "This action will delete {{numberOfDashboards}} dashboards.",
+      "text_other": "This action will delete {{numberOfDashboards}} dashboards.",
+      "title": "Permanently Delete Dashboards"
     },
     "restore-modal": {
       "restore-button": "Restore",
@@ -1653,6 +1672,8 @@
     },
     "results-table": {
       "datasource-header": "Data source",
+      "deleted-less-than-1-min": "< 1 min",
+      "deleted-remaining-header": "Time remaining",
       "location-header": "Location",
       "name-header": "Name",
       "tags-header": "Tags",

@@ -1697,7 +1697,11 @@
     "tree": {
       "collapse": "Collapse",
       "expand": "Expand",
-      "headline": "Recommended",
+      "headline": {
+        "noResults": "No results found for your query",
+        "recommended": "Recommended",
+        "results": "Results"
+      },
       "search": "Search"
     }
   },

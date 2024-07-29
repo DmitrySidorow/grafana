@@ -12,6 +12,7 @@ const (
 	// any items with default weight.
 
 	WeightHome = (iota - 20) * 100
+	WeightBookmarks
 	WeightSavedItems
 	WeightDashboard
 	WeightExplore
@@ -48,6 +49,7 @@ const (
 	NavIDCfgGeneral           = "cfg/general"
 	NavIDCfgPlugins           = "cfg/plugins"
 	NavIDCfgAccess            = "cfg/access"
+	NavIDBookmarks            = "bookmarks"
 	NavIDCarsOnline           = "dashboards/cars-online"
 	NavIDService              = "dashboards/service"
 )
@@ -71,6 +73,7 @@ type NavLink struct {
 	PluginID       string     `json:"pluginId,omitempty"` // (Optional) The ID of the plugin that registered nav link (e.g. as a standalone plugin page)
 	IsCreateAction bool       `json:"isCreateAction,omitempty"`
 	Keywords       []string   `json:"keywords,omitempty"`
+	ParentItem     *NavLink   `json:"parentItem,omitempty"` // (Optional) The parent item of the nav link
 }
 
 func (node *NavLink) Sort() {
@@ -85,6 +88,7 @@ func (root *NavTreeRoot) AddSection(node *NavLink) {
 	root.Children = append(root.Children, node)
 }
 
+// RemoveSection removes a section from the root node. Does not recurse into children.
 func (root *NavTreeRoot) RemoveSection(node *NavLink) {
 	var result []*NavLink
 
@@ -95,6 +99,26 @@ func (root *NavTreeRoot) RemoveSection(node *NavLink) {
 	}
 
 	root.Children = result
+}
+
+// RemoveSectionByID removes a section by ID from the root node and all its children
+func (root *NavTreeRoot) RemoveSectionByID(id string) bool {
+	var result []*NavLink
+
+	for i, child := range root.Children {
+		if child.Id == id {
+			// Remove the node by slicing it out
+			result = append(root.Children[:i], root.Children[i+1:]...)
+			root.Children = result
+			return true
+		} else if len(child.Children) > 0 {
+			if removed := RemoveById(child, id); removed {
+				return true
+			}
+		}
+	}
+
+	return false
 }
 
 func (root *NavTreeRoot) FindById(id string) *NavLink {
@@ -225,4 +249,23 @@ func FindByURL(nodes []*NavLink, url string) *NavLink {
 	}
 
 	return nil
+}
+
+func RemoveById(node *NavLink, id string) bool {
+	var result []*NavLink
+
+	for i, child := range node.Children {
+		if child.Id == id {
+			// Remove the node by slicing it out
+			result = append(node.Children[:i], node.Children[i+1:]...)
+			node.Children = result
+			return true
+		} else if len(child.Children) > 0 {
+			if removed := RemoveById(child, id); removed {
+				return true
+			}
+		}
+	}
+
+	return false
 }

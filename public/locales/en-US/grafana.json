@@ -1470,6 +1470,10 @@
     }
   },
   "navigation": {
+    "item": {
+      "add-bookmark": "Add to Bookmarks",
+      "remove-bookmark": "Remove from Bookmarks"
+    },
     "kiosk": {
       "tv-alert": "Нажмите ESC для выхода из режима киоска"
     },

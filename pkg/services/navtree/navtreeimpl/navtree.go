@@ -691,26 +691,26 @@ func (s *ServiceImpl) buildCarsLinks(c *contextmodel.ReqContext) []*navtree.NavL
         Icon:     "code-branch",
     })
 
-	serviceChildNavs = append(serviceChildNavs, &navtree.NavLink{
-    	Text:     "УКВ сервис",
-    	Id:       "explore/metrics",
-        Url:      s.cfg.AppSubURL + "/d/4KHHZYEGz",
-        Icon:     "code-branch",
-    })
+// 	serviceChildNavs = append(serviceChildNavs, &navtree.NavLink{
+//     	Text:     "УКВ сервис",
+//     	Id:       "explore/metrics",
+//         Url:      s.cfg.AppSubURL + "/d/4KHHZYEGz",
+//         Icon:     "code-branch",
+//     })
+//
+// 	serviceChildNavs = append(serviceChildNavs, &navtree.NavLink{
+//     	Text:     "ДГУ",
+//     	Id:       "explore/metrics",
+//         Url:      s.cfg.AppSubURL + "/d/ac8-d6EMk",
+//         Icon:     "code-branch",
+//     })
 
-	serviceChildNavs = append(serviceChildNavs, &navtree.NavLink{
-    	Text:     "ДГУ",
-    	Id:       "explore/metrics",
-        Url:      s.cfg.AppSubURL + "/d/ac8-d6EMk",
-        Icon:     "code-branch",
-    })
-
-	serviceChildNavs = append(serviceChildNavs, &navtree.NavLink{
-    	Text:     "Журнал",
-    	Id:       "explore/metrics",
-        Url:      s.cfg.AppSubURL + "/d/rPrHZLPMk",
-        Icon:     "code-branch",
-    })
+// 	serviceChildNavs = append(serviceChildNavs, &navtree.NavLink{
+//     	Text:     "Журнал",
+//     	Id:       "explore/metrics",
+//         Url:      s.cfg.AppSubURL + "/d/rPrHZLPMk",
+//         Icon:     "code-branch",
+//     })
 
 	return serviceChildNavs
 }

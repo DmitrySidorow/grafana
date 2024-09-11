@@ -1,4 +1,6 @@
-import { SelectableValue, TimeOption } from '@grafana/data';
+import { TimeOption } from '@grafana/data';
+
+import { ComboboxOption } from '../Combobox/Combobox';
 
 export const quickOptions: TimeOption[] = [
   { from: 'now-5m', to: 'now', display: 'Последние 5 минут' },
@@ -39,7 +41,7 @@ export const quickOptions: TimeOption[] = [
   { from: 'now/fy', to: 'now/fy', display: 'Этот фискальный год' },
 ];
 
-export const monthOptions: Array<SelectableValue<number>> = [
+export const monthOptions: Array<ComboboxOption<number>> = [
   { label: 'Январь', value: 0 },
   { label: 'Февраль', value: 1 },
   { label: 'Март', value: 2 },

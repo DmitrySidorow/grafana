@@ -22,8 +22,8 @@ export function buildNavModel(team: Team): NavModelItem {
   const navModel: NavModelItem = {
     img: team.avatarUrl,
     id: 'team-' + team.id,
-    subTitle: 'Управляйте пользователями и настройками',
-    url: '',
+    subTitle: 'Управление участниками и настройками',
+    url: `org/teams/edit/${team.id}`,
     text: team.name,
     children: [
       // With RBAC this tab will always be available (but not always editable)

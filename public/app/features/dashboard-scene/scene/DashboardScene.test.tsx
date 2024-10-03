@@ -1,4 +1,4 @@
-import { CoreApp, LoadingState, getDefaultTimeRange, store } from '@grafana/data';
+import { CoreApp, GrafanaConfig, LoadingState, getDefaultTimeRange, locationUtil, store } from '@grafana/data';
 import { locationService } from '@grafana/runtime';
 import {
   sceneGraph,
@@ -59,6 +59,17 @@ jest.mock('@grafana/runtime', () => ({
       getInstanceSettings: jest.fn().mockResolvedValue({ uid: 'ds1' }),
     };
   },
+  config: {
+    ...jest.requireActual('@grafana/runtime').config,
+    angularSupportEnabled: true,
+    panels: {
+      'briangann-datatable-panel': {
+        id: 'briangann-datatable-panel',
+        state: 'deprecated',
+        angular: { detected: true, hideDeprecation: false },
+      },
+    },
+  },
 }));
 
 jest.mock('app/features/playlist/PlaylistSrv', () => ({
@@ -75,6 +86,12 @@ jest.mock('app/features/manage-dashboards/state/actions', () => ({
   ...jest.requireActual('app/features/manage-dashboards/state/actions'),
   deleteDashboard: jest.fn().mockResolvedValue({}),
 }));
+
+locationUtil.initialize({
+  config: { appSubUrl: '/subUrl' } as GrafanaConfig,
+  getVariablesUrlParams: jest.fn(),
+  getTimeRangeForUrl: jest.fn(),
+});
 
 const worker = createWorker();
 mockResultsOfDetectChangesWorker({ hasChanges: true, hasTimeChanges: false, hasVariableValueChanges: false });
@@ -134,6 +151,7 @@ describe('DashboardScene', () => {
 
       beforeEach(() => {
         scene = buildTestScene();
+        locationService.push('/d/dash-1');
         deactivateScene = scene.activate();
         scene.onEnterEditMode();
         jest.clearAllMocks();
@@ -141,6 +159,11 @@ describe('DashboardScene', () => {
 
       it('Should set isEditing to true', () => {
         expect(scene.state.isEditing).toBe(true);
+      });
+
+      it('Can exit edit mode', () => {
+        scene.exitEditMode({ skipConfirm: true });
+        expect(locationService.getLocation().pathname).toBe('/d/dash-1');
       });
 
       it('Exiting already saved dashboard should not restore initial state', () => {
@@ -812,6 +835,75 @@ describe('DashboardScene', () => {
       const restoredGrid = scene.state.body as DefaultGridLayoutManager;
       expect(scene.state.isEditing).toBe(false);
       expect(restoredGrid.state.grid.state.children.length).toBe(1);
+    });
+  });
+
+  describe('When a dashboard contain angular panels', () => {
+    it('should return true if the dashboard contains angular panels', () => {
+      // create a scene with angular panels inside
+      const scene = buildTestScene({
+        body: new DefaultGridLayoutManager({
+          grid: new SceneGridLayout({
+            children: [
+              new DashboardGridItem({
+                key: 'griditem-1',
+                x: 0,
+                body: new VizPanel({
+                  title: 'Panel A',
+                  key: 'panel-1',
+                  pluginId: 'briangann-datatable-panel',
+                  $data: new SceneQueryRunner({ key: 'data-query-runner', queries: [{ refId: 'A' }] }),
+                }),
+              }),
+              new DashboardGridItem({
+                key: 'griditem-2',
+                body: new VizPanel({
+                  title: 'Panel B',
+                  key: 'panel-2',
+                  pluginId: 'table',
+                }),
+              }),
+            ],
+          }),
+        }),
+      });
+
+      scene.activate();
+
+      expect(scene.hasDashboardAngularPlugins()).toBe(true);
+    });
+    it('should return true if the dashboard contains explicitControllerMigration panels', () => {
+      // create a scene with angular panels inside
+      const scene = buildTestScene({
+        body: new DefaultGridLayoutManager({
+          grid: new SceneGridLayout({
+            children: [
+              new DashboardGridItem({
+                key: 'griditem-1',
+                x: 0,
+                body: new VizPanel({
+                  title: 'Panel A',
+                  key: 'panel-1',
+                  pluginId: 'graph',
+                  $data: new SceneQueryRunner({ key: 'data-query-runner', queries: [{ refId: 'A' }] }),
+                }),
+              }),
+              new DashboardGridItem({
+                key: 'griditem-2',
+                body: new VizPanel({
+                  title: 'Panel B',
+                  key: 'panel-2',
+                  pluginId: 'table',
+                }),
+              }),
+            ],
+          }),
+        }),
+      });
+
+      scene.activate();
+
+      expect(scene.hasDashboardAngularPlugins()).toBe(true);
     });
   });
 });

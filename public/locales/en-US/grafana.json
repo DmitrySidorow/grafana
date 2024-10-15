@@ -1407,7 +1407,8 @@
       "dashboards": "dashboards",
       "datasources": "data sources",
       "folders": "folders",
-      "library_elements": "library elements"
+      "library_elements": "library elements",
+      "mute_timings": "mute timings"
     },
     "migration-token": {
       "delete-button": "Delete token",
@@ -1491,6 +1492,7 @@
       "datasource": "Data source",
       "folder": "Folder",
       "library_element": "Library Element",
+      "mute_timing": "Mute Timing",
       "unknown": "Unknown"
     },
     "summary": {

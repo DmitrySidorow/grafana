@@ -2887,8 +2887,10 @@
     }
   },
   "user-session": {
+    "auth-module-column": "Identity Provider",
     "browser-column": "Браузер & ОС",
     "created-at-column": "Зарегистрирован",
+    "identity-provider-column": "Identity Provider",
     "ip-column": "IP адрес",
     "revoke": "Завершить сессию",
     "seen-at-column": "Последний вход"

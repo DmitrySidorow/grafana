@@ -615,7 +615,7 @@
       "import": "Импортировать из библиотеки",
       "paste-panel": "Вставить панель",
       "row": "Строка",
-      "visualization": "Панель визуализации",
+      "visualization": "Панель визуализации"
     },
     "alert-rules-drawer": {
       "redirect-link": "List in Grafana Alerting",

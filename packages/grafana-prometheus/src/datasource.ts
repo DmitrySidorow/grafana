@@ -405,6 +405,7 @@ export class PrometheusDatasource
           ...processedTarget,
           refId: processedTarget.refId + InstantQueryRefIdIndex,
           range: false,
+          exemplar: false,
         }
       );
     } else {
@@ -619,7 +620,7 @@ export class PrometheusDatasource
   // it is used in metric_find_query.ts
   // and in Tempo here grafana/public/app/plugins/datasource/tempo/QueryEditor/ServiceGraphSection.tsx
   async getTagKeys(options: DataSourceGetTagKeysOptions<PromQuery>): Promise<MetricFindValue[]> {
-    if (config.featureToggles.promQLScope && !!options) {
+    if (config.featureToggles.promQLScope && (options?.scopes?.length ?? 0) > 0) {
       const suggestions = await this.languageProvider.fetchSuggestions(
         options.timeRange,
         options.queries,
@@ -640,7 +641,7 @@ export class PrometheusDatasource
 
     const labelFilters: QueryBuilderLabelFilter[] = options.filters.map((f) => ({
       label: f.key,
-      value: prometheusRegularEscape(f.value),
+      value: f.value,
       op: f.operator,
     }));
     const expr = promQueryModeller.renderLabels(labelFilters);
@@ -672,7 +673,7 @@ export class PrometheusDatasource
 
     const labelFilters: QueryBuilderLabelFilter[] = options.filters.map((f) => ({
       label: f.key,
-      value: prometheusRegularEscape(f.value),
+      value: f.value,
       op: f.operator,
     }));
 
@@ -1045,14 +1046,9 @@ export function extractRuleMappingFromGroups(groups: RawRecordingRules[]): RuleQ
 // in language_utils.ts, but they are not exactly the same algorithm, and we found
 // no way to reuse one in the another or vice versa.
 export function prometheusRegularEscape<T>(value: T) {
-  return typeof value === 'string' ? value.replace(/\\/g, '\\\\').replace(/"/g, '\\"') : value;
+  return typeof value === 'string' ? value.replace(/\\/g, '\\\\').replace(/'/g, "\\\\'") : value;
 }
 
 export function prometheusSpecialRegexEscape<T>(value: T) {
-  return typeof value === 'string'
-    ? value
-        .replace(/\\/g, '\\\\\\\\')
-        .replace(/"/g, '\\\\\\"')
-        .replace(/[$^*{}\[\]\'+?.()|]/g, '\\\\$&')
-    : value;
+  return typeof value === 'string' ? value.replace(/\\/g, '\\\\\\\\').replace(/[$^*{}\[\]\'+?.()|]/g, '\\\\$&') : value;
 }

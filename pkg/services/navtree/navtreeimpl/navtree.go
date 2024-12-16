@@ -266,7 +266,7 @@ func checkTeamPermission(roles []int64, role int64) (bool){
 
 func (s *ServiceImpl) getHomeNode(c *contextmodel.ReqContext, prefs *pref.Preference) *navtree.NavLink {
 	homeUrl := s.cfg.AppSubURL + "/"
-	if !c.IsSignedIn && !s.cfg.AnonymousEnabled {
+	if !c.IsSignedIn && !s.cfg.Anonymous.Enabled {
 		homeUrl = s.cfg.AppSubURL + "/login"
 	} else {
 		homePage := s.cfg.HomePage

@@ -2176,6 +2176,16 @@
     "help/documentation": "Документация",
     "help/keyboard-shortcuts": "Горячие клавиши",
     "help/support": "Поддержка",
+    "history-container": {
+      "drawer-tittle": "История"
+    },
+    "history-wrapper": {
+      "collapse": "Свернуть",
+      "expand": "Развернуть",
+      "show-more": "Показать больше",
+      "today": "Сегодня",
+      "yesterday": "Вчера"
+    },
     "home": {
       "title": "Главная"
     },

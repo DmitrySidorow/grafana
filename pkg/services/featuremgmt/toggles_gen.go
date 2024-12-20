@@ -847,13 +847,9 @@ const (
 	// Enables automatic updates for pre-installed plugins
 	FlagPreinstallAutoUpdate = "preinstallAutoUpdate"
 
-	// FlagDashboardSchemaV2
-	// Enables the new dashboard schema version 2, implementing changes necessary for dynamic dashboards and dashboards as code.
-	FlagDashboardSchemaV2 = "dashboardSchemaV2"
-
-	// FlagPlaylistsWatcher
-	// Enables experimental watcher for playlists
-	FlagPlaylistsWatcher = "playlistsWatcher"
+	// FlagPlaylistsReconciler
+	// Enables experimental reconciler for playlists
+	FlagPlaylistsReconciler = "playlistsReconciler"
 
 	// FlagPasswordlessMagicLinkAuthentication
 	// Enable passwordless login via magic link authentication
@@ -910,6 +906,10 @@ const (
 	// FlagFeedbackButton
 	// Enables a button to send feedback from the Grafana UI
 	FlagFeedbackButton = "feedbackButton"
+
+	// FlagUnifiedStorageSearchUI
+	// Enable unified storage search UI
+	FlagUnifiedStorageSearchUI = "unifiedStorageSearchUI"
 
 	// FlagElasticsearchCrossClusterSearch
 	// Enables cross cluster search in the Elasticsearch datasource

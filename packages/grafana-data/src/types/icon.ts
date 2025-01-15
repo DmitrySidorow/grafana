@@ -259,7 +259,6 @@ export const availableIconsIndex = {
   rss: true,
   x: true,
   wifi: true,
-  wrench: true,
   'tachometer-fast-alt': true,
   'bolt-alt': true,
   'add-user': true,

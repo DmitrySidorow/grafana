@@ -1,5 +1,3 @@
-import { each } from 'lodash';
-
 import { RawTimeRange, TimeRange, TimeZone, IntervalValues, RelativeTimeRange, TimeOption } from '../types/time';
 
 import * as dateMath from './datemath';
@@ -17,7 +15,7 @@ const spans: { [key: string]: { display: string; section?: number } } = {
   y: { display: 'year' },
 };
 
-const rangeOptions: TimeOption[] = [
+const BASE_RANGE_OPTIONS: TimeOption[] = [
   { from: 'now/d', to: 'now/d', display: 'Сегодня' },
   { from: 'now/d', to: 'now', display: 'Сегодня (до сих пор)' },
   { from: 'now/w', to: 'now/w', display: 'Эта неделя' },
@@ -66,33 +64,31 @@ const rangeOptions: TimeOption[] = [
   { from: 'now/fy', to: 'now/fy', display: 'Этот фискальный год' },
 ];
 
-const hiddenRangeOptions: TimeOption[] = [
+const HIDDEN_RANGE_OPTIONS: TimeOption[] = [
   { from: 'now', to: 'now+1m', display: 'Следующая минута' },
   { from: 'now', to: 'now+5m', display: 'Следующие 5 минут' },
-  { from: 'now', to: 'now+15m', display: 'Next 15 minutes' },
-  { from: 'now', to: 'now+30m', display: 'Next 30 minutes' },
-  { from: 'now', to: 'now+1h', display: 'Next hour' },
-  { from: 'now', to: 'now+3h', display: 'Next 3 hours' },
-  { from: 'now', to: 'now+6h', display: 'Next 6 hours' },
-  { from: 'now', to: 'now+12h', display: 'Next 12 hours' },
-  { from: 'now', to: 'now+24h', display: 'Next 24 hours' },
-  { from: 'now', to: 'now+2d', display: 'Next 2 days' },
-  { from: 'now', to: 'now+7d', display: 'Next 7 days' },
-  { from: 'now', to: 'now+30d', display: 'Next 30 days' },
-  { from: 'now', to: 'now+90d', display: 'Next 90 days' },
-  { from: 'now', to: 'now+6M', display: 'Next 6 months' },
-  { from: 'now', to: 'now+1y', display: 'Next year' },
-  { from: 'now', to: 'now+2y', display: 'Next 2 years' },
-  { from: 'now', to: 'now+5y', display: 'Next 5 years' },
+  { from: 'now', to: 'now+15m', display: 'Следующие 15 минут' },
+  { from: 'now', to: 'now+30m', display: 'Следующие 30 минут' },
+  { from: 'now', to: 'now+1h', display: 'Следующий час' },
+  { from: 'now', to: 'now+3h', display: 'Следующие 3 часа' },
+  { from: 'now', to: 'now+6h', display: 'Следующие 6 часа' },
+  { from: 'now', to: 'now+12h', display: 'Следующие 12 часов' },
+  { from: 'now', to: 'now+24h', display: 'Следующие 24 часов' },
+  { from: 'now', to: 'now+2d', display: 'Следующие 2 дня' },
+  { from: 'now', to: 'now+7d', display: 'Следующие 7 дней' },
+  { from: 'now', to: 'now+30d', display: 'Следующие 30 дней' },
+  { from: 'now', to: 'now+90d', display: 'Следующие 90 дней' },
+  { from: 'now', to: 'now+6M', display: 'Следующие 6 месяцев' },
+  { from: 'now', to: 'now+1y', display: 'Следующий год' },
+  { from: 'now', to: 'now+2y', display: 'Следующие 2 года' },
+  { from: 'now', to: 'now+5y', display: 'Следующие 5 года' },
 ];
 
-const rangeIndex: Record<string, TimeOption> = {};
-each(rangeOptions, (frame) => {
-  rangeIndex[frame.from + ' до ' + frame.to] = frame;
-});
-each(hiddenRangeOptions, (frame) => {
-  rangeIndex[frame.from + ' до ' + frame.to] = frame;
-});
+const STANDARD_RANGE_OPTIONS = BASE_RANGE_OPTIONS.concat(HIDDEN_RANGE_OPTIONS);
+
+function findRangeInOptions(range: RawTimeRange, options: TimeOption[]) {
+  return options.find((option) => option.from === range.from && option.to === range.to);
+}
 
 // handles expressions like
 // 5m
@@ -106,7 +102,7 @@ export function describeTextRange(expr: string): TimeOption {
     expr = (isLast ? 'now-' : 'now') + expr;
   }
 
-  let opt = rangeIndex[expr + ' to now'];
+  let opt = findRangeInOptions({ from: expr, to: 'now' }, STANDARD_RANGE_OPTIONS);
   if (opt) {
     return opt;
   }
@@ -141,17 +137,15 @@ export function describeTextRange(expr: string): TimeOption {
 /**
  * Use this function to get a properly formatted string representation of a {@link @grafana/data:RawTimeRange | range}.
  *
- * @example
- * ```
- * // Prints "2":
- * console.log(add(1,1));
- * ```
  * @category TimeUtils
  * @param range - a time range (usually specified by the TimePicker)
+ * @param timeZone - optional time zone.
+ * @param quickRanges - optional dashboard's custom quick ranges to pick range names from.
  * @alpha
  */
-export function describeTimeRange(range: RawTimeRange, timeZone?: TimeZone): string {
-  const option = rangeIndex[range.from.toString() + ' до ' + range.to.toString()];
+export function describeTimeRange(range: RawTimeRange, timeZone?: TimeZone, quickRanges?: TimeOption[]): string {
+  const rangeOptions = quickRanges ? quickRanges.concat(STANDARD_RANGE_OPTIONS) : STANDARD_RANGE_OPTIONS;
+  const option = findRangeInOptions(range, rangeOptions);
 
   if (option) {
     return option.display;
@@ -273,14 +267,14 @@ export function msRangeToTimeString(rangeMs: number): string {
   const h = Math.floor(rangeSec / 60 / 60);
   const m = Math.floor(rangeSec / 60) - h * 60;
   const s = Number((rangeSec % 60).toFixed());
-  let formattedH = h ? h + 'h' : '';
-  let formattedM = m ? m + 'min' : '';
-  let formattedS = s ? s + 'sec' : '';
+  let formattedH = h ? h + 'ч.' : '';
+  let formattedM = m ? m + 'мин.' : '';
+  let formattedS = s ? s + 'сек.' : '';
 
   formattedH && formattedM ? (formattedH = formattedH + ' ') : (formattedH = formattedH);
   (formattedM || formattedH) && formattedS ? (formattedM = formattedM + ' ') : (formattedM = formattedM);
 
-  return formattedH + formattedM + formattedS || 'less than 1sec';
+  return formattedH + formattedM + formattedS || 'меньше 1 с.';
 }
 
 export function calculateInterval(range: TimeRange, resolution: number, lowLimitInterval?: string): IntervalValues {

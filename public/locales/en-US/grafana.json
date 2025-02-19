@@ -2534,6 +2534,8 @@
       "drawer-tittle": "История"
     },
     "history-wrapper": {
+      "icon-selected": "Selected Entry",
+      "icon-unselected": "Normal Entry",
       "collapse": "Свернуть",
       "expand": "Развернуть",
       "show-more": "Показать больше",

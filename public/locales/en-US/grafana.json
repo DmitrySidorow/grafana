@@ -1337,6 +1337,12 @@
       "time-zone-label": "Часовой пояс",
       "week-start-label": "Начало недели"
     },
+    "time-regions": {
+      "advanced-description-cron": "Cron syntax",
+      "advanced-description-rest": " to define a recurrence schedule and duration",
+      "advanced-description-use": "Use ",
+      "advanced-label": "Advanced"
+    },
     "variables": {
       "title": "Переменные"
     },
@@ -1419,6 +1425,11 @@
   },
   "explore": {
     "add-to-dashboard": "Add to dashboard",
+    "drilldownInfo": {
+      "action": "Go to Grafana Drilldown",
+      "description": "Looking for the Grafana Explore apps? They are now called the Grafana Drilldown apps and can be found under <1>Menu > Drilldown</1>",
+      "title": "Explore Metrics, Logs, Traces and Profiles have moved!"
+    },
     "logs": {
       "logs-volume": {
         "add-filters": "Add more labels to your query to narrow down your search.",
@@ -2499,6 +2510,9 @@
     "detect": {
       "title": "Detect"
     },
+    "drilldown": {
+      "title": "Drilldown"
+    },
     "explore": {
       "title": "Explore"
     },
@@ -2711,6 +2725,7 @@
       "tv-alert": "Нажмите ESC для выхода из режима киоска"
     },
     "megamenu": {
+      "new": "Новый!",
       "close": "Закрыть меню",
       "dock": "Закрепить меню",
       "list-label": "Навигация",

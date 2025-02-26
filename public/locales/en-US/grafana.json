@@ -1750,6 +1750,12 @@
     "drawer": {
       "close": "Закрыть"
     },
+    "feature-badge": {
+      "experimental": "Experimental",
+      "new": "New!",
+      "preview": "Preview",
+      "private-preview": "Private preview"
+    },
     "field-link-list": {
       "external-links-heading": "External links"
     },

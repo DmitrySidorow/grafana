@@ -3,6 +3,7 @@ import { ReactElement, useCallback } from 'react';
 
 import { selectors } from '@grafana/e2e-selectors';
 
+import { t } from '../../utils/i18n';
 import { Dropdown } from '../Dropdown/Dropdown';
 import { ToolbarButton } from '../ToolbarButton';
 import { TooltipPlacement } from '../Tooltip';
@@ -40,8 +41,8 @@ export function PanelMenu({
   return (
     <Dropdown overlay={menu} placement={placement} offset={offset} onVisibleChange={handleVisibility}>
       <ToolbarButton
-        aria-label={`Menu for panel with ${title ? `title ${title}` : 'no title'}`}
-        title="Меню"
+        aria-label={t('grafana-ui.panel-menu.label', 'Меню панели {{ title }}', { title: title ?? 'Без названия' })}
+        title={t('grafana-ui.panel-menu.title', 'Меню')}
         icon="ellipsis-v"
         iconSize="md"
         narrow

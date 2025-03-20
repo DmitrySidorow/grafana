@@ -103,7 +103,12 @@ export const TeamList = ({
           }
 
           return (
-            <TextLink color="primary" inline={false} href={`/org/teams/edit/${original.uid}`} title="Edit team">
+            <TextLink
+              color="primary"
+              inline={false}
+              href={`/org/teams/edit/${original.uid}`}
+              title={t('teams.team-list.columns.title-edit-team', 'Edit team')}
+            >
               {value}
             </TextLink>
           );
@@ -209,7 +214,7 @@ export const TeamList = ({
       actions={
         !noTeams ? (
           <LinkButton href={canCreate ? 'org/teams/new' : '#'} disabled={!canCreate}>
-            Новая команда
+            <Trans i18nKey="teams.team-list.new-team">Новая команда</Trans>
           </LinkButton>
         ) : undefined
       }
@@ -220,7 +225,7 @@ export const TeamList = ({
             variant="call-to-action"
             button={
               <LinkButton disabled={!canCreate} href="org/teams/new" icon="users-alt" size="lg">
-                <Trans i18nKey="teams.empty-state.button-title">New team</Trans>
+                <Trans i18nKey="teams.empty-state.button-title">Новая команда</Trans>
               </LinkButton>
             }
             message={t('teams.empty-state.title', "You haven't created any teams yet")}
@@ -236,7 +241,11 @@ export const TeamList = ({
           <>
             <div className="page-action-bar">
               <InlineField grow>
-                <FilterInput placeholder="Search teams" value={query} onChange={changeQuery} />
+                <FilterInput
+                  placeholder={t('teams.team-list.placeholder-search-teams', 'Search teams')}
+                  value={query}
+                  onChange={changeQuery}
+                />
               </InlineField>
             </div>
             {hasFetched && teams.length === 0 ? (

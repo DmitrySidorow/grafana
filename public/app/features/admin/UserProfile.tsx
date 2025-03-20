@@ -90,30 +90,34 @@ export function UserProfile({
         <div>
           <table className="filter-table form-inline">
             <tbody>
-              <UserProfileRow label="Numerical identifier" value={user.id.toString()} locked={true} />
               <UserProfileRow
-                label="ФИО"
+                label={t('admin.user-profile.label-numerical-identifier', 'ID')}
+                value={user.id.toString()}
+                locked={true}
+              />
+              <UserProfileRow
+                label={t('admin.user-profile.label-name', 'ФИО')}
                 value={user.name}
                 locked={editLocked}
                 lockMessage={lockMessage}
                 onChange={onUserNameChange}
               />
               <UserProfileRow
-                label="Email"
+                label={t('admin.user-profile.label-email', 'Email')}
                 value={user.email}
                 locked={editLocked}
                 lockMessage={lockMessage}
                 onChange={onUserEmailChange}
               />
               <UserProfileRow
-                label="Логин"
+                label={t('admin.user-profile.label-username', 'Логин')}
                 value={user.login}
                 locked={editLocked}
                 lockMessage={lockMessage}
                 onChange={onUserLoginChange}
               />
               <UserProfileRow
-                label="Пароль"
+                label={t('admin.user-profile.label-password', 'Пароль')}
                 value="********"
                 inputType="password"
                 locked={passwordChangeLocked}
@@ -131,7 +135,7 @@ export function UserProfile({
               </Button>
               <ConfirmModal
                 isOpen={showDeleteModal}
-                title="Удаление пользователя"
+                title={t('admin.user-profile.title-delete-user', 'Удаление пользователя')}
                 body="Вы уверены, что хотите удалить этого пользователя?"
                 confirmText="Удалить пользователя"
                 onConfirm={handleUserDelete}
@@ -151,7 +155,7 @@ export function UserProfile({
               </Button>
               <ConfirmModal
                 isOpen={showDisableModal}
-                title="Отключение пользователя"
+                title={t('admin.user-profile.title-disable-user', 'Отключение пользователя')}
                 body="Вы уверены, что хотите отключить этого пользователя?"
                 confirmText="Отключить пользователя"
                 onConfirm={handleUserDisable}

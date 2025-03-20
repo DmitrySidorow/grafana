@@ -6,7 +6,7 @@ import { NavModelItem } from '@grafana/data';
 import { getBackendSrv } from '@grafana/runtime';
 import { Button, Input, Field } from '@grafana/ui';
 import { Page } from 'app/core/components/Page/Page';
-import { Trans } from 'app/core/internationalization';
+import { Trans, t } from 'app/core/internationalization';
 
 interface UserDTO {
   name: string;
@@ -45,19 +45,24 @@ const UserCreatePage = () => {
     <Page navId="global-users" pageNav={pageNav}>
       <Page.Contents>
         <form onSubmit={handleSubmit(onSubmit)} style={{ maxWidth: '600px' }}>
-          <Field label="ФИО" required invalid={!!errors.name} error={errors.name ? 'Требуется имя' : undefined}>
+          <Field
+            label={t('admin.user-create-page.label-name', 'ФИО')}
+            required
+            invalid={!!errors.name}
+            error={errors.name ? 'Требуется имя' : undefined}
+          >
             <Input id="name-input" {...register('name', { required: true })} />
           </Field>
 
-          <Field label="Email">
+          <Field label={t('admin.user-create-page.label-email', 'Email')}>
             <Input id="email-input" {...register('email')} />
           </Field>
 
-          <Field label="Логин">
+          <Field label={t('admin.user-create-page.label-username', 'Логин')}>
             <Input id="username-input" {...register('login')} />
           </Field>
           <Field
-            label="Пароль"
+            label={t('admin.user-create-page.label-password', 'Пароль')}
             required
             invalid={!!errors.password}
             error={errors.password ? 'Требуется пароль и он должен содержать как минимум 4 символа' : undefined}

@@ -69,20 +69,20 @@ export default function UserListPage() {
       {showAdminAndOrgTabs ? (
         <TabsBar className={styles.tabsMargin}>
           <Tab
-            label="Все пользователи"
+            label={t('admin.user-list-page.label-all-users', 'Все пользователи')}
             active={view === TabView.ADMIN}
             onChangeTab={() => setView(TabView.ADMIN)}
             data-testid={selectors.tabs.allUsers}
           />
           <Tab
-            label="Организации пользователей"
+            label={t('admin.user-list-page.label-organization-users', 'Организации пользователей')}
             active={view === TabView.ORG}
             onChangeTab={() => setView(TabView.ORG)}
             data-testid={selectors.tabs.orgUsers}
           />
           {config.anonymousEnabled && (
             <Tab
-              label="Anonymous devices"
+              label={t('admin.user-list-page.label-anonymous-devices', 'Anonymous devices')}
               active={view === TabView.ANON}
               onChangeTab={() => setView(TabView.ANON)}
               data-testid={selectors.tabs.anonUserDevices}
@@ -94,7 +94,7 @@ export default function UserListPage() {
         isEmailSharingEnabled() && (
           <TabsBar className={styles.tabsMargin}>
             <Tab
-              label="Пользователи"
+              label={t('admin.user-list-page.label-users', 'Пользователи')}
               active={view === TabView.ORG}
               onChangeTab={() => setView(TabView.ORG)}
               data-testid={selectors.tabs.users}

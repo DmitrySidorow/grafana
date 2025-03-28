@@ -24,7 +24,7 @@ import (
 	"github.com/grafana/grafana/pkg/services/supportbundles/supportbundlesimpl"
 	"github.com/grafana/grafana/pkg/setting"
 
-	"github.com/open-feature/go-sdk/openfeature"
+// 	"github.com/open-feature/go-sdk/openfeature"
 )
 
 type ServiceImpl struct {

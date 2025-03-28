@@ -84,7 +84,7 @@ func ProvideService(cfg *setting.Cfg, accessControl ac.AccessControl, pluginStor
 func (s *ServiceImpl) GetNavTree(c *contextmodel.ReqContext, prefs *pref.Preference) (*navtree.NavTreeRoot, error) {
 	hasAccess := ac.HasAccess(s.accessControl, c)
 	treeRoot := &navtree.NavTreeRoot{}
-	ctx := c.Req.Context()
+// 	ctx := c.Req.Context()
 
 	treeRoot.AddSection(s.getHomeNode(c, prefs))
 

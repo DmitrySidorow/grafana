@@ -5131,7 +5131,8 @@
       "week-start-label": "Начало недели"
     },
     "theme": {
-      "default-label": "По умолчанию"
+      "default-label": "По умолчанию",
+      "experimental": "Experimental"
     },
     "title": "Предпочтения"
   },

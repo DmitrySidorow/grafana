@@ -703,7 +703,8 @@ export interface FeatureToggles {
   */
   ssoSettingsLDAP?: boolean;
   /**
-  * Throws an error if a datasource has an invalid UIDs
+  * Throws an error if a data source has an invalid UIDs
+  * @default true
   */
   failWrongDSUID?: boolean;
   /**
@@ -1001,6 +1002,10 @@ export interface FeatureToggles {
   */
   alertingJiraIntegration?: boolean;
   /**
+  * Use the scopes navigation endpoint instead of the dashboardbindings endpoint
+  */
+  useScopesNavigationEndpoint?: boolean;
+  /**
   * Enables the alert rule version history restore feature
   * @default true
   */
@@ -1046,6 +1051,10 @@ export interface FeatureToggles {
   * Enables the unified storage history pruner
   */
   unifiedStorageHistoryPruner?: boolean;
+  /**
+  * Specify the locale so we can show the correct format for numbers and dates
+  */
+  localeFormatPreference?: boolean;
   /**
   * Enables the unified storage grpc connection pool
   */

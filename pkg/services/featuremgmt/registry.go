@@ -1208,9 +1208,10 @@ var (
 		},
 		{
 			Name:        "failWrongDSUID",
-			Description: "Throws an error if a datasource has an invalid UIDs",
-			Stage:       FeatureStageExperimental,
+			Description: "Throws an error if a data source has an invalid UIDs",
+			Stage:       FeatureStageGeneralAvailability,
 			Owner:       grafanaPluginsPlatformSquad,
+			Expression:  "true", // enabled by default
 		},
 		{
 			Name:              "zanzana",
@@ -1651,7 +1652,7 @@ var (
 			Description:     "Use the externalized Grafana Metrics Drilldown (formerly known as Explore Metrics) app plugin",
 			Stage:           FeatureStagePublicPreview,
 			Owner:           grafanaObservabilityMetricsSquad,
-			FrontendOnly:    true,
+			FrontendOnly:    false,
 			RequiresRestart: true,
 		},
 		{
@@ -1705,6 +1706,14 @@ var (
 			Description:  "Enables the new Jira integration for contact points in cloud alert managers.",
 			Stage:        FeatureStageExperimental,
 			Owner:        grafanaAlertingSquad,
+			FrontendOnly: true,
+			HideFromDocs: true,
+		},
+		{
+			Name:         "useScopesNavigationEndpoint",
+			Description:  "Use the scopes navigation endpoint instead of the dashboardbindings endpoint",
+			Stage:        FeatureStageExperimental,
+			Owner:        grafanaFrontendPlatformSquad,
 			FrontendOnly: true,
 			HideFromDocs: true,
 		},
@@ -1799,6 +1808,12 @@ var (
 			Owner:             grafanaSearchAndStorageSquad,
 			HideFromAdminPage: true,
 			HideFromDocs:      true,
+		},
+		{
+			Name:        "localeFormatPreference",
+			Description: "Specify the locale so we can show the correct format for numbers and dates",
+			Stage:       FeatureStageExperimental,
+			Owner:       grafanaFrontendPlatformSquad,
 		},
 		{
 			Name:              "unifiedStorageGrpcConnectionPool",

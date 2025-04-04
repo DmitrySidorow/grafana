@@ -6,6 +6,7 @@ import { selectors } from '@grafana/e2e-selectors';
 import { config } from '@grafana/runtime';
 import { Dashboard } from '@grafana/schema';
 import { Button, Checkbox, TextArea, useStyles2, Stack } from '@grafana/ui';
+import { t, Trans } from 'app/core/internationalization';
 import { DashboardModel } from 'app/features/dashboard/state/DashboardModel';
 import { SaveDashboardResponseDTO } from 'app/types';
 
@@ -72,7 +73,10 @@ export const SaveDashboardForm = ({
                 saveTimerange: !options.saveTimerange,
               })
             }
-            label="Сохранить текущий временной диапазон по умолчанию"
+            label={t(
+              'dashboard.save-dashboard-form.label-current-range-dashboard-default',
+              'Сохранить текущий временной диапазон по умолчанию'
+            )}
             aria-label={selectors.pages.SaveDashboardModal.saveTimerange}
           />
         )}
@@ -85,7 +89,10 @@ export const SaveDashboardForm = ({
                 saveVariables: !options.saveVariables,
               })
             }
-            label="Сохранить текущие переменные по умолчанию"
+            label={t(
+              'dashboard.save-dashboard-form.label-current-variable-values-dashboard-default',
+              'Сохранить текущие переменные по умолчанию'
+            )}
             aria-label={selectors.pages.SaveDashboardModal.saveVariables}
           />
         )}
@@ -104,7 +111,6 @@ export const SaveDashboardForm = ({
             />
           )}
           <TextArea
-            aria-label="message"
             value={message}
             onChange={(e) => {
               onOptionsChange({
@@ -113,7 +119,10 @@ export const SaveDashboardForm = ({
               });
               setMessage(e.currentTarget.value);
             }}
-            placeholder="Добавьте описание изменений."
+            placeholder={t(
+              'dashboard.save-dashboard-form.placeholder-describe-changes',
+              'Добавьте описание изменений.'
+            )}
             autoFocus
             rows={5}
           />
@@ -121,7 +130,7 @@ export const SaveDashboardForm = ({
 
         <Stack alignItems="center">
           <Button variant="secondary" onClick={onCancel} fill="outline">
-            Отмена
+            <Trans i18nKey="dashboard.save-dashboard-form.cancel">Отмена</Trans>
           </Button>
           <Button
             type="submit"
@@ -131,7 +140,11 @@ export const SaveDashboardForm = ({
           >
             {isLoading ? 'Сохранение...' : 'Сохранить'}
           </Button>
-          {!saveModel.hasChanges && <div>Нет изменений для сохранения</div>}
+          {!saveModel.hasChanges && (
+            <div>
+              <Trans i18nKey="dashboard.save-dashboard-form.no-changes-to-save">Нет изменений для сохранения</Trans>
+            </div>
+          )}
         </Stack>
       </Stack>
     </form>

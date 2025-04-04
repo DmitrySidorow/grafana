@@ -5,6 +5,7 @@ import { memo, useContext, useEffect, useMemo } from 'react';
 import { locationService } from '@grafana/runtime';
 import { ModalsContext, Modal, Button, useStyles2 } from '@grafana/ui';
 import { Prompt } from 'app/core/components/FormPrompt/Prompt';
+import { t, Trans } from 'app/core/internationalization';
 import { contextSrv } from 'app/core/services/context_srv';
 
 import { SaveLibraryVizPanelModal } from '../panel-edit/SaveLibraryVizPanelModal';
@@ -124,20 +125,24 @@ export const UnsavedChangesModal = ({ onDiscard, onDismiss, onSaveDashboardClick
   return (
     <Modal
       isOpen={true}
-      title="Несохраненные изменения"
+      title={t('dashboard-scene.unsaved-changes-modal.title-unsaved-changes', 'Несохраненные изменения')}
       onDismiss={onDismiss}
       icon="exclamation-triangle"
       className={styles.modal}
     >
-      <h5>Вы хотите сохранить изменения?</h5>
+      <h5>
+        <Trans i18nKey="dashboard-scene.unsaved-changes-modal.changes">Вы хотите сохранить изменения?</Trans>
+      </h5>
       <Modal.ButtonRow>
         <Button variant="secondary" onClick={onDismiss} fill="outline">
-          Отмена
+          <Trans i18nKey="dashboard-scene.unsaved-changes-modal.cancel">Отмена</Trans>
         </Button>
         <Button variant="destructive" onClick={onDiscard}>
-          Отказаться
+          <Trans i18nKey="dashboard-scene.unsaved-changes-modal.discard">Отказаться</Trans>
         </Button>
-        <Button onClick={onSaveDashboardClick}>Сохранить дашборд</Button>
+        <Button onClick={onSaveDashboardClick}>
+          <Trans i18nKey="dashboard-scene.unsaved-changes-modal.save-dashboard">Сохранить дашборд</Trans>
+        </Button>
       </Modal.ButtonRow>
     </Modal>
   );

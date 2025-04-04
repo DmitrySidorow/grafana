@@ -1,6 +1,7 @@
 import { selectors } from '@grafana/e2e-selectors';
 import { reportInteraction } from '@grafana/runtime';
 import { Button, ButtonVariant, ComponentSize, ModalsController } from '@grafana/ui';
+import { Trans } from 'app/core/internationalization';
 import { DashboardModel } from 'app/features/dashboard/state/DashboardModel';
 
 import { SaveDashboardDrawer } from './SaveDashboardDrawer';
@@ -28,7 +29,7 @@ export const SaveDashboardButton = ({ dashboard, onSaveSuccess, size }: SaveDash
             }}
             aria-label={selectors.pages.Dashboard.Settings.General.saveDashBoard}
           >
-            Сохранить дашборд
+            <Trans i18nKey="dashboard.save-dashboard-button.save-dashboard">Сохранить дашборд</Trans>
           </Button>
         );
       }}
@@ -58,7 +59,7 @@ export const SaveDashboardAsButton = ({ dashboard, onClick, onSaveSuccess, varia
             variant={variant}
             aria-label={selectors.pages.Dashboard.Settings.General.saveAsDashBoard}
           >
-            Сохранить как
+            <Trans i18nKey="dashboard.save-dashboard-as-button.save-as">Сохранить как</Trans>
           </Button>
         );
       }}

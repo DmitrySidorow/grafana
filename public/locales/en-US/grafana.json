@@ -1048,6 +1048,12 @@
       "alert-rules": "Alert rules",
       "confirm-modal": {
         "confirm": "Yes, import",
+        "no-rules-body": "There are no rules to import. Please select a different namespace or rule group.",
+        "no-rules-title": "No rules to import",
+        "plugin-rules-warning": {
+          "text": "We have detected that some rules are managed by plugins. These rules will not be imported.",
+          "title": "Some rules are excluded from import"
+        },
         "title": "Confirm import"
       },
       "datasource": {
@@ -3137,7 +3143,6 @@
         "tooltip": "Поделиться дашбордом"
       },
       "share-button": "Поделиться",
-      "switch-old-dashboard": "Switch to old dashboard page",
       "unlink-library-panel": "Unlink library panel",
       "unmark-favorite": "Убрать из избранного"
     },
@@ -5430,6 +5435,7 @@
       "errored-resource-count": "Errors",
       "page-loading": "Loading...",
       "rebuild-snapshot": "Rebuild snapshot",
+      "show-errors": "Only view errors",
       "snapshot-date": "Snapshot timestamp",
       "snapshot-not-created": "Not yet created",
       "start-migration": "Build snapshot",
@@ -5831,7 +5837,6 @@
       "remove-bookmark": "Remove from Bookmarks"
     },
     "kiosk": {
-      "tooltip": "Включить режим киоска",
       "tv-alert": "Нажмите ESC для выхода из режима киоска"
     },
     "megamenu": {
@@ -6230,6 +6235,7 @@
       "strong-password-validation-register": "Пароль"
     },
     "change-theme": "Change theme",
+    "enable-kiosk-mode": "Enable kiosk mode",
     "user-organizations": {
       "text-loading-organizations": "Loading organizations..."
     },

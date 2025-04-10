@@ -2775,13 +2775,18 @@
     "edit-pane": {
       "elements": {
         "dashboard": "Dashboard",
+        "multiple-elements": "Multiple elements",
+        "multiple-elements-delete-text": "Are you sure you want to delete these elements?",
+        "multiple-panels": "Multiple panels",
+        "multiple-panels-delete-text": "Are you sure you want to delete these panels? All queries will be removed.",
         "objects": "Objects",
         "panel": "Panel",
         "panels": "Panels",
         "row": "Row",
         "rows": "Rows",
         "tab": "Tab",
-        "tabs": "Tabs"
+        "tabs": "Tabs",
+        "variable": "Variable"
       },
       "open": "Open options pane",
       "row": {
@@ -2972,6 +2977,9 @@
       "title-row-options": "Row options"
     },
     "rows-layout": {
+      "delete-row-text": "Deleting this row will also remove all panels. Are you sure you want to continue?",
+      "delete-row-title": "Delete row?",
+      "delete-row-yes": "Delete",
       "description": "Collapsable panel groups with headings",
       "header-hidden-tooltip": "Row header only visible in edit mode",
       "name": "Rows",
@@ -3046,6 +3054,9 @@
       "aria-label-template-variables": "Template variables"
     },
     "tabs-layout": {
+      "delete-tab-text": "Deleting this tab will also remove all panels. Are you sure you want to continue?",
+      "delete-tab-title": "Delete tab?",
+      "delete-tab-yes": "Delete",
       "description": "Organize panels into horizontal tabs",
       "name": "Tabs",
       "tab": {
@@ -3256,6 +3267,9 @@
       "title-close": "Close"
     },
     "viz-panel": {
+      "delete-panel-text": "Deleting this panel will also remove all queries. Are you sure you want to continue?",
+      "delete-panel-title": "Delete panel?",
+      "delete-panel-yes": "Delete",
       "options": {
         "configure-button-tooltip": "Edit queries and visualization options",
         "description": "Описание",
@@ -3624,13 +3638,19 @@
       "aria-label-variable-editor-form": "Variable editor form",
       "back-to-list": "Back to list",
       "delete": "Delete",
+      "description": "Description",
       "description-optional-display-name": "Optional display name",
       "description-template-variable-characters": "The name of the template variable. (Max. 50 characters)",
       "general": "General",
+      "label": "Label",
+      "name": "Name",
+      "open-editor": "Open variable editor",
+      "open-editor-tooltip": "For more variable options open variable editor",
       "placeholder-descriptive-text": "Descriptive text",
       "placeholder-label-name": "Label name",
       "placeholder-variable-name": "Variable name",
-      "text-running-query": "Running query..."
+      "text-running-query": "Running query...",
+      "type": "Type"
     },
     "variable-editor-list": {
       "definition": "Definition",
@@ -3643,7 +3663,7 @@
       "tooltip-remove-variable": "Remove variable"
     },
     "variable-hide-select": {
-      "label-show-on-dashboard": "Show on dashboard"
+      "label": "Hide"
     },
     "variable-usages-button": {
       "title-show-usages": "Showing usages for: {{variableId}}",
@@ -5832,7 +5852,7 @@
       "title": "Scenes"
     },
     "search": {
-      "placeholderCommandPalette": "Найти или перейти к..."
+      "placeholderCommandPalette": "Найти..."
     },
     "search-dashboards": {
       "title": "Поиск дашбордов"
@@ -7421,6 +7441,11 @@
   },
   "shared-preferences": {
     "fields": {
+      "language-preference-label": "Язык",
+      "language-preference-placeholder": "Выберите язык",
+      "locale-preference-description": "Choose your region to see the corresponding date, time, and number format",
+      "locale-preference-label": "Region format",
+      "locale-preference-placeholder": "Choose region",
       "theme-description": "Enjoying the experimental themes? Tell us what you'd like to see <2>here.</2>",
       "home-dashboard-label": "Домашний дашборд",
       "home-dashboard-placeholder": "Дашборд по умолчанию",

@@ -138,7 +138,9 @@ export const SaveDashboardForm = ({
             icon={saving ? 'spinner' : undefined}
             aria-label={selectors.pages.SaveDashboardModal.save}
           >
-            {isLoading ? 'Сохранение...' : 'Сохранить'}
+            {isLoading
+              ? t('dashboard.save-dashboard-form.saving', 'Сохранение...')
+              : t('dashboard.save-dashboard-form.save', 'Сохранить')}
           </Button>
           {!saveModel.hasChanges && (
             <div>

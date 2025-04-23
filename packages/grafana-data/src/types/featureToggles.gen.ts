@@ -762,11 +762,6 @@ export interface FeatureToggles {
   */
   timeRangeProvider?: boolean;
   /**
-  * Use new **Combobox** component for Prometheus query editor
-  * @default true
-  */
-  prometheusUsesCombobox?: boolean;
-  /**
   * Disables the log limit restriction for Azure Monitor when true. The limit is enabled by default.
   * @default false
   */
@@ -1030,4 +1025,9 @@ export interface FeatureToggles {
   * Enables the alerting list view v2 preview toggle
   */
   alertingListViewV2PreviewToggle?: boolean;
+  /**
+  * Use FiredAt for StartsAt when sending alerts to Alertmaanger
+  * @default false
+  */
+  alertRuleUseFiredAtForStartsAt?: boolean;
 }

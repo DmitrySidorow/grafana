@@ -410,7 +410,6 @@
       "action-buttons": {
         "delete": "Delete",
         "edit-yaml": "Edit YAML",
-        "save": "Save rule",
         "save-exit": "Save rule and exit"
       },
       "title-delete-rule": "Delete rule"
@@ -1729,7 +1728,7 @@
       "min-interval": "Min. Interval = {{minInterval}}"
     },
     "query-preview": {
-      "relative-time-range": "{{from}} to now"
+      "relative-time-range": "<0>{{from}}</0> to now"
     },
     "queryAndExpressionsStep": {
       "disableAdvancedOptions": {
@@ -3173,6 +3172,7 @@
     "edit-pane": {
       "elements": {
         "dashboard": "Dashboard",
+        "local-variable": "Local variable",
         "multiple-elements": "Multiple elements",
         "multiple-elements-delete-text": "Are you sure you want to delete these elements?",
         "multiple-panels": "Multiple panels",
@@ -4290,7 +4290,7 @@
       "hide-time-picker": "Скрыть выбор интервалов",
       "now-delay-description": "Exclude recent data that may be incomplete.",
       "now-delay-label": "Now delay",
-      "refresh-live-dashboards-description": "Continuously re-draw panels where the time range references 'now'",
+      "refresh-live-dashboards-description": "Continuously update panels when the time range includes the current time",
       "refresh-live-dashboards-label": "Refresh live dashboards",
       "time-options-label": "Настройки времени",
       "time-zone-label": "Часовой пояс",
@@ -4740,9 +4740,6 @@
     "logs-volumne-panel-list": {
       "body-no-logs-volume-available": "No volume information available for the current queries and time range."
     },
-    "make-datasource-setup": {
-      "aria-label-query": "query"
-    },
     "next": "Next",
     "next-prev-result": {
       "aria-label-next": "Next result button",
@@ -4864,8 +4861,6 @@
     "rich-history-utils": {
       "a-week-ago": "неделю назад",
       "days-ago": "{{num}} дней назад",
-      "default-from": "час назад",
-      "default-to": "сейчас",
       "today": "сегодня",
       "two-weeks-ago": "2 недели назад",
       "yesterday": "вчера"
@@ -8530,15 +8525,11 @@
       "apply": "Применить временной диапазон",
       "aria-role": "Выбор временного диапазона",
       "default-title": "Временные диапазаоны",
-      "example": "Example: to select a time range from 10 minutes ago to now",
-      "example-details": "From: now-10m To: now",
-      "from-label": "От",
-      "submit-button-label": "TimePicker submit button",
       "example-title": "Примеры временных диапазонов",
+      "from-label": "От",
       "from-to": "{{timeOptionFrom}} до {{timeOptionTo}}",
-      "more-info": "For more information see <2>docs <1></1></2>.",
-      "specify": "Укажите временной диапазон <1></1>",
-      "supported-formats": "Поддерживаемые форматы: <1>now-[digit]s/m/h/d/w</1>",
+      "specify": "Укажите временной диапазон",
+      "submit-button-label": "TimePicker submit button",
       "to-label": "До"
     },
     "zone": {

@@ -6390,7 +6390,7 @@
     "run-query": {
       "left-pane": "Левая область",
       "right-pane": "Правая область",
-      "run-query-button": "Выполнить запрос",
+      "run-query-button": "Запрос",
       "switch-datasource-button": "Переключить источник данных и выполнить запрос"
     },
     "scoped-vars-from-span": {
@@ -6531,7 +6531,7 @@
       "copy-shortened-link-label": "Общий доступ",
       "copy-shortened-link-menu": "Открыть параметры копирования ссылок",
       "refresh-picker-cancel": "Отмена",
-      "refresh-picker-run": "Выполнить запрос",
+      "refresh-picker-run": "Запрос",
       "split-close": "Закрыть ",
       "split-close-tooltip": "Закрыть разделенную область",
       "split-narrow": "Сузить область",
@@ -11262,7 +11262,7 @@
       "placeholder-descriptive-text": "Поясняющий текст",
       "placeholder-label-name": "Название метки",
       "placeholder-variable-name": "Название переменной",
-      "run-query": "Выполнить запрос"
+      "run-query": "Запрос"
     },
     "variable-editor-list": {
       "definition": "Определение",
@@ -11301,7 +11301,7 @@
   "welcome": {
     "welcome-banner": {
       "need-help": "Нужна помощь?",
-      "welcome-to-grafana": ""
+      "welcome-to-grafana": "Система мониторинга вагонов"
     }
   },
   "xychart": {

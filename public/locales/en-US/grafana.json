@@ -4045,6 +4045,9 @@
         "title": "Row options"
       }
     },
+    "description": {
+      "action": "Change dashboard description"
+    },
     "dynamic-config-value-editor": {
       "render-label": {
         "tooltip-remove-property": "Remove property"
@@ -4535,7 +4538,10 @@
     },
     "save-dashboard-drawer": {
       "label-changes": "Changes",
-      "label-details": "Details"
+      "label-details": "Details",
+      "title": "Save dashboard",
+      "title-copy": "Save dashboard copy",
+      "title-provisioned": "Provisioned dashboard"
     },
     "save-dashboard-error-proxy": {
       "body-name-exists": "A dashboard with the same name in selected folder already exists.<1></1><2>Would you still like to save this dashboard?</2>",
@@ -5271,7 +5277,10 @@
     "save-dashboard-drawer": {
       "tabs": {
         "label-changes": "Changes",
-        "label-details": "Details"
+        "label-details": "Details",
+        "title": "Save dashboard",
+        "title-copy": "Save dashboard copy",
+        "title-provisioned": "Provisioned dashboard"
       }
     },
     "save-dashboard-form": {
@@ -10661,6 +10670,11 @@
       "tooltip-disable": "Disable",
       "tooltip-enable": "Enable"
     },
+    "draggable-sort-order": {
+      "asc": "ASC",
+      "desc": "DESC",
+      "off": "Off"
+    },
     "enum-mapping-editor": {
       "add-enum-value": "Add enum value",
       "generate-enum-values-from-data": "Generate enum values from data"
@@ -10839,6 +10853,9 @@
       "time-in-ascending-order": "Time in ascending order"
     },
     "organize-fields-transformer-editor": {
+      "field-order": "Field order",
+      "field-order-auto": "Auto",
+      "field-order-manual": "Manual",
       "first-frame-warning": "Organize fields only works with a single frame. Consider applying a join transformation or filtering the input first."
     },
     "partion-by-values-editor": {

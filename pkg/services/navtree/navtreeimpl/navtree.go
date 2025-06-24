@@ -152,7 +152,7 @@ func (s *ServiceImpl) GetNavTree(c *contextmodel.ReqContext, prefs *pref.Prefere
 
             		dashboardLink := &navtree.NavLink{
             			Text:       "ДГА",
-            			Id:         navtree.NavIDCarsOnline,
+            			Id:         navtree.NavIDDga,
             			Icon:       "bolt-alt",
             			Url:        s.cfg.AppSubURL + "/d/ac8-d6EMk",
             			SortWeight: navtree.WeightDashboard,
@@ -161,6 +161,21 @@ func (s *ServiceImpl) GetNavTree(c *contextmodel.ReqContext, prefs *pref.Prefere
 
             		treeRoot.AddSection(dashboardLink)
             	}
+	if hasAccess(ac.EvalAny(
+                		ac.EvalPermission(dashboards.ActionFoldersRead), ac.EvalPermission(dashboards.ActionFoldersCreate),
+                		ac.EvalPermission(dashboards.ActionDashboardsRead), ac.EvalPermission(dashboards.ActionDashboardsCreate)),
+                	) {
+
+                		dashboardLink := &navtree.NavLink{
+                			Text:       "ДГА",
+                			Id:         navtree.NavIDAnalyticsDGA,
+                			Icon:       "clipboard-notes",
+                			Url:        s.cfg.AppSubURL + "/d/7335525c-7acc-4ad9-bb1a-7ce29af2841a",
+                			SortWeight: navtree.WeightDashboard,
+                		}
+
+                		treeRoot.AddSection(dashboardLink)
+                	}
 
     if checkTeamPermission(c.SignedInUser.GetTeams(), 8) || checkTeamPermission(c.SignedInUser.GetTeams(), 3) || checkTeamPermission(c.SignedInUser.GetTeams(), 7) || checkTeamPermission(c.SignedInUser.GetTeams(), 5) {
     	serviceChildLinks := s.buildServiceLinks(c)

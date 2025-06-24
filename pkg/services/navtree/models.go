@@ -56,7 +56,6 @@ const (
 	NavIDCarsOnline           = "dashboards/cars-online"
 	NavIDDga                  = "dashboards/dga"
 	NavIDAnalyticsDGA         = "dashboards/analytics-dga"
-	NavIDCarsOnline           = "dashboards/cars-online"
 	NavIDService              = "dashboards/service"
 )
 

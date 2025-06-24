@@ -167,7 +167,7 @@ func (s *ServiceImpl) GetNavTree(c *contextmodel.ReqContext, prefs *pref.Prefere
                 	) {
 
                 		dashboardLink := &navtree.NavLink{
-                			Text:       "ДГА",
+                			Text:       "Сводка ДГА",
                 			Id:         navtree.NavIDAnalyticsDGA,
                 			Icon:       "clipboard-notes",
                 			Url:        s.cfg.AppSubURL + "/d/7335525c-7acc-4ad9-bb1a-7ce29af2841a",

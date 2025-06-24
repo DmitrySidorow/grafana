@@ -180,7 +180,7 @@ func (s *ServiceImpl) GetNavTree(c *contextmodel.ReqContext, prefs *pref.Prefere
     if checkTeamPermission(c.SignedInUser.GetTeams(), 8) || checkTeamPermission(c.SignedInUser.GetTeams(), 3) || checkTeamPermission(c.SignedInUser.GetTeams(), 7) || checkTeamPermission(c.SignedInUser.GetTeams(), 5) {
     	serviceChildLinks := s.buildServiceLinks(c)
         serviceLink := &navtree.NavLink{
-        	Text:       "Сервис",
+        	Text:       "Сервис ",
         	Id:         navtree.NavIDService,
         	Icon:       "wrench",
         	Url:        s.cfg.AppSubURL + "/dashboards/f/edj7hg9u12o74d",

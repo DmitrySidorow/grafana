@@ -169,7 +169,7 @@ func (s *ServiceImpl) GetNavTree(c *contextmodel.ReqContext, prefs *pref.Prefere
                 		dashboardLink := &navtree.NavLink{
                 			Text:       "Сводка ДГА",
                 			Id:         navtree.NavIDAnalyticsDGA,
-                			Icon:       "clipboard-notes",
+                			Icon:       "clipboard-alt",
                 			Url:        s.cfg.AppSubURL + "/d/7335525c-7acc-4ad9-bb1a-7ce29af2841a",
                 			SortWeight: navtree.WeightDashboard,
                 		}
@@ -180,7 +180,7 @@ func (s *ServiceImpl) GetNavTree(c *contextmodel.ReqContext, prefs *pref.Prefere
     if checkTeamPermission(c.SignedInUser.GetTeams(), 8) || checkTeamPermission(c.SignedInUser.GetTeams(), 3) || checkTeamPermission(c.SignedInUser.GetTeams(), 7) || checkTeamPermission(c.SignedInUser.GetTeams(), 5) {
     	serviceChildLinks := s.buildServiceLinks(c)
         serviceLink := &navtree.NavLink{
-        	Text:       "Сервис ",
+        	Text:       "Сервис",
         	Id:         navtree.NavIDService,
         	Icon:       "wrench",
         	Url:        s.cfg.AppSubURL + "/dashboards/f/edj7hg9u12o74d",

@@ -58,6 +58,7 @@ const BASE_RANGE_OPTIONS: TimeOption[] = [
   { from: 'now-1y', to: 'now', display: 'Последний 1 год' },
   { from: 'now-2y', to: 'now', display: 'Последние 2 года' },
   { from: 'now-5y', to: 'now', display: 'Последние 5 лет' },
+  { from: 'now-1d/d+7h', to: 'now/1d-1d+7h', display: 'Сводка с 7 до 7 утра' },
   { from: 'now/fQ', to: 'now', display: 'Этот фискальный квартал (до сих пор)' },
   { from: 'now/fQ', to: 'now/fQ', display: 'Этот фискальный квартал' },
   { from: 'now/fy', to: 'now', display: 'Этот фискальный год (до сих пор)' },

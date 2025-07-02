@@ -343,7 +343,7 @@ export const preparePlotConfigBuilder: UPlotConfigPrepFn = ({
 
     let pointsFilter: uPlot.Series.Points.Filter = () => null;
 
-    if (customConfig.spanNulls !== true) {
+    if (customConfig.spanNulls !== true && showPoints === VisibilityMode.Auto) {
       pointsFilter = (u, seriesIdx, show, gaps) => {
         let filtered = [];
 
@@ -386,9 +386,24 @@ export const preparePlotConfigBuilder: UPlotConfigPrepFn = ({
               filtered.push(approxIdx);
             }
           }
+          // single point
+          else {
+            // scan right
+            let leftIdx = 0;
+            while (yData[leftIdx] == null) {
+              leftIdx++;
+            }
 
-          if (gaps[gaps.length - 1][1] === lastPos) {
-            filtered.push(lastIdx);
+            // scan left
+            let rightIdx = yData.length - 1;
+            while (rightIdx >= leftIdx && yData[rightIdx] == null) {
+              rightIdx--;
+            }
+
+            // render if same
+            if (leftIdx === rightIdx) {
+              filtered.push(leftIdx);
+            }
           }
         }
 

@@ -261,9 +261,11 @@ export const OrgUsersTable = ({
       </Stack>
       {Boolean(userToRemove) && (
         <ConfirmModal
-          body={`Вы уверены, что хотите удалить пользователя  ${userToRemove?.login}?`}
-          confirmText="Удалить"
-          title={t('admin.org-users-table.title-delete', 'Удаление')}
+          body={t('admin.org-users-table.body-delete', 'Are you sure you want to delete user {{user}}?', {
+            user: userToRemove?.login,
+          })}
+          confirmText={t('admin.org-users-table.confirmText-delete', 'Delete')}
+          title={t('admin.org-users-table.title-delete', 'Delete')}
           onDismiss={() => {
             setUserToRemove(null);
           }}

@@ -12554,6 +12554,7 @@
         "transform": "Transform"
       }
     },
+    "tag": "{{ tag }}",
     "time-series-table-transform-editor": {
       "label-stat": "Stat",
       "label-time-field": "Time field",

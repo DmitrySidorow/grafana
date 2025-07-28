@@ -28,6 +28,7 @@ var (
 	sqlDataKeyList        = mustTemplate("data_key_list.sql")
 	sqlDataKeyDisable     = mustTemplate("data_key_disable.sql")
 	sqlDataKeyDelete      = mustTemplate("data_key_delete.sql")
+	sqlDataKeyDisableAll  = mustTemplate("data_key_disable_all.sql")
 )
 
 // TODO: Move this to a common place so that all stores can use
@@ -55,7 +56,8 @@ func (r createEncryptedValue) Validate() error {
 type readEncryptedValue struct {
 	sqltemplate.SQLTemplate
 	Namespace string
-	UID       string
+	Name      string
+	Version   int64
 }
 
 // Validate is only used if we use `dbutil` from `unifiedstorage`
@@ -67,7 +69,8 @@ func (r readEncryptedValue) Validate() error {
 type updateEncryptedValue struct {
 	sqltemplate.SQLTemplate
 	Namespace     string
-	UID           string
+	Name          string
+	Version       int64
 	EncryptedData []byte
 	Updated       int64
 }
@@ -81,7 +84,8 @@ func (r updateEncryptedValue) Validate() error {
 type deleteEncryptedValue struct {
 	sqltemplate.SQLTemplate
 	Namespace string
-	UID       string
+	Name      string
+	Version   int64
 }
 
 // Validate is only used if we use `dbutil` from `unifiedstorage`
@@ -137,3 +141,10 @@ type deleteDataKey struct {
 }
 
 func (r deleteDataKey) Validate() error { return nil }
+
+type disableAllDataKeys struct {
+	sqltemplate.SQLTemplate
+	Updated time.Time
+}
+
+func (r disableAllDataKeys) Validate() error { return nil }

@@ -11877,7 +11877,7 @@
         "recommended": "Recommended",
         "results": "Results"
       },
-      "search": "Search"
+      "search": "Search {{parentTitle}}"
     }
   },
   "search": {

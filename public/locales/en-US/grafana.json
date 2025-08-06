@@ -3587,10 +3587,11 @@
       "title-folder": "This folder doesn't have any dashboards yet"
     },
     "folder-actions-button": {
-      "delete": "Удалить",
-      "folder-actions": "Действия с папкой",
-      "manage-permissions": "Управление разрешениями",
-      "move": "Переместить"
+      "delete": "Delete",
+      "delete-folder-error": "Error deleting folder. Please try again later.",
+      "folder-actions": "Folder actions",
+      "manage-permissions": "Manage permissions",
+      "move": "Move"
     },
     "folder-picker": {
       "accessible-label": "Select folder: {{ label }} currently selected",
@@ -7498,6 +7499,9 @@
     "badge-tooltip": "Provisioned"
   },
   "folders": {
+    "api": {
+      "folder-deleted-success": "Folder deleted"
+    },
     "get-loading-nav": {
       "main": {
         "title": {

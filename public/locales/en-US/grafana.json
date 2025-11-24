@@ -1984,7 +1984,11 @@
       "alertmanager": "Alertmanager:",
       "error": "Could not load routing preview for {{alertmanager}}",
       "initialized": "Based on the labels added, alert instances are routed to the following notification policies. Expand each notification policy below to view more details.",
+      "no-condition-tooltip": "Select a query condition to preview routing",
+      "permission-warning": "Preview not available",
+      "permission-warning-message": "You don't have permission to view notification policies. Preview is not available.",
       "preview-routing": "Preview routing",
+      "select-folder-tooltip": "Select a folder to preview routing",
       "text-loading-preview": "Loading preview...",
       "title": "Alert instance routing preview",
       "uninitialized": "When you have your folder selected and your query and labels are configured, click \"Preview routing\" to see the results here."
@@ -2596,8 +2600,7 @@
         "firing": "Firing",
         "normal": "Normal",
         "pending": "Pending",
-        "recovering": "Recovering",
-        "unknown": "Unknown"
+        "recovering": "Recovering"
       },
       "type": {
         "alert": "Alert rule",
@@ -2621,12 +2624,14 @@
         "placeholder-search-input": "Search by name or enter filter query..."
       },
       "grafana-folder": "Grafana folder",
+      "group-autocomplete-unavailable": "Due to large number of groups, autocomplete is not available",
       "health": "Health",
       "label": {
         "hide": "Hide",
         "show": "Show"
       },
       "manage-alerts": "In these data sources, you can select Manage alerts via Alerting UI to be able to manage these alert rules in the Grafana UI as well as in the data source where they were configured.",
+      "namespace-autocomplete-unavailable": "Due to large number of folders, autocomplete is not available",
       "placeholder-all-data-sources": "All data sources",
       "placeholder-contact-point": "Select contact point",
       "placeholder-data-sources": "Select data sources",
@@ -3538,14 +3543,16 @@
       "delete-modal-invalid-title": "Cannot delete folder",
       "delete-modal-restore-dashboards-text": "This action will delete the selected folders immediately. Deleted dashboards will be kept in the history for up to 12 months and can be restored by your organization administrator during that time. The history is limited to 1000 dashboards — older ones may be removed sooner if the limit is reached. Folders cannot be restored.",
       "delete-modal-text": "This action will delete the following content:",
+      "delete-modal-text-one-folder": "This action will delete the folder \" <1>{{ folderName }}</1> \" and the following content:",
       "delete-modal-title": "Delete",
       "delete-provisioned-folder": "Delete provisioned folder",
       "deleting": "Deleting...",
       "manage-permissions-button": "Manage permissions",
       "move-button": "Move",
       "move-modal-alert": "Moving this item may change its permissions.",
-      "move-modal-field-label": "Название папки",
-      "move-modal-text": "Это действие переместит следующие данные:",
+      "move-modal-field-label": "Folder name",
+      "move-modal-text": "This action will move the following content:",
+      "move-modal-text-one-folder": "This action will move the folder \" <1>{{ folderName }}</1> \" and the following content:",
       "move-modal-title": "Move",
       "move-provisioned-folder": "Move provisioned folder",
       "moving": "Moving...",
@@ -3633,11 +3640,11 @@
       "title-folder": "This folder doesn't have any dashboards yet"
     },
     "folder-actions-button": {
-      "delete": "Delete",
+      "delete": "Delete this folder",
       "delete-folder-error": "Error deleting folder. Please try again later.",
       "folder-actions": "Folder actions",
       "manage-permissions": "Manage permissions",
-      "move": "Move"
+      "move": "Move this folder"
     },
     "folder-picker": {
       "accessible-label": "Select folder: {{ label }} currently selected",
@@ -4128,9 +4135,10 @@
   },
   "command-palette": {
     "action": {
-      "change-theme": "Изменить тему",
-      "dark-theme": "Темная",
-      "light-theme": "Светлая",
+      "change-theme": "Change theme",
+      "dark-theme": "Dark",
+      "dashboard-from-template": "Dashboard from template",
+      "light-theme": "Light",
       "scopes": "Scopes"
     },
     "empty-state": {
@@ -5092,8 +5100,12 @@
     "new-panel": {
       "configure-button": "Configure",
       "configure-button-menu": "Toggle menu",
+      "empty-state-message": "Run a query to visualize it here or go to all visualizations to add other panel types",
       "menu-open-panel-editor": "Configure",
-      "menu-use-library-panel": "Use library panel"
+      "menu-use-library-panel": "Use library panel",
+      "suggestions": {
+        "empty-state-message": "Run a query to start seeing suggested visualizations"
+      }
     },
     "new-panel-title": "New panel",
     "on-create-new-row": {
@@ -5718,6 +5730,10 @@
     "suggested-dashboards-subtitle": "Browse and select from data-source provided or community dashboards",
     "suggested-dashboards-title": "Build a dashboard using suggested options for your selected data source",
     "suggested-dashboards-title-with-datasource": "Build a dashboard using suggested options for your {{datasourceType}} data source",
+    "template-dashboard-modal": {
+      "description": "Get started with Grafana templates using sample data. Connect your data to power them with real metrics.",
+      "title": "Start a dashboard from a template"
+    },
     "view-all": "View all"
   },
   "dashboard-links": {
@@ -5925,7 +5941,10 @@
       }
     },
     "empty-transformations-message": {
-      "add-transformation": "Add transformation"
+      "add-transformation": "Add transformation",
+      "show-more": "Show more",
+      "sql-name": "Transform with SQL",
+      "sql-transformation-description": "Manipulate your data using MySQL-like syntax"
     },
     "general-settings-edit-view": {
       "editable_options": {
@@ -7207,6 +7226,7 @@
       "logs-volume": {
         "add-filters": "Add more labels to your query to narrow down your search.",
         "decrease-timerange": "Decrease the time range of your query.",
+        "max-bytes-error": "The query would read too many bytes. Try one or more of the following:",
         "much-data": "The query is trying to access too much data. Try one or more of the following:"
       },
       "maximum-pinned-logs": "Maximum of {{PINNED_LOGS_LIMIT}} pinned logs reached. Unpin a log to add another.",
@@ -7256,12 +7276,15 @@
       "tooltip-select-query-visualize-table": "Select a query to visualize in the table"
     },
     "logs-volume-panel": {
-      "content-streaming": "Streaming"
+      "content-streaming": "Streaming",
+      "partial-data-tips": "Try decreasing the time range or adding more labels to your query."
     },
     "logs-volume-panel-list": {
       "aria-label-reload-log-volume": "Reload log volume",
       "label-reload-log-volume": "Reload log volume",
       "loading": "Loading...",
+      "message-showing-partial-data-max-bytes": "The query would read too many bytes and some sharded requests could not be completed. ",
+      "message-showing-partial-data-timeout": "The query is trying to access too much data and some sharded requests could not be completed. ",
       "title-failed-volume-query": "Failed to load log volume for this query",
       "title-no-logs-volume-available": "No logs volume available",
       "title-showing-partial-data": "Showing partial data",
@@ -7784,6 +7807,14 @@
     "name-show-threshold-labels": "Show threshold labels",
     "name-show-threshold-markers": "Show threshold markers",
     "placeholder-neutral": "auto",
+    "suggestions": {
+      "arc": "Gauge",
+      "circular": "Circular gauge",
+      "style": {
+        "circular": "Glowing",
+        "simple": "Simple"
+      }
+    },
     "threshold": "Threshold {{value}}"
   },
   "gen-ai": {
@@ -8570,7 +8601,13 @@
       "saving": "Saving <1></1>"
     },
     "axis-builder": {
-      "linear-threshold": "Linear threshold",
+      "linear-threshold": {
+        "label": "Linear threshold",
+        "warning": {
+          "nan": "Linear threshold must be a number",
+          "zero": "Linear threshold cannot be zero"
+        }
+      },
       "log-base": "Log base"
     },
     "builder": {
@@ -8976,6 +9013,11 @@
     "series-color-picker-popover": {
       "y-axis-usage": "Use right y-axis"
     },
+    "sidebar": {
+      "close": "Close",
+      "dock": "Dock",
+      "undock": "Undock"
+    },
     "slider": {
       "drag-handle-aria-label": "Use arrow keys to change the value"
     },
@@ -8994,6 +9036,13 @@
       "copy": "Copy to Clipboard",
       "csv-counts": "Rows:{{rows}}, Columns:{{columns}}",
       "csv-placeholder": "Enter CSV here...",
+      "filter": {
+        "add-all": "Add all displayed values to the filter",
+        "remove-all": "Remove all displayed values from the filter",
+        "select-all": "Select all",
+        "selected": "{{ numSelected }} selected",
+        "selected-some-hidden": "{{ numSelected }} selected ({{ numHidden }} hidden)"
+      },
       "filter-placeholder": "Filter values",
       "filter-popup-apply": "Ok",
       "filter-popup-aria-label-match-case": "Match case",
@@ -9145,6 +9194,9 @@
     "category-legend": "Legend",
     "category-tooltip": "Tooltip",
     "category-y-axis": "Y Axis",
+    "error": {
+      "no-y-fields": "No numeric fields found for heatmap"
+    },
     "mode-options": {
       "label-opacity": "Opacity",
       "label-scheme": "Scheme"
@@ -9257,6 +9309,7 @@
       "toggle-panel-edit": "Toggle panel edit view",
       "toggle-panel-fullscreen": "Toggle panel fullscreen view",
       "toggle-panel-legend": "Toggle panel legend",
+      "zoom-in-time-range": "Zoom in time range",
       "zoom-out-time-range": "Zoom out time range"
     },
     "title": "Shortcuts"
@@ -9932,11 +9985,7 @@
       "wrap-lines": "Wrap lines"
     },
     "logs-navigation": {
-      "newer-logs": "Newer logs",
-      "older-logs": "Older logs",
-      "scroll-bottom": "Scroll to bottom",
-      "scroll-top": "Scroll to top",
-      "start-of-range": "Start of range"
+      "scroll-top": "Scroll to top"
     },
     "logs-panel": {
       "render-common-labels": {
@@ -10528,7 +10577,8 @@
       "title": "Новый"
     },
     "new-dashboard": {
-      "title": "Новый дашборд"
+      "empty-title": "Empty dashboard",
+      "title": "New dashboard"
     },
     "new-folder": {
       "title": "Новая папка"
@@ -10694,7 +10744,8 @@
       "aria-label": "Profile"
     },
     "quick-add": {
-      "aria-label": "New"
+      "aria-label": "New",
+      "new-template-dashboard-button": "Dashboard from template"
     },
     "rss-button": "Latest from the blog"
   },
@@ -11495,6 +11546,9 @@
       "label-display-name": "Display name",
       "placeholder-my-repository-connection": "My repository connection",
       "text-loading-resource-information": "Loading resource information...",
+      "unavailable-options": {
+        "title": "Unavailable options"
+      },
       "unmanaged-resources-label": "Unmanaged resources"
     },
     "check-repository": {
@@ -11776,6 +11830,12 @@
       "truncated": "Message truncated"
     },
     "mode-options": {
+      "disabled": {
+        "folder-connected": "Full instance synchronization is disabled because another folder is already synced with a repository.",
+        "legacy-storage": "Legacy storage mode only supports syncing the entire Grafana instance.",
+        "not-allowed": "Provisioning settings for this repository restrict syncing to specific targets. Update the repository configuration to enable this option.",
+        "not-supported": "This option is not supported yet."
+      },
       "folder": {
         "description": "After setup, a new Grafana folder will be created and synced with external storage. If any resources are present in external storage, they will be provisioned to this new folder. All new resources created in this folder will be stored and versioned in external storage.",
         "label": "Sync external storage to a new Grafana folder",
@@ -12366,6 +12426,7 @@
   "scopes": {
     "dashboards": {
       "collapse": "Collapse",
+      "exchange": "Change root scope to {{scope}}",
       "expand": "Expand",
       "loading": "Loading dashboards",
       "noResultsForFilter": "No results found for your query",
@@ -12384,8 +12445,10 @@
       "cancel": "Cancel",
       "error-title": "An unexpected error happened",
       "input": {
-        "placeholder": "Select scopes...",
-        "removeAll": "Remove all scopes"
+        "placeholder": "No scopes",
+        "remove-all": "Remove all",
+        "removeAll": "Remove all scopes",
+        "tooltip": "Select scope"
       },
       "title": "Select scopes"
     },
@@ -12419,10 +12482,12 @@
       }
     },
     "dashboard-actions": {
-      "import": "Импорт",
-      "new": "Новый",
-      "new-dashboard": "Новый дашборд",
-      "new-folder": "Новая папка"
+      "empty-dashboard": "Empty dashboard",
+      "import": "Import",
+      "new": "New",
+      "new-dashboard": "New dashboard",
+      "new-folder": "New folder",
+      "new-template-dashboard": "Dashboard from template"
     },
     "generate-columns": {
       "score": "Score"
@@ -12494,11 +12559,14 @@
       "copy-clipboard": "Copy to clipboard",
       "copy-to-clipboard-and-close": "Copy to clipboard and close",
       "description-name-to-easily-identify-the-token": "Name to easily identify the token",
+      "description-no-expiration-disabled": "Cannot create a token with no expiration date when token expiration day limit is configured",
       "description-token": "Copy the token now as you will not be able to see it again. Losing a token requires creating a new one.",
       "generate-token": "Generate token",
       "label-display-name": "Display name",
       "label-expiration": "Expiration",
       "label-expiration-date": "Expiration date",
+      "label-no-expiration": "No expiration",
+      "label-set-expiration-date": "Set expiration date",
       "label-token": "Token"
     },
     "get-actions-cell": {

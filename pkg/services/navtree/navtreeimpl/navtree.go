@@ -867,5 +867,5 @@ func (s *ServiceImpl) buildSummaryLinks(c *contextmodel.ReqContext) []*navtree.N
     		Url:      s.cfg.AppSubURL + "/d/7335525c-7acc-4ad9-bb1a-7ce29af2841a",
     		Icon:     "code-branch",
     	})
-	return serviceChildNavs
+	return SummaryChildNavs
 }

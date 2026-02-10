@@ -861,7 +861,7 @@ func (s *ServiceImpl) buildSummaryLinks(c *contextmodel.ReqContext) []*navtree.N
 		Icon:     "code-branch",
 	})
 
-	SummaryChildNavs = append(serviceChildNavs, &navtree.NavLink{
+	SummaryChildNavs = append(SummaryChildNavs, &navtree.NavLink{
     		Text:     "ДГА",
     		Id:       "explore/metrics",
     		Url:      s.cfg.AppSubURL + "/d/7335525c-7acc-4ad9-bb1a-7ce29af2841a",

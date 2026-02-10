@@ -157,21 +157,40 @@ func (s *ServiceImpl) GetNavTree(c *contextmodel.ReqContext, prefs *pref.Prefere
 
             		treeRoot.AddSection(dashboardLink)
             	}
+
+
 	if hasAccess(ac.EvalAny(
-                		ac.EvalPermission(dashboards.ActionFoldersRead), ac.EvalPermission(dashboards.ActionFoldersCreate),
-                		ac.EvalPermission(dashboards.ActionDashboardsRead), ac.EvalPermission(dashboards.ActionDashboardsCreate)),
-                	) {
+               		ac.EvalPermission(dashboards.ActionFoldersRead), ac.EvalPermission(dashboards.ActionFoldersCreate),
+               		ac.EvalPermission(dashboards.ActionDashboardsRead), ac.EvalPermission(dashboards.ActionDashboardsCreate)),
+               	) {
+        	summaryChildLinks := s.buildSummaryLinks(c)
+            summaryLink := &navtree.NavLink{
+            	Text:       "Сводка",
+            	Id:         navtree.NavIDService,
+            	Icon:       "clipboard-alt",
+            	Url:        s.cfg.AppSubURL + "/dashboards/f/bfceljx193j0ge",
+            	SortWeight: navtree.WeightDashboard,
+            	Children:   summaryChildLinks,
+            }
 
-                		dashboardLink := &navtree.NavLink{
-                			Text:       "Сводка ДГА",
-                			Id:         navtree.NavIDAnalyticsDGA,
-                			Icon:       "clipboard-alt",
-                			Url:        s.cfg.AppSubURL + "/d/7335525c-7acc-4ad9-bb1a-7ce29af2841a",
-                			SortWeight: navtree.WeightDashboard,
-                		}
+            treeRoot.AddSection(summaryLink)
+        }
 
-                		treeRoot.AddSection(dashboardLink)
-                	}
+// 	if hasAccess(ac.EvalAny(
+//                 		ac.EvalPermission(dashboards.ActionFoldersRead), ac.EvalPermission(dashboards.ActionFoldersCreate),
+//                 		ac.EvalPermission(dashboards.ActionDashboardsRead), ac.EvalPermission(dashboards.ActionDashboardsCreate)),
+//                 	) {
+//
+//                 		dashboardLink := &navtree.NavLink{
+//                 			Text:       "Сводка ДГА",
+//                 			Id:         navtree.NavIDAnalyticsDGA,
+//                 			Icon:       "clipboard-alt",
+//                 			Url:        s.cfg.AppSubURL + "/d/7335525c-7acc-4ad9-bb1a-7ce29af2841a",
+//                 			SortWeight: navtree.WeightDashboard,
+//                 		}
+//
+//                 		treeRoot.AddSection(dashboardLink)
+//                 	}
 
     if checkTeamPermission(c.SignedInUser.GetTeams(), 8) || checkTeamPermission(c.SignedInUser.GetTeams(), 3) || checkTeamPermission(c.SignedInUser.GetTeams(), 7) || checkTeamPermission(c.SignedInUser.GetTeams(), 5) {
     	serviceChildLinks := s.buildServiceLinks(c)
@@ -830,5 +849,23 @@ func (s *ServiceImpl) buildCarsLinks(c *contextmodel.ReqContext) []*navtree.NavL
 //         Icon:     "code-branch",
 //     })
 
+	return serviceChildNavs
+}
+
+func (s *ServiceImpl) buildSummaryLinks(c *contextmodel.ReqContext) []*navtree.NavLink {
+	SummaryChildNavs := []*navtree.NavLink{}
+	SummaryChildNavs = append(SummaryChildNavs, &navtree.NavLink{
+		Text:     "Вагоны",
+		Id:       "explore/metrics",
+		Url:      s.cfg.AppSubURL + "/d/7335525c-7acc-4ad9-bb1a-7ce29af28411",
+		Icon:     "code-branch",
+	})
+
+	SummaryChildNavs = append(serviceChildNavs, &navtree.NavLink{
+    		Text:     "ДГА",
+    		Id:       "explore/metrics",
+    		Url:      s.cfg.AppSubURL + "/d/7335525c-7acc-4ad9-bb1a-7ce29af2841a",
+    		Icon:     "code-branch",
+    	})
 	return serviceChildNavs
 }

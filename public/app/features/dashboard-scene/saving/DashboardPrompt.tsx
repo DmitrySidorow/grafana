@@ -138,7 +138,6 @@ export const UnsavedChangesModal = ({ onDiscard, onDismiss, onSaveDashboardClick
       isOpen={true}
       title={t('dashboard-scene.unsaved-changes-modal.title-unsaved-changes', 'Несохраненные изменения')}
       onDismiss={onDismiss}
-      icon="exclamation-triangle"
       className={styles.modal}
     >
       <h5>

@@ -8,7 +8,7 @@ import { useStyles2 } from '@grafana/ui';
 
 import { Branding } from '../Branding/Branding';
 import { type BrandingSettings } from '../Branding/types';
-import { Footer } from '../Footer/Footer';
+//import { Footer } from '../Footer/Footer';
 
 interface InnerBoxProps {
   enterAnimation?: boolean;

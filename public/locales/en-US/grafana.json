@@ -15290,13 +15290,14 @@
       "time-zone-selection": "Выбор часового пояса"
     },
     "range-content": {
-      "apply-button": "Применить",
-      "default-error": "Введите прошедшую дату или \"{{now}}\"",
-      "fiscal-year": "Фискальный год: {{from}} - {{to}}",
-      "from-input": "От",
-      "open-input-calendar": "Открыть календарь",
-      "range-error": "\"От\" не может быть после \"До\"",
-      "to-input": "До"
+      "apply-button": "Apply time range",
+      "default-error": "Enter a date ({{dateExample}}) or relative time ({{relativeTimeExample1}}, {{relativeTimeExample2}})",
+      "fiscal-year": "Fiscal year: {{from}} - {{to}}",
+      "from-input": "From",
+      "open-input-calendar": "Open calendar",
+      "range-error": "\"From\" date must be before \"To\" date",
+      "required-error": "This field is required",
+      "to-input": "To"
     },
     "range-picker": {
       "backwards-time-aria-label": "Move time range backwards",

@@ -154,11 +154,6 @@ export interface FeatureToggles {
   */
   provisioningExport?: boolean;
   /**
-  * Render the README.md of a Git Sync provisioned folder inline below its dashboards list
-  * @default false
-  */
-  provisioningReadmes?: boolean;
-  /**
   * Start an additional https handler and write kubectl options
   * @default false
   */
@@ -795,11 +790,6 @@ export interface FeatureToggles {
   */
   pluginsSriChecks?: boolean;
   /**
-  * Enables to save big objects in blob storage
-  * @default false
-  */
-  unifiedStorageBigObjectsSupport?: boolean;
-  /**
   * Enables time pickers sync
   * @default false
   */
@@ -809,11 +799,6 @@ export interface FeatureToggles {
   * @default true
   */
   timeRangePan?: boolean;
-  /**
-  * Enables new keyboard shortcuts for time range zoom operations
-  * @default true
-  */
-  newTimeRangeZoomShortcuts?: boolean;
   /**
   * Disables the log limit restriction for Azure Monitor when true. The limit is enabled by default.
   * @default false

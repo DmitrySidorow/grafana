@@ -10858,7 +10858,17 @@
   },
   "home": {
     "home-page": {
-      "placeholder": "Welcome to Grafana"
+      "edition": {
+        "cloud": "Grafana Cloud",
+        "enterprise": "Grafana Enterprise",
+        "open-source": "Grafana"
+      },
+      "greeting": {
+        "afternoon": "Good afternoon.",
+        "evening": "Good evening.",
+        "morning": "Good morning."
+      },
+      "placeholder": "Welcome to {{edition}}."
     }
   },
   "inspector": {
@@ -14835,11 +14845,10 @@
       "update-preferences": "Error updating preferences"
     },
     "fields": {
-      "language-preference-label": "Язык",
-      "language-preference-placeholder": "Выберите язык",
-      "locale-preference-description": "Choose your region to see the corresponding date, time, and number format",
-      "locale-preference-label": "Region format",
-      "locale-preference-placeholder": "Choose region",
+      "home-dashboard-label": "Home Dashboard",
+      "home-dashboard-placeholder": "Default dashboard",
+      "language-preference-label": "Language",
+      "language-preference-placeholder": "Choose language",
       "theme-description": "Enjoying the experimental themes? Tell us what you'd like to see <2>here.</2>",
       "home-dashboard-label": "Домашний дашборд",
       "home-dashboard-placeholder": "Дашборд по умолчанию",

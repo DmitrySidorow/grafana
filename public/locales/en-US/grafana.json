@@ -4923,6 +4923,11 @@
       "light-theme": "Light",
       "scopes": "Scopes"
     },
+    "deep-search": {
+      "more-panels_one": "{{count}} more matched panel",
+      "more-panels_other": "{{count}} more matched panels",
+      "no-matches": "No matches"
+    },
     "empty-state": {
       "button-title": "Search with Grafana Assistant",
       "message": "No results found"
@@ -4935,12 +4940,13 @@
       "placeholder": "Найти или перейти к..."
     },
     "section": {
-      "actions": "Действия",
-      "dashboard-search-results": "Дашборды",
-      "folder-search-results": "Папки",
-      "pages": "Страницы",
-      "preferences": "Настройки",
-      "recent-dashboards": "Недавние дашборды",
+      "actions": "Actions",
+      "dashboard-search-results": "Dashboards",
+      "deep-search": "Dashboards deep search",
+      "folder-search-results": "Folders",
+      "pages": "Pages",
+      "preferences": "Preferences",
+      "recent-dashboards": "Recent dashboards",
       "recent-scopes": "Recent scopes"
     }
   },
@@ -5431,11 +5437,6 @@
       "provisioning-title": "Dashboard preview",
       "text": {
         "not-found": "Not found"
-      }
-    },
-    "dashboard-slice": {
-      "title": {
-        "dashboard-init-failed": "Dashboard init failed"
       }
     },
     "dashboard-srv": {
@@ -9366,6 +9367,7 @@
     "field": {
       "fieldColor": {
         "accessibleGroup": "Accessible",
+        "experimentalGroup": "Experimental",
         "otherGroup": "Others"
       }
     },
@@ -14486,6 +14488,9 @@
       "new-dashboard": "New dashboard",
       "new-folder": "New folder",
       "new-template-dashboard": "Use template"
+    },
+    "description-tooltip": {
+      "label": "Description"
     },
     "generate-columns": {
       "score": "Score"

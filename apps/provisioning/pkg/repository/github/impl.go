@@ -164,7 +164,8 @@ func (r *githubClient) GetRulesets(ctx context.Context, branch string) (*Ruleset
 	logger := logging.FromContext(ctx).With(
 		slog.String("owner", r.owner),
 		slog.String("repository", r.repo),
-		slog.String("branch", branch))
+		slog.String("branch", branch),
+	)
 
 	// Get all active rules that apply to this specific branch
 	// This API returns only active rules (no disabled/evaluate enforcement)
@@ -431,8 +432,8 @@ func (r *githubClient) adoptExistingWebhook(ctx context.Context, cfg webhookConf
 	return nil, ErrWebhookAlreadyExists
 }
 
-func (r *githubClient) GetWebhook(ctx context.Context, webhookID int64) (repo.WebhookConfig, error) {
-	hook, _, err := r.gh.Repositories.GetHook(ctx, r.owner, r.repo, webhookID)
+func (r *githubClient) GetWebhook(ctx context.Context, webhookID repo.WebhookID) (repo.WebhookConfig, error) {
+	hook, _, err := r.gh.Repositories.GetHook(ctx, r.owner, r.repo, webhookID.ID)
 	if err != nil {
 		return nil, translateGitHubError(err)
 	}
@@ -454,8 +455,8 @@ func (r *githubClient) GetWebhook(ctx context.Context, webhookID int64) (repo.We
 	}, nil
 }
 
-func (r *githubClient) DeleteWebhook(ctx context.Context, webhookID int64) error {
-	_, err := r.gh.Repositories.DeleteHook(ctx, r.owner, r.repo, webhookID)
+func (r *githubClient) DeleteWebhook(ctx context.Context, webhookID repo.WebhookID) error {
+	_, err := r.gh.Repositories.DeleteHook(ctx, r.owner, r.repo, webhookID.ID)
 	if err != nil {
 		return translateGitHubError(err)
 	}
@@ -513,6 +514,20 @@ func (r *githubClient) ListPullRequestFiles(ctx context.Context, number int) ([]
 	}
 
 	return ret, nil
+}
+
+func (r *githubClient) MergeBase(ctx context.Context, base, head string) (string, error) {
+	cmp, _, err := r.gh.Repositories.CompareCommits(ctx, r.owner, r.repo, base, head, &github.ListOptions{PerPage: 1})
+	if err != nil {
+		return "", translateGitHubError(err)
+	}
+
+	sha := cmp.GetMergeBaseCommit().GetSHA()
+	if sha == "" {
+		return "", fmt.Errorf("no merge base found between %q and %q", base, head)
+	}
+
+	return sha, nil
 }
 
 func (r *githubClient) CreatePullRequestComment(ctx context.Context, number int, body string) error {

@@ -3,11 +3,13 @@ package provisioning
 import (
 	"context"
 	"fmt"
+	"net"
 	"net/http"
 	"net/url"
 	"strings"
 	"time"
 
+	"github.com/open-feature/go-sdk/openfeature"
 	"github.com/prometheus/client_golang/prometheus"
 	apierrors "k8s.io/apimachinery/pkg/api/errors"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
@@ -55,6 +57,7 @@ import (
 	"github.com/grafana/grafana/pkg/registry/apis/provisioning/jobs/fixfoldermetadata"
 	"github.com/grafana/grafana/pkg/registry/apis/provisioning/jobs/migrate"
 	movepkg "github.com/grafana/grafana/pkg/registry/apis/provisioning/jobs/move"
+	"github.com/grafana/grafana/pkg/registry/apis/provisioning/jobs/perftest"
 	releaseresourcespkg "github.com/grafana/grafana/pkg/registry/apis/provisioning/jobs/releaseresources"
 	"github.com/grafana/grafana/pkg/registry/apis/provisioning/jobs/sync"
 	"github.com/grafana/grafana/pkg/registry/apis/provisioning/resources"
@@ -122,6 +125,7 @@ type APIBuilder struct {
 	repoStore           grafanarest.Storage
 	repoLister          repository.RepositoryByConnectionLister
 	repoValidator       repository.Validator
+	repoValidatorOpts   []repository.ValidatorOption
 	connectionStore     grafanarest.Storage
 	parsers             resources.ParserFactory
 	repositoryResources resources.RepositoryResourcesFactory
@@ -355,6 +359,17 @@ func RegisterAPIService(
 	folderMetadataEnabled := features.IsEnabledGlobally(featuremgmt.FlagProvisioningFolderMetadata) //nolint:staticcheck
 	maxFileSize := cfg.ProvisioningMaxFileSize
 	incrementalPolicy := repository.NewIncrementalSyncPolicy(folderMetadataEnabled, cfg.ProvisioningMaxIncrementalChanges)
+	provisioningSec := cfg.SectionWithEnvOverrides("provisioning")
+
+	// allowed_git_urls contain an allowlist of Git URLs that are allowed to be used for Git repositories.
+	// It should contain enpoints that otherwise would be blocked by the URL validator.
+	allowListConfig := provisioningSec.Key("allowed_git_urls").Strings(",")
+	allowlist, err := repository.NewAllowlist(allowListConfig)
+	if err != nil {
+		return nil, fmt.Errorf("invalid allowed_git_urls configuration: %w", err)
+	}
+	urlValidator := repository.NewURLValidator(allowlist, net.DefaultResolver.LookupIPAddr)
+	repoValidatorOpts := []repository.ValidatorOption{repository.WithURLValidator(urlValidator)}
 
 	// Register v0alpha1 (preferred version)
 	builder, err := NewAPIBuilder(
@@ -392,6 +407,7 @@ func RegisterAPIService(
 	if err != nil {
 		return nil, err
 	}
+	builder.repoValidatorOpts = repoValidatorOpts
 	builder.webhookSecretRotationInterval = cfg.ProvisioningWebhookSecretRotationInterval
 	builder.syncResourceTimeout = cfg.ProvisioningSyncResourceTimeout
 	builder.controllerResyncInterval = cfg.ProvisioningControllerResyncInterval
@@ -437,6 +453,7 @@ func RegisterAPIService(
 	if err != nil {
 		return nil, err
 	}
+	v1beta1Builder.repoValidatorOpts = repoValidatorOpts
 	v1beta1Builder.webhookSecretRotationInterval = cfg.ProvisioningWebhookSecretRotationInterval
 	v1beta1Builder.syncResourceTimeout = cfg.ProvisioningSyncResourceTimeout
 	v1beta1Builder.controllerResyncInterval = cfg.ProvisioningControllerResyncInterval
@@ -804,7 +821,7 @@ func (b *APIBuilder) UpdateAPIGroupInfo(apiGroupInfo *genericapiserver.APIGroupI
 	b.admissionHandler = appadmission.NewHandler()
 
 	// Repository mutator and validator
-	b.repoValidator = repository.NewValidator(b.allowImageRendering, b.repoFactory)
+	b.repoValidator = repository.NewValidator(b.allowImageRendering, b.repoFactory, b.repoValidatorOpts...)
 
 	existingReposValidator := repository.NewVerifyAgainstExistingRepositoriesValidator(b.repoLister, b.quotaGetter)
 	connWebhookValidator := repogithub.NewConnectionWebhookValidator(b)
@@ -817,7 +834,9 @@ func (b *APIBuilder) UpdateAPIGroupInfo(apiGroupInfo *genericapiserver.APIGroupI
 	connCombinedValidator := appadmission.NewCombinedValidator(connAdmissionValidator, connDeleteValidator)
 	b.admissionHandler.RegisterMutator(provisioning.ConnectionResourceInfo.GetName(), connection.NewAdmissionMutator(b.connectionFactory))
 	b.admissionHandler.RegisterValidator(provisioning.ConnectionResourceInfo.GetName(), connCombinedValidator)
-	// Jobs validator (no mutator needed)
+	// Jobs mutator and validator. The mutator attributes each job to the acting
+	// user at creation time (gated by the provisioning.userAttribution flag) and
+	// the validator enforces that the recorded author is immutable.
 	jobSupportedResources := make([]provisioning.SupportedResource, 0, len(b.supportedResources))
 	for _, r := range b.supportedResources {
 		jobSupportedResources = append(jobSupportedResources, provisioning.SupportedResource{
@@ -826,7 +845,8 @@ func (b *APIBuilder) UpdateAPIGroupInfo(apiGroupInfo *genericapiserver.APIGroupI
 			Disabled: !r.IsActive(),
 		})
 	}
-	b.admissionHandler.RegisterValidator(provisioning.JobResourceInfo.GetName(), appjobs.NewAdmissionValidator(jobSupportedResources))
+	b.admissionHandler.RegisterMutator(provisioning.JobResourceInfo.GetName(), appjobs.NewAdmissionMutator(userAttributionEnabled))
+	b.admissionHandler.RegisterValidator(provisioning.JobResourceInfo.GetName(), appjobs.NewAdmissionValidator(jobSupportedResources, performanceEnabled))
 	b.admissionHandler.RegisterValidator(provisioning.HistoricJobResourceInfo.GetName(), appjobs.NewHistoricJobAdmissionValidator())
 
 	jobStore, err := grafanaregistry.NewCompleteRegistryStore(opts.Scheme, provisioning.JobResourceInfo, opts.OptsGetter)
@@ -851,7 +871,7 @@ func (b *APIBuilder) UpdateAPIGroupInfo(apiGroupInfo *genericapiserver.APIGroupI
 		if err != nil {
 			return fmt.Errorf("create historic job wrapper: %w", err)
 		}
-		storage[provisioning.HistoricJobResourceInfo.StoragePath()] = historicJobStore
+		storage[provisioning.HistoricJobResourceInfo.StoragePath()] = &historicJobStorage{Store: historicJobStore}
 	}
 
 	connectionsStore, err := grafanaregistry.NewRegistryStore(opts.Scheme, provisioning.ConnectionResourceInfo, opts.OptsGetter)
@@ -900,7 +920,7 @@ func (b *APIBuilder) UpdateAPIGroupInfo(apiGroupInfo *genericapiserver.APIGroupI
 	storage[provisioning.RepositoryResourceInfo.StoragePath("refs")] = WithTimeout(NewRefsConnector(b), 30*time.Second)
 	storage[provisioning.RepositoryResourceInfo.StoragePath("resources")] = WithTimeout(NewListConnector(b, b.resourceLister), 30*time.Second)
 	storage[provisioning.RepositoryResourceInfo.StoragePath("history")] = WithTimeout(NewHistorySubresource(b), 30*time.Second)
-	storage[provisioning.RepositoryResourceInfo.StoragePath("jobs")] = WithTimeout(NewJobsConnector(b, b, b, jobHistory, b.access, b.clients, b.folderMetadataEnabled), 30*time.Second)
+	storage[provisioning.RepositoryResourceInfo.StoragePath("jobs")] = WithTimeout(NewJobsConnector(b, b, b, jobHistory, b.access, b.clients, b.folderMetadataEnabled, performanceEnabled), 30*time.Second)
 
 	// Add any extra storage
 	for _, extra := range b.extras {
@@ -911,6 +931,20 @@ func (b *APIBuilder) UpdateAPIGroupInfo(apiGroupInfo *genericapiserver.APIGroupI
 
 	apiGroupInfo.VersionedResourcesStorageMap[b.gv.Version] = storage
 	return nil
+}
+
+// userAttributionEnabled reports whether Git Sync commits should be attributed
+// to the acting user. It lives here (rather than in apps/provisioning) because
+// the feature flag machinery is only available in the main Grafana module.
+func userAttributionEnabled(ctx context.Context) bool {
+	return openfeature.NewDefaultClient().Boolean(ctx, featuremgmt.FlagProvisioningUserAttribution, false, openfeature.TransactionContext(ctx))
+}
+
+// performanceEnabled reports whether the synthetic "test" job type is enabled.
+// It is evaluated per request via OpenFeature (rather than captured once at
+// startup) so the flag behaves consistently with the other provisioning flags.
+func performanceEnabled(ctx context.Context) bool {
+	return openfeature.NewDefaultClient().Boolean(ctx, featuremgmt.FlagProvisioningPerformance, false, openfeature.TransactionContext(ctx))
 }
 
 // Mutate delegates to the admission handler for resource-specific mutation
@@ -1040,8 +1074,11 @@ func (b *APIBuilder) GetPostStartHooks() (map[string]genericapiserver.PostStartH
 			releaseResourcesWorker := releaseresourcespkg.NewWorker(b.resourceLister, b.clients, 10)
 			deleteResourcesWorker := deleteresourcespkg.NewWorker(b.resourceLister, b.clients, 10)
 
-			// All workers registered - export/migrate will check feature flag at runtime
-			workers := make([]jobs.Worker, 0, 8+len(b.extraWorkers))
+			// Synthetic load-testing worker; a no-op unless provisioning.performance is enabled.
+			perfTestWorker := perftest.NewWorker(performanceEnabled)
+
+			// All workers registered - export/migrate/perftest check their feature flag at runtime
+			workers := make([]jobs.Worker, 0, 9+len(b.extraWorkers))
 			workers = append(workers,
 				deleteResourcesWorker,
 				deleteWorker,
@@ -1049,17 +1086,10 @@ func (b *APIBuilder) GetPostStartHooks() (map[string]genericapiserver.PostStartH
 				fixMetadataWorker,
 				migrationWorker,
 				moveWorker,
+				perfTestWorker,
 				releaseResourcesWorker,
 				syncWorker,
 			)
-
-			// Create JobController to handle job create notifications
-			jobController := appcontroller.NewJobController()
-			jobSource := informer.NewJobDeltaSource(b.natsSubscriber, c, informerFactoryResyncInterval)
-			if _, err := jobSource.AddEventHandler(jobController.EventHandler()); err != nil {
-				return fmt.Errorf("add job controller event handler: %w", err)
-			}
-			go jobSource.Run(postStartHookCtx.Done())
 
 			// Add any extra workers
 			workers = append(workers, b.extraWorkers...)
@@ -1089,8 +1119,8 @@ func (b *APIBuilder) GetPostStartHooks() (map[string]genericapiserver.PostStartH
 			// considered abandoned.
 			leaseRenewalInterval := jobClaimExpiry / 3
 
-			// Fallback poll for new jobs; the driver is also woken immediately by
-			// the job-create notification. Configurable via [provisioning]
+			// Backstop poll for unclaimed jobs missed by the informer events (one
+			// list per interval per replica). Configurable via [provisioning]
 			// job_poll_interval; <=0 falls back to the default.
 			jobPollInterval := b.jobPollInterval
 			if jobPollInterval <= 0 {
@@ -1101,10 +1131,9 @@ func (b *APIBuilder) GetPostStartHooks() (map[string]genericapiserver.PostStartH
 			driver, err := jobs.NewConcurrentJobDriver(
 				3,                    // 3 drivers for now
 				20*time.Minute,       // Max time for each job
-				jobPollInterval,      // Periodically look for new jobs
+				jobPollInterval,      // Periodically look for unclaimed jobs
 				leaseRenewalInterval, // Lease renewal interval
 				b.jobs, repoGetter, jobHistoryWriter,
-				jobController.InsertNotifications(),
 				b.registry,
 				&metrics,
 				workers...,
@@ -1112,6 +1141,15 @@ func (b *APIBuilder) GetPostStartHooks() (map[string]genericapiserver.PostStartH
 			if err != nil {
 				return err
 			}
+
+			// Feed the driver's work queue from job create events. The handler must
+			// be registered before the informer runs: the NATS-backed source has no
+			// cache to replay for late handlers.
+			jobSource := informer.NewJobDeltaSource(b.natsSubscriber, c, informerFactoryResyncInterval)
+			if _, err := jobSource.AddEventHandler(driver.EventHandler()); err != nil {
+				return fmt.Errorf("add job event handler: %w", err)
+			}
+			go jobSource.Run(postStartHookCtx.Done())
 
 			go func() {
 				if err := driver.Run(postStartHookCtx.Context); err != nil {

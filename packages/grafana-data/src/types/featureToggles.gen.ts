@@ -109,15 +109,15 @@ export interface FeatureToggles {
   */
   awsDatasourcesTempCredentials?: boolean;
   /**
+  * Generate a per-datasource external ID for Grafana Assume Role (jsonData.grafanaExternalId). When disabled, new datasources keep using the stack-level external ID.
+  * @default false
+  */
+  awsAssumeRolePerDatasourceExternalId?: boolean;
+  /**
   * Enable support for Machine Learning in server-side expressions
   * @default false
   */
   mlExpressions?: boolean;
-  /**
-  * Expose some datasources as apiservers.
-  * @default false
-  */
-  datasourceAPIServers?: boolean;
   /**
   * Register experimental APIs with the k8s API server, including all datasources
   * @default false
@@ -193,11 +193,6 @@ export interface FeatureToggles {
   * @default false
   */
   externalSnapshotsSupportLegacyAPI?: boolean;
-  /**
-  * Routes library panel requests from /api to the /apis endpoint
-  * @default false
-  */
-  kubernetesLibraryPanels?: boolean;
   /**
   * Routes short URL requests from /api to the /apis endpoint in the frontend. Depends on kubernetesShortURLs
   * @default true
@@ -309,16 +304,6 @@ export interface FeatureToggles {
   */
   dashboardNewLayouts?: boolean;
   /**
-  * Enables default layout selector in dashboard settings
-  * @default true
-  */
-  dashboardDefaultLayoutSelector?: boolean;
-  /**
-  * Enables the assistant prompt popover on panel click in dashboard view mode
-  * @default false
-  */
-  dashboardAssistantPopover?: boolean;
-  /**
   * Enables undo/redo in dynamic dashboards
   * @default false
   */
@@ -385,7 +370,7 @@ export interface FeatureToggles {
   jitterAlertRulesWithinGroups?: boolean;
   /**
   * Enable audit logging with Kubernetes under app platform
-  * @default false
+  * @default true
   */
   auditLoggingAppPlatform?: boolean;
   /**
@@ -690,11 +675,6 @@ export interface FeatureToggles {
   */
   azureMonitorDisableLogLimit?: boolean;
   /**
-  * Enables experimental reconciler for playlists
-  * @default false
-  */
-  playlistsReconciler?: boolean;
-  /**
   * Adds support for quotes and special characters in label values for Prometheus queries
   * @default false
   */
@@ -760,15 +740,15 @@ export interface FeatureToggles {
   */
   alertingAIAnalyzeCentralStateHistory?: boolean;
   /**
+  * Enable the alert quality tab, which surfaces the health of your alert rules and recommends actions to improve them.
+  * @default false
+  */
+  ['alerting.ruleQuality']?: boolean;
+  /**
   * Enables simplified step mode in the notifications section
   * @default true
   */
   alertingNotificationsStepMode?: boolean;
-  /**
-  * Enables cross cluster search in the Elasticsearch data source
-  * @default false
-  */
-  elasticsearchCrossClusterSearch?: boolean;
   /**
   * Defaults to using the Loki `/labels` API instead of `/series`
   * @default true
@@ -800,11 +780,6 @@ export interface FeatureToggles {
   */
   teamLBACApiWriteFromAppPlatform?: boolean;
   /**
-  * Enables Advisor app
-  * @default true
-  */
-  grafanaAdvisor?: boolean;
-  /**
   * Enables less memory intensive Elasticsearch result parsing
   * @default false
   */
@@ -814,6 +789,11 @@ export interface FeatureToggles {
   * @default false
   */
   datasourceConnectionsTab?: boolean;
+  /**
+  * Enables the new sidebar filter panel in the Add new connection page
+  * @default false
+  */
+  connectionsFilterSidebar?: boolean;
   /**
   * Use a POST request to list rules by passing down the namespaces user has access to
   * @default false
@@ -884,6 +864,11 @@ export interface FeatureToggles {
   * @default false
   */
   azureMonitorLogsBuilderEditor?: boolean;
+  /**
+  * Enables the Metrics Batch API for the Azure Monitor data source, allowing up to 50 resources to be queried in a single request
+  * @default false
+  */
+  azureMonitorBatchAPI?: boolean;
   /**
   * Enables UI functionality to permanently delete alert rules
   * @default true
@@ -1116,11 +1101,6 @@ export interface FeatureToggles {
   */
   prometheusTypeMigration?: boolean;
   /**
-  * Enables running plugins in containers
-  * @default false
-  */
-  pluginContainers?: boolean;
-  /**
   * Prioritize loading plugins from the CDN before other sources
   * @default false
   */
@@ -1135,11 +1115,6 @@ export interface FeatureToggles {
   * @default false
   */
   pluginInstallAPISync?: boolean;
-  /**
-  * Enable visualization presets
-  * @default true
-  */
-  vizPresets?: boolean;
   /**
   * Render native histogram (exponential and NHCB) zero and negative heatmap buckets on a symlog y-axis
   * @default false
@@ -1181,16 +1156,6 @@ export interface FeatureToggles {
   */
   panelTimeSettings?: boolean;
   /**
-  * Enables the raw DSL query editor in the Elasticsearch data source
-  * @default false
-  */
-  elasticsearchRawDSLQuery?: boolean;
-  /**
-  * Enables the ES|QL query editor in the Elasticsearch data source
-  * @default false
-  */
-  elasticsearchESQLQuery?: boolean;
-  /**
   * Enables http proxy settings for aws datasources
   * @default false
   */
@@ -1220,11 +1185,6 @@ export interface FeatureToggles {
   * @default true
   */
   dashboardSectionVariables?: boolean;
-  /**
-  * Enables global and folder-scoped dashboard variables via dashboard.grafana.app
-  * @default false
-  */
-  globalDashboardVariables?: boolean;
   /**
   * Enables the ASAP smoothing transformation for time series data
   * @default false
@@ -1306,11 +1266,6 @@ export interface FeatureToggles {
   */
   kubernetesUsersRedirect?: boolean;
   /**
-  * Enables the ability to create multiple notification policies in alerting
-  * @default true
-  */
-  alertingMultiplePolicies?: boolean;
-  /**
   * Use notification settings policy field instead of labels for named policy routing in alert rules
   * @default false
   */
@@ -1386,20 +1341,10 @@ export interface FeatureToggles {
   */
   flameGraphWithCallTree?: boolean;
   /**
-  * Enables the advisor report integration with datasource pages
-  * @default false
-  */
-  advisorDatasourceIntegration?: boolean;
-  /**
   * Enables an inline version of Log Details that creates no new scrolls
   * @default false
   */
   inlineLogDetailsNoScrolls?: boolean;
-  /**
-  * Enables fine-grained Y-axis tick options beyond the auto-ticks
-  * @default false
-  */
-  yAxisTickControl?: boolean;
   /**
   * Enables the logs tableNG panel to replace existing tableRT
   * @default false

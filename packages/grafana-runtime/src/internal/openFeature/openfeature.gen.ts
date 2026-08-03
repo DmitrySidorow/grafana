@@ -13,6 +13,8 @@ import {
 
 // Flag key constants for programmatic access
 export const FlagKeys = {
+  /** Enable manually starting an Assistant investigation from the alert instance drawer. */
+  AlertingManualAssistantInvestigation: "alerting.manualAssistantInvestigation",
   /** Enable the alert quality tab, which surfaces the health of your alert rules and recommends actions to improve them. */
   AlertingRuleQuality: "alerting.ruleQuality",
   /** Automatically syncs external Alertmanager datasource configuration as ExtraConfiguration in Grafana */
@@ -31,8 +33,6 @@ export const FlagKeys = {
   DashboardNotebooks: "dashboard.notebooks",
   /** Exposes the semantic (vector) search endpoint for dashboards under the dashboard API */
   DashboardVectorSearch: "dashboard.vectorSearch",
-  /** Enables support for section level variables (rows and tabs) */
-  DashboardSectionVariables: "dashboardSectionVariables",
   /** Enables the Assistant button in the dashboard templates card */
   DashboardTemplatesAssistantButton: "dashboardTemplatesAssistantButton",
   /** Use the new datasource API groups for datasource resource requests, frontend flag */
@@ -151,6 +151,10 @@ export const FlagKeys = {
   StateTimelineNameAboveBars: "stateTimeline.nameAboveBars",
   /** Enables the 'Customize with Assistant' button on suggested dashboard cards */
   SuggestedDashboardsAssistantButton: "suggestedDashboardsAssistantButton",
+  /** Sizes TableNG auto-width columns to fit their content instead of distributing evenly */
+  TableAutoColumnWidths: "table.autoColumnWidths",
+  /** Enables configuring a fixed page size for paginated tables instead of deriving it from the panel height */
+  TablePaginationPageSize: "table.paginationPageSize",
   /** Enables a new internal parser for table panel which doesn't rely on constructing a dynamic function and works in more browser environments. */
   TableProtoRowParser: "table.protoRowParser",
   /** Enables the refactored TableNG nested-table implementation */
@@ -158,6 +162,17 @@ export const FlagKeys = {
   /** Routes short URL requests from /api to the /apis endpoint in the frontend. Depends on kubernetesShortURLs */
   UseKubernetesShortURLsAPI: "useKubernetesShortURLsAPI",
 } as const;
+
+/**
+ * Enable manually starting an Assistant investigation from the alert instance drawer.
+ *
+ * **Details:**
+ * - flag key: `alerting.manualAssistantInvestigation`
+ * - default value: `false`
+ */
+export const useFlagAlertingManualAssistantInvestigation = (options?: ReactFlagEvaluationOptions): boolean => {
+  return useFlag("alerting.manualAssistantInvestigation", false, options).value;
+};
 
 /**
  * Enable the alert quality tab, which surfaces the health of your alert rules and recommends actions to improve them.
@@ -256,17 +271,6 @@ export const useFlagDashboardNotebooks = (options?: ReactFlagEvaluationOptions):
  */
 export const useFlagDashboardVectorSearch = (options?: ReactFlagEvaluationOptions): boolean => {
   return useFlag("dashboard.vectorSearch", false, options).value;
-};
-
-/**
- * Enables support for section level variables (rows and tabs)
- *
- * **Details:**
- * - flag key: `dashboardSectionVariables`
- * - default value: `true`
- */
-export const useFlagDashboardSectionVariables = (options?: ReactFlagEvaluationOptions): boolean => {
-  return useFlag("dashboardSectionVariables", true, options).value;
 };
 
 /**
@@ -714,10 +718,10 @@ export const useFlagManagedPluginsV2 = (options?: ReactFlagEvaluationOptions): b
  *
  * **Details:**
  * - flag key: `newSavedQueriesExperience`
- * - default value: `false`
+ * - default value: `true`
  */
 export const useFlagNewSavedQueriesExperience = (options?: ReactFlagEvaluationOptions): boolean => {
-  return useFlag("newSavedQueriesExperience", false, options).value;
+  return useFlag("newSavedQueriesExperience", true, options).value;
 };
 
 /**
@@ -916,6 +920,28 @@ export const useFlagStateTimelineNameAboveBars = (options?: ReactFlagEvaluationO
  */
 export const useFlagSuggestedDashboardsAssistantButton = (options?: ReactFlagEvaluationOptions): boolean => {
   return useFlag("suggestedDashboardsAssistantButton", false, options).value;
+};
+
+/**
+ * Sizes TableNG auto-width columns to fit their content instead of distributing evenly
+ *
+ * **Details:**
+ * - flag key: `table.autoColumnWidths`
+ * - default value: `false`
+ */
+export const useFlagTableAutoColumnWidths = (options?: ReactFlagEvaluationOptions): boolean => {
+  return useFlag("table.autoColumnWidths", false, options).value;
+};
+
+/**
+ * Enables configuring a fixed page size for paginated tables instead of deriving it from the panel height
+ *
+ * **Details:**
+ * - flag key: `table.paginationPageSize`
+ * - default value: `false`
+ */
+export const useFlagTablePaginationPageSize = (options?: ReactFlagEvaluationOptions): boolean => {
+  return useFlag("table.paginationPageSize", false, options).value;
 };
 
 /**

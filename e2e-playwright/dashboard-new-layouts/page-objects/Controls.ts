@@ -4,6 +4,10 @@ import { PageObject } from './PageObject';
 
 // Controls above the dashboard: timepicker, refresh button, edit button, save button
 export class Controls extends PageObject {
+  getContainer(): Locator {
+    return this.dashboardPage.getByGrafanaSelector(this.selectors.pages.Dashboard.Controls);
+  }
+
   private getEditButton(label: RegExp): Locator {
     return this.dashboardPage
       .getByGrafanaSelector(this.selectors.components.NavToolbar.editDashboard.editButton)
@@ -38,16 +42,14 @@ export class Controls extends PageObject {
     });
   }
 
-  async setTimeRange(from: string, to: string) {
-    await test.step(`Set time range from "${from}" to "${to}"`, async () => {
-      await this.dashboardPage.getByGrafanaSelector(this.selectors.components.TimePicker.openButton).click();
-      const fromField = this.dashboardPage.getByGrafanaSelector(this.selectors.components.TimePicker.fromField);
-      await fromField.click();
-      await fromField.fill(from);
-      const toField = this.dashboardPage.getByGrafanaSelector(this.selectors.components.TimePicker.toField);
-      await toField.click();
-      await toField.fill(to);
-      await this.dashboardPage.getByGrafanaSelector(this.selectors.components.TimePicker.applyTimeRange).click();
+  async openShareSnapshotDrawer() {
+    await test.step('Open share snapshot drawer', async () => {
+      await this.dashboardPage
+        .getByGrafanaSelector(this.selectors.pages.Dashboard.DashNav.newShareButton.arrowMenu)
+        .click();
+      await this.dashboardPage
+        .getByGrafanaSelector(this.selectors.pages.Dashboard.DashNav.newShareButton.menu.shareSnapshot)
+        .click();
     });
   }
 
@@ -56,6 +58,30 @@ export class Controls extends PageObject {
       await this.dashboardPage.getByGrafanaSelector(this.selectors.pages.Dashboard.ControlsButton).click();
     });
   }
+
+  readonly timeRange = {
+    set: async (from: string, to: string) => {
+      await test.step(`Set time range from "${from}" to "${to}"`, async () => {
+        await this.dashboardPage.getByGrafanaSelector(this.selectors.components.TimePicker.openButton).click();
+        const fromField = this.dashboardPage.getByGrafanaSelector(this.selectors.components.TimePicker.fromField);
+        await fromField.click();
+        await fromField.fill(from);
+        const toField = this.dashboardPage.getByGrafanaSelector(this.selectors.components.TimePicker.toField);
+        await toField.click();
+        await toField.fill(to);
+        await this.dashboardPage.getByGrafanaSelector(this.selectors.components.TimePicker.applyTimeRange).click();
+      });
+    },
+    selectPreset: async (presetLabel: string) => {
+      await test.step(`Select time range preset "${presetLabel}"`, async () => {
+        await this.dashboardPage.getByGrafanaSelector(this.selectors.components.TimePicker.openButton).click();
+        await this.dashboardPage
+          .getByGrafanaSelector(this.selectors.components.TimePicker.overlayContent)
+          .getByText(presetLabel)
+          .click();
+      });
+    },
+  };
 
   readonly variables = {
     getLabel: (variableLabel: string): Locator =>

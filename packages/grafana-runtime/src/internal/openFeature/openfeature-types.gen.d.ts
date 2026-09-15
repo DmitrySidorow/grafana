@@ -61,7 +61,6 @@ declare module "@openfeature/core" {
     | "grafana.scenesFlickeringFix"
     | "grafana.viewPanelPane"
     | "datasourcesApiServerEnableHealthEndpointFrontend"
-    | "flameGraphWithCallTree"
     | "flameGraph.tableNg"
     | "inlineLogDetailsNoScrolls"
     | "logsTablePanelNG"
@@ -87,6 +86,7 @@ declare module "@openfeature/core" {
     | "table.paginationPageSize"
     | "table.autoColumnWidths"
     | "table.refresh"
+    | "table.refreshNewFeatures"
     | "table.inspectDataTableNG"
     | "dataviz.experimentalColorSchemes"
     | "grafana.customizableMegaMenu"
@@ -106,7 +106,8 @@ declare module "@openfeature/core" {
     | "grafana.panelPluginTransformations"
     | "grafana.dashboardsAutoHeightPanels"
     | "grafana.dashboardAutoGridDefault"
-    | "grafana.multiTenantUserPermissions";
+    | "grafana.multiTenantUserPermissions"
+    | "datasources.gatewayGuardrails";
   export type NumberFlagKey = never;
   export type StringFlagKey = never;
   export type ObjectFlagKey = never;

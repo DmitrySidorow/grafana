@@ -471,18 +471,6 @@ const (
 	// Enables user auth for Azure Monitor datasource only
 	FlagAzureMonitorEnableUserAuth = "azureMonitorEnableUserAuth"
 
-	// FlagAlertingAIGenAlertRules
-	// Enable AI-generated alert rules.
-	FlagAlertingAIGenAlertRules = "alertingAIGenAlertRules"
-
-	// FlagAlertingAIFeedback
-	// Enable AI-generated feedback from the Grafana UI.
-	FlagAlertingAIFeedback = "alertingAIFeedback"
-
-	// FlagAlertingAIImproveAlertRules
-	// Enable AI-improve alert rules labels and annotations.
-	FlagAlertingAIImproveAlertRules = "alertingAIImproveAlertRules"
-
 	// FlagAlertingAIGenTemplates
 	// Enable AI-generated alerting templates.
 	FlagAlertingAIGenTemplates = "alertingAIGenTemplates"
@@ -683,7 +671,7 @@ const (
 	FlagInteractiveLearning = "interactiveLearning"
 
 	// FlagAlertingTriage
-	// Enables the alerting triage feature
+	// Deprecated. The alert activity page is shown when alert state history is written to Prometheus. Set to false to hide it.
 	FlagAlertingTriage = "alertingTriage"
 
 	// FlagGraphiteBackendMode

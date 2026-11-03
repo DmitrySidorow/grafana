@@ -98,6 +98,8 @@ export const FlagKeys = {
   CreateAlertRuleFromPanel: "createAlertRuleFromPanel",
   /** Enables Critical User Journey (CUJ) tracking */
   CujTracking: "cujTracking",
+  /** Enables commenting on Notebook cells */
+  DashboardNotebookComments: "dashboard.notebookComments",
   /** Enable notebooks, a resource in the dashboard API group for mixing text cells, code cells, and visualization panels */
   DashboardNotebooks: "dashboard.notebooks",
   /** Exposes the semantic (vector) search endpoint for dashboards under the dashboard API */
@@ -202,8 +204,6 @@ export const FlagKeys = {
   GrafanaFilterablePanels: "grafana.filterablePanels",
   /** Adds an experimental Protomaps vector basemap to the geomap panel */
   GrafanaGeomapProtomapsBasemap: "grafana.geomapProtomapsBasemap",
-  /** Enables PLG-focused growth redesign of the unified homepage */
-  GrafanaGrowthHomepage: "grafana.growthHomepage",
   /** Enables usage of the new annotations API client */
   GrafanaKubernetesAnnotationsClient: "grafana.kubernetesAnnotationsClient",
   /** Deprecated: Toggle displayed fields from Log Details */
@@ -272,6 +272,8 @@ export const FlagKeys = {
   GrafanaAPIServerWithExperimentalAPIs: "grafanaAPIServerWithExperimentalAPIs",
   /** Enables the Graphite data source full backend mode */
   GraphiteBackendMode: "graphiteBackendMode",
+  /** Render native histogram (exponential and NHCB) zero and negative heatmap buckets on a symlog y-axis */
+  HeatmapNegativeLogBuckets: "heatmapNegativeLogBuckets",
   /** Enables an inline version of Log Details that creates no new scrolls */
   InlineLogDetailsNoScrolls: "inlineLogDetailsNoScrolls",
   /** Adds support for Kubernetes correlations */
@@ -294,8 +296,6 @@ export const FlagKeys = {
   NewSavedQueriesExperience: "newSavedQueriesExperience",
   /** Applies OTel formatting templates to displayed logs */
   OtelLogsFormatting: "otelLogsFormatting",
-  /** Enables a new panel time settings drawer */
-  PanelTimeSettings: "panelTimeSettings",
   /** Search for dashboards using panel title */
   PanelTitleSearch: "panelTitleSearch",
   /** Shows text labels on the add and stacked view buttons in PanelEditNext */
@@ -392,8 +392,6 @@ export const FlagKeys = {
   TableSharedCrosshair: "tableSharedCrosshair",
   /** Enables the new features in text panel */
   TextNewFeatures: "text.newFeatures",
-  /** Enables time comparison option in supported panels */
-  TimeComparison: "timeComparison",
   /** Show transformation quick-start cards in empty transformations state */
   TransformationsEmptyPlaceholder: "transformationsEmptyPlaceholder",
   /** Enables unified navbars */
@@ -866,6 +864,17 @@ export const useFlagCreateAlertRuleFromPanel = (options?: ReactFlagEvaluationOpt
  */
 export const useFlagCujTracking = (options?: ReactFlagEvaluationOptions): boolean => {
   return useFlag("cujTracking", false, options).value;
+};
+
+/**
+ * Enables commenting on Notebook cells
+ *
+ * **Details:**
+ * - flag key: `dashboard.notebookComments`
+ * - default value: `false`
+ */
+export const useFlagDashboardNotebookComments = (options?: ReactFlagEvaluationOptions): boolean => {
+  return useFlag("dashboard.notebookComments", false, options).value;
 };
 
 /**
@@ -1441,17 +1450,6 @@ export const useFlagGrafanaGeomapProtomapsBasemap = (options?: ReactFlagEvaluati
 };
 
 /**
- * Enables PLG-focused growth redesign of the unified homepage
- *
- * **Details:**
- * - flag key: `grafana.growthHomepage`
- * - default value: `false`
- */
-export const useFlagGrafanaGrowthHomepage = (options?: ReactFlagEvaluationOptions): boolean => {
-  return useFlag("grafana.growthHomepage", false, options).value;
-};
-
-/**
  * Enables usage of the new annotations API client
  *
  * **Details:**
@@ -1826,6 +1824,17 @@ export const useFlagGraphiteBackendMode = (options?: ReactFlagEvaluationOptions)
 };
 
 /**
+ * Render native histogram (exponential and NHCB) zero and negative heatmap buckets on a symlog y-axis
+ *
+ * **Details:**
+ * - flag key: `heatmapNegativeLogBuckets`
+ * - default value: `false`
+ */
+export const useFlagHeatmapNegativeLogBuckets = (options?: ReactFlagEvaluationOptions): boolean => {
+  return useFlag("heatmapNegativeLogBuckets", false, options).value;
+};
+
+/**
  * Enables an inline version of Log Details that creates no new scrolls
  *
  * **Details:**
@@ -1944,17 +1953,6 @@ export const useFlagNewSavedQueriesExperience = (options?: ReactFlagEvaluationOp
  */
 export const useFlagOtelLogsFormatting = (options?: ReactFlagEvaluationOptions): boolean => {
   return useFlag("otelLogsFormatting", true, options).value;
-};
-
-/**
- * Enables a new panel time settings drawer
- *
- * **Details:**
- * - flag key: `panelTimeSettings`
- * - default value: `true`
- */
-export const useFlagPanelTimeSettings = (options?: ReactFlagEvaluationOptions): boolean => {
-  return useFlag("panelTimeSettings", true, options).value;
 };
 
 /**
@@ -2483,17 +2481,6 @@ export const useFlagTableSharedCrosshair = (options?: ReactFlagEvaluationOptions
  */
 export const useFlagTextNewFeatures = (options?: ReactFlagEvaluationOptions): boolean => {
   return useFlag("text.newFeatures", false, options).value;
-};
-
-/**
- * Enables time comparison option in supported panels
- *
- * **Details:**
- * - flag key: `timeComparison`
- * - default value: `true`
- */
-export const useFlagTimeComparison = (options?: ReactFlagEvaluationOptions): boolean => {
-  return useFlag("timeComparison", true, options).value;
 };
 
 /**

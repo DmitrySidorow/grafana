@@ -2047,7 +2047,8 @@
       }
     },
     "inspector-yaml-tab": {
-      "apply": "Toepassen"
+      "apply": "Toepassen",
+      "editor-label": ""
     },
     "instance-details": {
       "drawer-time-range-short": {
@@ -5334,6 +5335,9 @@
       "preferences": "Voorkeuren",
       "recent-dashboards": "Recente dashboards",
       "recent-scopes": "Recente scopes"
+    },
+    "tags": {
+      "label": ""
     }
   },
   "common": {
@@ -5759,7 +5763,8 @@
       "apply-undo-title": "",
       "overlay": {
         "hint-panel": "",
-        "hint-region": ""
+        "hint-region": "",
+        "hint-variable": ""
       },
       "region": "",
       "untitled-panel": "",
@@ -5941,6 +5946,9 @@
       "render-label": {
         "tooltip-remove-property": "Eigenschap verwijderen"
       }
+    },
+    "edit": {
+      "mobile-not-available": ""
     },
     "edit-actions": {
       "add": "{{typeName}} toevoegen",
@@ -6438,6 +6446,9 @@
           "hide-header": "Rij-koptekst verbergen",
           "title": "Titel"
         },
+        "section-annotations": {
+          "title": ""
+        },
         "section-filters": {
           "title": "Filters"
         },
@@ -6519,11 +6530,10 @@
         "data-source": "Gegevensbron",
         "display": "Annotatiebesturingselementen weergeven in",
         "display-options": {
-          "above-dashboard": "Boven dashboard",
           "controls-menu": "Besturingsmenu",
-          "controls-menu-description": "Kan worden geopend wanneer het besturingsmenu open is",
+          "controls-menu-description": "",
           "hidden": "Verborgen",
-          "hidden-description": "Verbergt de schakelaar voor het in- of uitschakelen van deze annotatie"
+          "hidden-description": ""
         },
         "enabled": "Ingeschakeld",
         "enabled-description": "Wanneer ingeschakeld, wordt de annotatiequery elke dashboardvernieuwing uitgegeven",
@@ -6626,7 +6636,9 @@
         "tab": "Tabblad",
         "tabs": "Tabbladen",
         "variable": "{{type}} variabele",
-        "variable-set": "Variabelen"
+        "variable-set": "Variabelen",
+        "selected-panels_one": "",
+        "selected-panels_other": ""
       },
       "export": {
         "title": "Exporteren"
@@ -6805,6 +6817,9 @@
             "description": "Herhaal dit tabblad voor elke waarde in de geselecteerde variabele.",
             "title": "Herhalen per variabele"
           }
+        },
+        "section-annotations": {
+          "title": ""
         },
         "section-filters": {
           "title": "Filters"
@@ -7581,6 +7596,7 @@
       "error-invalid-json": "Ongeldige JSON",
       "error-invalid-layout": "De JSON van de lay-out heeft de validatie niet doorstaan. Controleer de JSON en probeer het opnieuw.",
       "error-invalid-v2-panel": "De JSON van het paneel heeft de validatie niet doorstaan. Controleer de JSON en probeer het opnieuw.",
+      "mobile-edit-unavailable": "",
       "validation-error": "Validatiefout"
     },
     "interval-variable-form": {
@@ -7650,10 +7666,10 @@
       "discard-pending-failed": "",
       "discard-pending-title": "",
       "draft-body": "",
+      "draft-discarded": "",
       "draft-title": "",
       "edited-dashboard": "",
       "highlight-changes": "",
-      "open-to-save": "",
       "pending-body": "",
       "pending-body-source": "",
       "pending-changes-changed": "",
@@ -7757,7 +7773,9 @@
       "title-delete-all-transformations": "Alle transformaties verwijderen?"
     },
     "panel-edit-actions": {
-      "edit-visualization": "Visualisatie bewerken"
+      "edit-visualization": "Visualisatie bewerken",
+      "panels-selected_one": "",
+      "panels-selected_other": ""
     },
     "panel-edit-controls": {
       "table-view-aria-label-toggletableview": "Tabelweergave in-/uitschakelen",
@@ -12399,7 +12417,6 @@
       "copy-log-line-json": "Logboekinhoud kopiëren als JSON",
       "copy-shortlink": "Snelkoppeling kopiëren",
       "copy-to-clipboard": "Kopiëren naar klembord",
-      "displayed-fields-section": "Weergegeven velden ordenen",
       "fields": {
         "adhoc-statistics": "Ad-hocstatistieken",
         "copy-value-to-clipboard": "Waarde naar klembord kopiëren",
@@ -12423,14 +12440,11 @@
       "log-attributes-field": "Logattributen",
       "log-line-field": "Logregel",
       "log-line-section": "Logregel",
-      "move-displayed-field-down": "Naar beneden verplaatsen",
-      "move-displayed-field-up": "Naar boven verplaatsen",
       "no-details": "Weer te geven velden.",
       "open-assistant": "",
       "open-value-in": "",
       "pin-line": "Logboek vastzetten",
       "prettify": "Verfraaien",
-      "remove-displayed-field": "Veld verwijderen",
       "remove-log": "Log verwijderen",
       "scroll-to-logline": "Naar logregel scrollen",
       "search": {
@@ -14017,6 +14031,12 @@
     "viz-type-picker": {
       "could-anything-matching-query": "Kon niets vinden dat overeenkomt met je query"
     }
+  },
+  "panel-adhoc-changes": {
+    "remove-changes": "",
+    "save-to-dashboard": "",
+    "tooltip": "",
+    "undo-title": ""
   },
   "panel-data-pane": {
     "try-new-editor": {
